@@ -88,7 +88,6 @@ https://geosoft.no/development/cppstyle.html.
 #include "X11_window.h"
 
 
-std::condition_variable gSyncOutputReading_cv;
 bool gSyncOutputReading_ready = false;
 bool loopMaintainer = true;  // xxxx needed?
 bool input_read = false;

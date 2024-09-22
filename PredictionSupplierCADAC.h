@@ -8,7 +8,6 @@
 
 extern std::mutex ChangeFiles_Mutex;    // XXXX IMPORTANT: UNDERSTAND WHY THE HELL is this mutex needed? on this machine also? XXXX give proper name. XXXX Explain in comment why extern. find in stackexchange examples of using extern for mutex.
 
-extern std::condition_variable gSyncOutputReading_cv;
 extern bool gSyncOutputReading_ready;
 extern bool loopMaintainer;  // xxxx needed?
 extern int readOnce;
@@ -32,7 +31,6 @@ class PredictionSupplierCADAC : public PredictionSupplier {   // XXXX THIS MAKES
     int resultUpdateBITA = 0; // xxxx delete this when not needed.
 
     /*
-    std::condition_variable gSyncOutputReading_cv;
     bool gSyncOutputReading_ready = false;
     bool loopMaintainer = true;  // xxxx needed?
     */

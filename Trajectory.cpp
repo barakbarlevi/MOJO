@@ -47,7 +47,6 @@ int Trajectory::readInput(bool isDetection) { //  XXXX MAKE SURE ALL VAR NAMES i
             //gSyncOutputReading_ready = false;
             //readOnce = 1;
             //ul.unlock();
-            //gSyncOutputReading_cv.notify_one();
             //ul.lock();
         //}
 

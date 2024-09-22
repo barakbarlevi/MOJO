@@ -16,7 +16,6 @@ extern bool syncDetectSetBITA_ready;
 extern int g_data;
 */
 
-extern std::condition_variable gSyncOutputReading_cv;
 extern bool gSyncOutputReading_ready;
 extern bool loopMaintainer;  // xxxx needed?
 extern bool input_read;

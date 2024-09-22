@@ -173,12 +173,7 @@ int PredictionSupplierCADAC::runSupplierOnce()
         //cv.notify_one();
 
 
-        //gSyncOutputReading_ready = true;
-        //ul.unlock();
-        //gSyncOutputReading_cv.notify_one();
-        //ul.lock();
-        //gSyncOutputReading_cv.wait(ul, [](){ return gSyncOutputReading_ready == false; });
-    //}
+        
 
     //readOnce = 0;
     
