@@ -26,7 +26,7 @@ struct BITA_params { // XXXX name... member names...
     std::string BITA_flightPath = "0";
     std::string BITA_heading = "0";
     std::string BITA_lat = "0";
-    std::string lon = "0";
+    std::string BITA_lon = "0";
 };
 
 enum predictionSuppliers {

@@ -27,7 +27,7 @@ void SensorTrajectoryCADAC::setBITA_Params()
     // BITA_mass: Cannot be detected by the sensor. It's added in he supplier's Update BITA routine, according to the supplier's models.  // XXXX VERIFY for example still calling it BITA_mass ? go over this line.
     this->_BITA_Params.BITA_mass = "0";
     this->_BITA_Params.BITA_lat = utils::SubStringStartTillReaching(data[currentRowIndex], ',', 5, 1, currentRowIndex, "SensorTrajectoryCADAC::setBITA_Params 2"); // XXXX check on func arguments to match cadac / general(?)
-    this->_BITA_Params.lon = utils::SubStringStartTillReaching(data[currentRowIndex], ',', 4, 1, currentRowIndex, "SensorTrajectoryCADAC::setBITA_Params 3"); // XXXX check on func arguments to match cadac / general(?)
+    this->_BITA_Params.BITA_lon = utils::SubStringStartTillReaching(data[currentRowIndex], ',', 4, 1, currentRowIndex, "SensorTrajectoryCADAC::setBITA_Params 3"); // XXXX check on func arguments to match cadac / general(?)
     this->_BITA_Params.BITA_height = utils::SubStringStartTillReaching(data[currentRowIndex], ',', 6, 1, currentRowIndex, "SensorTrajectoryCADAC::setBITA_Params 4");  // XXXX check on func arguments to match cadac / general(?)
     this->_BITA_Params.BITA_speed = utils::SubStringStartTillReaching(data[currentRowIndex], ',', 7, 1, currentRowIndex, "SensorTrajectoryCADAC::setBITA_Params 5");  // XXXX check on func arguments to match cadac / general(?)
     // xxxx write that assuming alpha = 0 because can't sense it !
