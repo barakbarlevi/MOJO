@@ -54,67 +54,27 @@ https://geosoft.no/development/cppstyle.html.
 // XXXX difference from typedef struct?
 
 
+#include <algorithm>
+#include <chrono>
+#include <condition_variable>
+#include <cstdlib>
+#include <filesystem>
+#include <fstream>
+#include <functional>
+#include <iomanip>
+#include <iostream>
+#include <math.h>
+#include <memory>
+#include <mutex>
+#include <pthread.h>
+#include <semaphore>
+#include <sstream>
+#include <stdlib.h>
+#include <string>
+#include <thread>
+#include <vector>
 
 #include "BITA_params.h"
-
-
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <sstream>
-#include <chrono>
-#include <thread>
-#include <functional>
-#include <cstdlib>
-#include <vector>
-#include <algorithm>
-#include <iomanip>
-#include <mutex>
-#include <condition_variable>
-#include <math.h>
-
-
-
-
-
-
-
-
-
-//#include <iostream>
-//#include <fstream>
-//#include <string>
-//#include <sstream>
-//#include <chrono>
-//#include <thread>
-//#include <functional>
-//#include <cstdlib>
-//#include <vector>
-//#include <algorithm>
-//#include <mutex>
-#include <memory>
-#include <filesystem>
-#include <pthread.h>
-#include <stdlib.h>
-//#include <string>
-//#include <sstream>
-#include <semaphore>
-
-//#include <iostream>
-//#include <fstream>
-//#include <string>
-//#include <sstream>
-//#include <chrono>
-//#include <thread>
-//#include <functional>
-//#include <cstdlib>
-//#include <vector>
-//#include <algorithm>
-////#include <iomanip>
-//#include <mutex>
-////#include <condition_variable>
-////#include <math.h>
-
 #include "utils.h"
 #include "PredictionSupplierCADAC.h"
 #include "SensorTrajectoryCADAC.h"
