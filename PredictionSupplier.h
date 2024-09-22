@@ -16,7 +16,6 @@ class PredictionSupplier {
     //virtual void runSupplierOnce() = 0;  // XXXX name?
     virtual int runSupplierOnce() = 0;  // XXXX name?
     
-    //virtual void updateBITA_ParamsInSupplierInput(BITA_params BITA_params) = 0;    // XXXX
     virtual int updateBITA_ParamsInSupplierInput(BITA_params BITA_params) = 0;    // XXXX
 
     protected:

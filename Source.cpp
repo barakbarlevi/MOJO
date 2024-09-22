@@ -74,6 +74,21 @@ https://geosoft.no/development/cppstyle.html.
 #include <sstream>
 #include <semaphore>
 
+//#include <iostream>
+//#include <fstream>
+//#include <string>
+//#include <sstream>
+//#include <chrono>
+//#include <thread>
+//#include <functional>
+//#include <cstdlib>
+//#include <vector>
+//#include <algorithm>
+////#include <iomanip>
+//#include <mutex>
+////#include <condition_variable>
+////#include <math.h>
+
 #include "utils.h"
 #include "PredictionSupplierCADAC.h"
 #include "SensorTrajectoryCADAC.h"

@@ -23,7 +23,6 @@ int PredictionSupplierCADAC::prepareInputFiles() { return 0; }; // XXXX this is 
 
 
 
-//void PredictionSupplierCADAC::updateBITA_ParamsInSupplierInput(BITA_params BITA_params) // XXXX so _bita_params or bita_params? and ofcourse change tbm and all
 int PredictionSupplierCADAC::updateBITA_ParamsInSupplierInput(BITA_params BITA_params) // XXXX so _bita_params or bita_params? and ofcourse change tbm and all
 {
     

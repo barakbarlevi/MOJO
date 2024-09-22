@@ -6,7 +6,6 @@
 #include <fstream>
 #include <cstring>
 
-extern std::mutex ChangeFiles_Mutex;    // XXXX IMPORTANT: UNDERSTAND WHY THE HELL is this mutex needed? on this machine also? XXXX give proper name. XXXX Explain in comment why extern. find in stackexchange examples of using extern for mutex.
 
 
 
@@ -47,7 +46,6 @@ class PredictionSupplierCADAC : public PredictionSupplier {   // XXXX THIS MAKES
 
     //void setTBM(std::string primaryInputFile) { this->primaryInputFile = primaryInputFile;} // XXXX CHANGE "TBM" TO SOMETHING ELSE. THORUGHT ALL CTRL+F TBM.
 
-    //virtual void updateBITA_ParamsInSupplierInput(BITA_params BITA_params);    // XXXX make sure that this is the right way of declaration. in base class virtual ... = 0 , in inhertied class this and that .... until implementation.
     virtual int updateBITA_ParamsInSupplierInput(BITA_params BITA_params);    // XXXX make sure that this is the right way of declaration. in base class virtual ... = 0 , in inhertied class this and that .... until implementation.
 
     // XXXX CHANGE PLACE IN DECLARATIONS (ARRANGE ALL), _ CONVENTION, TBM, MOVE TO POSIX... BUT COMMENT OUT THIS WRITING STYLE.
