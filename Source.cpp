@@ -83,7 +83,6 @@ https://geosoft.no/development/cppstyle.html.
 
 #include "SuppliersCollectorsVector.h"
 #include "DecisionMaker.h"
-#include "WindowObject.h"
 #include "SyncDataArrivalAndPredicting.h"
 #include "X11_window.h"
 
@@ -97,17 +96,7 @@ int main(int argc, char *argv[])
 { 
     (void)argc;
     (void)argv;
-
-    /*
-    WindowObject windowObject;
-    windowObject.init();
-    windowObject.startWindow();
-    //std::thread x = windowObject.threadstartWindow();
-    //x.detach();
-    windowObject.setWindowRed();
-    */
-
-   
+  
     pthread_t thread1;
     SyncDataArrivalAndPredicting *syncSingleton = new SyncDataArrivalAndPredicting();
     pthread_mutex_init(&syncSingleton->condition_lock_color, NULL);
@@ -403,7 +392,6 @@ int main(int argc, char *argv[])
             }
             suppliersCollectorsVector.suppliersCollectorsVector_.at(suppliersCollectorsVector.getCurrentNumOfSuppliersCollectors())->currentNumOfSuppliers++;
             //suppliersCollectorsVector.at(suppliersCollectorsVectorIndex)->currentNumOfSuppliers++;
-            //BS1.release();
         }
         suppliersCollectorsVector.suppliersCollectorsVector_.at(suppliersCollectorsVector.getCurrentNumOfSuppliersCollectors())->plotCollectorAtOnce(2); // xxxx no "2" cases
         

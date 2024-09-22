@@ -9,17 +9,7 @@
 extern std::mutex ChangeFiles_Mutex;    // XXXX IMPORTANT: UNDERSTAND WHY THE HELL is this mutex needed? on this machine also? XXXX give proper name. XXXX Explain in comment why extern. find in stackexchange examples of using extern for mutex.
 
 
-extern bool completed[3];
-extern void signalCompletionOfT1();
-extern void signalCompletionOfT2();
-extern void signalCompletionOfT3();
-extern void waitForCompletionOfT1();
-extern void waitForCompletionOfT2();
-extern void waitForCompletionOfT3(); 
 
-extern std::binary_semaphore BS1;
-extern std::binary_semaphore BS2;
-extern std::binary_semaphore BS3;
 
 class PredictionSupplierCADAC : public PredictionSupplier {   // XXXX THIS MAKES NO SENSE convetions wise. start with a capital letter or no? decide and change throught all !
     public:

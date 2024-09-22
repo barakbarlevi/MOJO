@@ -17,17 +17,6 @@ extern int g_data;
 */
 
 
-extern void signalCompletionOfT1();
-extern void signalCompletionOfT2();
-extern void signalCompletionOfT3();
-extern void waitForCompletionOfT1();
-extern void waitForCompletionOfT2();
-extern void waitForCompletionOfT3(); 
-
-extern std::binary_semaphore BS1;
-extern std::binary_semaphore BS2;
-extern std::binary_semaphore BS3;
-
 class Trajectory {
     
     public:

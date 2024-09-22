@@ -26,13 +26,7 @@ int PredictionSupplierCADAC::prepareInputFiles() { return 0; }; // XXXX this is 
 //void PredictionSupplierCADAC::updateBITA_ParamsInSupplierInput(BITA_params BITA_params) // XXXX so _bita_params or bita_params? and ofcourse change tbm and all
 int PredictionSupplierCADAC::updateBITA_ParamsInSupplierInput(BITA_params BITA_params) // XXXX so _bita_params or bita_params? and ofcourse change tbm and all
 {
-    //this->trajectoryCADAC->synchObj.waitForCompletionOfT3();
     
-    //BS1.acquire();
-    //obj.waitForCompletionOfT3();
-    //waitForCompletionOfT3();
-
-
     std::string inputPath = this->primaryInputFile;
     std::ofstream kml_file(inputPath, std::ofstream::out | std::ios::binary);
 
@@ -120,12 +114,7 @@ int PredictionSupplierCADAC::updateBITA_ParamsInSupplierInput(BITA_params BITA_p
     kml_file.close();
     std::cout << "Wrote to input file: lonx = " + BITA_params.lon + ", latx = " + BITA_params.lat + ", alt = " + BITA_params.height + ", dvbe = " + BITA_params.vbal + ", thtbdx = " + BITA_params.gamalbal + ", psibdx = " + BITA_params.azimlbal + ", Aerodeck = " + aeroDeck + ", vmass0 = " + momentaryMass << std::endl;
     
-    //BS2.release();
-    //obj.signalCompletionOfT1();
-    //signalCompletionOfT1();
-    //completed[0] = true;
     
-    //return 1;
 }
 
 
@@ -159,16 +148,5 @@ int PredictionSupplierCADAC::runSupplierOnce()
 
         std::string COMMAND = this->path_to_exe + " " + this->primaryInputFile;
         std::system(COMMAND.c_str());
-
-        //BS3.release();
-        // obj.signalCompletionOfT2();
-        //signalCompletionOfT2();
-        //completed[0] = false;
-        //completed[1] = true;
-
-
-        
-
     
-    //return 0;
 }

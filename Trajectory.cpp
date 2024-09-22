@@ -35,17 +35,6 @@ int Trajectory::readInput(bool isDetection) { //  XXXX MAKE SURE ALL VAR NAMES i
             }
             else { std::cerr << "Unable to open file " << this->loadPath << std::endl;}  // XXXX std::cerr ? or something else? cout? are there other options? comment what std::cerr in fact IS. be consistent and change throught all code.    
 
-
-            // obj.signalCompletionOfT3();
-            //signalCompletionOfT3();
-            //completed[0] = false;
-            //completed[1] = false;
-            //completed[2] = true;
-
-            //ul.unlock();
-            //ul.lock();
-        //}
-
     }
 
     else {
