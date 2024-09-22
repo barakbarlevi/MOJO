@@ -23,7 +23,7 @@ void SensorTrajectoryCADAC::setBITA_Params()
     //std::cout << "currentRowIndex: " << currentRowIndex << std::endl;
 
     /*
-    this->_BITA_Params.tbal = utils::SubStringStartTillReaching(data[currentRowIndex], ',', 1, 0); // XXXX check on func arguments to match cadac / general(?)
+    this->_BITA_Params.BITA_time = utils::SubStringStartTillReaching(data[currentRowIndex], ',', 1, 0); // XXXX check on func arguments to match cadac / general(?)
     // massbal: Cannot be detected by the sensor. It's added in he supplier's Update BITA routine, according to the supplier's models.  // XXXX VERIFY for example still calling it massbal ? go over this line.
     this->_BITA_Params.massbal = "0";
     this->_BITA_Params.lat = utils::SubStringStartTillReaching(data[currentRowIndex], ',', 5, 1); // XXXX check on func arguments to match cadac / general(?)
@@ -36,7 +36,7 @@ void SensorTrajectoryCADAC::setBITA_Params()
     */
 
 
-    this->_BITA_Params.tbal = utils::SubStringStartTillReaching(data[currentRowIndex], ',', 1, 0, currentRowIndex, "SensorTrajectoryCADAC::setBITA_Params 1"); // XXXX check on func arguments to match cadac / general(?)
+    this->_BITA_Params.BITA_time = utils::SubStringStartTillReaching(data[currentRowIndex], ',', 1, 0, currentRowIndex, "SensorTrajectoryCADAC::setBITA_Params 1"); // XXXX check on func arguments to match cadac / general(?)
     // massbal: Cannot be detected by the sensor. It's added in he supplier's Update BITA routine, according to the supplier's models.  // XXXX VERIFY for example still calling it massbal ? go over this line.
     this->_BITA_Params.massbal = "0";
     this->_BITA_Params.lat = utils::SubStringStartTillReaching(data[currentRowIndex], ',', 5, 1, currentRowIndex, "SensorTrajectoryCADAC::setBITA_Params 2"); // XXXX check on func arguments to match cadac / general(?)

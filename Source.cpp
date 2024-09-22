@@ -51,6 +51,7 @@ https://geosoft.no/development/cppstyle.html.
 // xxxx turn suppliersCollectorsVector into just a vector.. no actual need to create a class for it.
 // xxxx "int" i ? ++i or i++ ? xxxx always size_t? maybe unsigned?
 // xxxx what abouth factory design pattern? how can it be implemented in mojo?
+// XXXX difference from typedef struct?
 
 #include "Header.h"
 
@@ -240,7 +241,7 @@ int main(int argc, char *argv[])
     }
     std::this_thread::sleep_for(std::chrono::milliseconds(1));
     std::cout << "Reached " << detectionHeight << "[m], at currentRowIndex: " << trajectoryFromSensor.currentRowIndex << std::endl; // XXXX choose what to cout, only necessary.
-    float detectionTime = std::stof(trajectoryFromSensor._BITA_Params.tbal);
+    float detectionTime = std::stof(trajectoryFromSensor._BITA_Params.BITA_time);
     trajectoryFromSensor.reachedHdetection = true;
 
 #endif
@@ -261,7 +262,7 @@ int main(int argc, char *argv[])
     //while (trajectoryFromSensor.currentRowIndex <= trajectoryFromSensor.data.size()) // as long as ballistic motion still takes place. loop on collectors xxxx english
     do
     {
-        std::shared_ptr<SuppliersCollector> currentCollector = std::make_shared<SuppliersCollector>(std::stof(trajectoryFromSensor._BITA_Params.tbal) - detectionTime);
+        std::shared_ptr<SuppliersCollector> currentCollector = std::make_shared<SuppliersCollector>(std::stof(trajectoryFromSensor._BITA_Params.BITA_time) - detectionTime);
         suppliersCollectorsVector.suppliersCollectorsVector_.push_back(currentCollector);
         //suppliersCollectorsVector.push_back(currentCollector);
 
@@ -447,8 +448,8 @@ int main(int argc, char *argv[])
 
     //  XXXX Operate / do something when reaching a specific detect time value
 
-    // while(std::stof(trajectoryFromSensor.getBITA_Params().tbal < 5)) {   // XXXX fix 5 XXXX fix names
-    //     std::cout << "tbal: " << trajectoryFromSensor.getBITA_Params().tbal << std::endl;    // XXXX fix tbal XXXX maybe omit entirely the cout
+    // while(std::stof(trajectoryFromSensor.getBITA_Params().BITA_time < 5)) {   // XXXX fix 5 XXXX fix names
+    //     std::cout << "BITA_time: " << trajectoryFromSensor.getBITA_Params().BITA_time << std::endl;    // XXXX fix BITA_time XXXX maybe omit entirely the cout
     //     trajectoryFromSensor.setBITA_Params();
     // }
 

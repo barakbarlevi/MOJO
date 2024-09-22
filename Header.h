@@ -15,12 +15,11 @@
 #include <condition_variable>
 #include <math.h>
 
-// XXXX IMPORTANT: is this the right place to declare the struct? is it more adequate to declare elsewhere?
-// XXXX difference from typedef struct?
+
 
 struct BITA_params { // XXXX name... member names...
     // XXXX edit..
-    std::string tbal = "0";
+    std::string BITA_time = "0";
     std::string massbal = "0";
     //std::string sxbal = "0";    // xxxx remove this...
     //std::string sybal = "0";
