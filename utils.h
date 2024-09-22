@@ -2,7 +2,6 @@
 #include "Header.h"
 #include <memory>
 
-extern std::mutex KML_editing_mutex;    // XXXX name. explanation on extern.
 
 namespace utils {
     

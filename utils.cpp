@@ -491,49 +491,7 @@ namespace utils
     } // XXXX names, XXXX more?
     */
  
-   /*
-    int kmlInsertEntireTrajectory(std::shared_ptr<Trajectory> trajectory, std::string KML, int indexJump, int currentNumbebrOfSuppliers, int CollectorSize, float StyleScale, bool flagDelay, int delayms)
-    {
-        std::string line;
-        utils::rgb RGB;
-        utils::hsv HSV;
-        std::stringstream ss;
-        HSV.h = ((((double)currentNumbebrOfSuppliers) / (double)CollectorSize)) * 360.0; // XXXX THERES ABSOLUTELY no way that so many casts are needed. MINIMIZE.
-        HSV.s = 0.9;
-        HSV.v = 1;
-        RGB = utils::hsv2rgb(HSV);
-        int decimalR = static_cast<int>(RGB.r * 255);
-        int decimalG = static_cast<int>(RGB.g * 255);
-        int decimalB = static_cast<int>(RGB.b * 255);
-        int decimalA = (1 * 255);
-        ss << std::hex << std::setfill('0') << std::setw(2) << decimalA << std::hex << std::setfill('0') << std::setw(2) << decimalG << std::hex << std::setfill('0') << std::setw(2) << decimalB << std::hex << std::setfill('0') << std::setw(2) << decimalR << std::endl;
-        std::string color = ss.str(); // XXXX ss.str() ? FROm what library this and c_str, to_string .substr() etc are from ?
-
-
-        std::unique_lock<std::mutex> EditKML_ul(KML_editing_mutex); // XXXX name
-
-       
-        std::cout << "Inserting entire CADAC Trajectory to KML: " << KML << " at index jumps of: " << indexJump << std::endl; // XXXX English. check that this cout is needed. fix what needs to be fixed.
-        for (unsigned int i = 4; i < trajectory->data.size() / indexJump; i++)
-        { // XXXX unsigned int ? i++ so why had there ++i ? strange ++i xxxx why the hell just a random 4? fix
-            
-            trajectory->setSingleCoordsLine();
-
-            // xxxx there's a need in it because of https://stackoverflow.com/questions/3727420/significance-of-sleep0 ENGLISH
-            if (flagDelay == 1)
-            {
-                std::this_thread::sleep_for(std::chrono::milliseconds(delayms));
-            } // xxxx Using sleep here but really not sure that's the right way... https://stackoverflow.com/questions/70697368/how-to-let-a-thread-wait-itself-out-without-using-sleep
-
-            utils::kmlAppendOneCoord(KML, trajectory->SingleCoordsLine, std::to_string(currentNumbebrOfSuppliers)); // XXXX HERE this->SingleCoordsLine and line above just SingleCoordsLine ?xxxx fix this method to the one i printed on one paper that only does appending
-            trajectory->currentRowIndex += indexJump; // XXXX fix name of indexJump (?)
-        }
-
-        EditKML_ul.unlock(); // XXXX challenge the fact that mutexes are really where they should be. all throughout the code.  // XXXX really need a mutex for editing a kml that's only for this specific trajectory? something's wrong here
-
-        return 0;
-    }
-    */
+   
 
 
     int kmlAppendOneCoord(std::string kml_path, std::string SingleCoordsLine, std::string styleID)

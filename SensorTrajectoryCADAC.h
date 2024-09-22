@@ -2,7 +2,6 @@
 
 #include "SensorTrajectory.h"
 
-extern std::mutex RunKML_mutex; // XXXX name. explanation on extern. XXXX move to pthreads
 extern std::mutex ChangeFiles_mutex;    // XXXX name. explanation on extern. XXXX IMPORTANT: Understand why the hell is this mutex needed?
 
 class SensorTrajectoryCADAC : public SensorTrajectory {

@@ -87,8 +87,6 @@ https://geosoft.no/development/cppstyle.html.
 #include "SyncDataArrivalAndPredicting.h"
 #include "X11_window.h"
 
-std::mutex RunKML_mutex;      // XXXX name
-std::mutex KML_editing_mutex; // IMPORTANT: Understand why the hell is this mutex needed? it was tough to say on the windows system and requires check here. XXXX
 std::mutex ChangeFiles_mutex; // IMPORTANT: Understand why the hell is this mutex needed? it was tough to say on the windows system and requires check here. XXXX
 
 std::mutex nameThisMutex;   // xxxx name this mutex
