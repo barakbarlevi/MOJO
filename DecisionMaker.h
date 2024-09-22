@@ -3,7 +3,6 @@
 //#include "SensorTrajectory.h"
 #include "SensorTrajectoryCADAC.h"
 
-extern bool check;  // xxxx for checking, delete
 //extern int globalcount; // xxxx
 
 class DecisionMaker {

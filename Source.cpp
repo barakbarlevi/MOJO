@@ -62,7 +62,6 @@ https://geosoft.no/development/cppstyle.html.
 #include <chrono>
 #include <thread>
 #include <functional>
-
 #include <cstdlib>
 #include <vector>
 #include <algorithm>
@@ -70,18 +69,16 @@ https://geosoft.no/development/cppstyle.html.
 #include <memory>
 #include <filesystem>
 #include <pthread.h>
-
-#include "PredictionSupplierCADAC.h"
-#include "SensorTrajectoryCADAC.h"
-#include "PredSuppTrajectoryCADAC.h"
-#include "SuppliersCollector.h"
-#include "utils.h"
 #include <stdlib.h>
 #include <string>
 #include <sstream>
 #include <semaphore>
 
-
+#include "utils.h"
+#include "PredictionSupplierCADAC.h"
+#include "SensorTrajectoryCADAC.h"
+#include "PredSuppTrajectoryCADAC.h"
+#include "SuppliersCollector.h"
 #include "SuppliersCollectorsVector.h"
 #include "DecisionMaker.h"
 #include "SyncDataArrivalAndPredicting.h"
@@ -89,7 +86,6 @@ https://geosoft.no/development/cppstyle.html.
 
 
 
-bool check{false};  // xxxx for checking, delete
 
 
 

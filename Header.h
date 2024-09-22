@@ -17,8 +17,7 @@
 
 
 
-struct BITA_params { // XXXX name... member names...
-    // XXXX edit..
+struct BITA_params {
     std::string BITA_time = "0";
     std::string BITA_mass = "0";
     std::string BITA_height = "0";

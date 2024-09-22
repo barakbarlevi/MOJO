@@ -78,7 +78,6 @@ void DecisionMaker::calculate(SyncDataArrivalAndPredicting * syncSingleton) {
 
         if (consequtiveConditionCount >= 50) {
             std::cout << "consequtiveConditionCount >= 5" << std::endl;
-            check = true;
             printf("Signaling color\n");
             pthread_cond_signal(&syncSingleton->condition_variable_color);
             pthread_mutex_unlock(&syncSingleton->condition_lock_color);
