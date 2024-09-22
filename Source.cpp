@@ -33,18 +33,33 @@ target in its starting conditions. This doesn't represnt a real life case for
 ballisitic targets, since first detection is expected to occur after the object
 has gained height. Parameter 'detectionHeight' of type double is set for this
 reason.
+2. In this program's context, the term 'Prediction' is referring to any type
+of simulation's output, that describes the progression of a modeled airframe
+motion through the air for the momentary initial conditions. The term
+'Supplier' refers to the simulation's itself. In this program, the sole
+supplier of predictions is the CADAC++ simulation, be anyone can add other
+simulations as source of information, with adjusting to meet their required
+metadata structure.
+3. An effort was made to work according to coding conventions given in
+https://geosoft.no/development/cppstyle.html.
+
   
 ******************************************************************************/
 
+// xxxx put big intro text in grammarly
 // XXXX go though all public / protected / private sections and decide on the best declarations.
+// xxxx turn suppliersCollectorsVector into just a vector.. no actual need to create a class for it.
+// xxxx "int" i ? ++i or i++ ? xxxx always size_t? maybe unsigned?
+// xxxx what abouth factory design pattern? how can it be implemented in mojo?
+
 #include "Header.h"
 
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <sstream> // XXXX why so many streams......
+#include <sstream>
 #include <chrono>
-#include <thread> // XXXX pthread !
+#include <thread>
 #include <functional>
 
 #include <cstdlib>
@@ -52,7 +67,7 @@ reason.
 #include <algorithm>
 #include <mutex>
 #include <memory>
-#include <filesystem> // XXXX for the execution permissions. if moving elsewhere, move this too. in general, make order in headers cuz currently giant mess.
+#include <filesystem>
 #include <pthread.h>
 
 #include "PredictionSupplierCADAC.h"
@@ -72,23 +87,6 @@ reason.
 #include "SyncDataArrivalAndPredicting.h"
 #include "X11_window.h"
 
-// XXXX from the stackoverflow most accepted answer on naming conventions:
-//  class separated_by_underscores
-/*
-protected:
-        // the more public it is, the more important it is,
-        // so order: public on top, then protected then private
-
-
-https://geosoft.no/development/cppstyle.html:
-  void setDepth (int depth)
-  {
-    depth_ = depth;
-  }
-
-An issue is whether the underscore should be added as a prefix or as a suffix. Both practices are commonly used, but the latter is recommended because it seem to best preserve the readability of the name.
-*/
-
 std::mutex RunKML_mutex;      // XXXX name
 std::mutex KML_editing_mutex; // IMPORTANT: Understand why the hell is this mutex needed? it was tough to say on the windows system and requires check here. XXXX
 std::mutex ChangeFiles_mutex; // IMPORTANT: Understand why the hell is this mutex needed? it was tough to say on the windows system and requires check here. XXXX
@@ -106,58 +104,8 @@ std::mutex mux;
 std::condition_variable cv;  
 bool completed[3]{ false, false, false };
 bool check{false};  // xxxx for checking, delete
-// int globalcount; // xxxx
-/*
-void signalCompletionOfT1() {
-        std::lock_guard<std::mutex> ul(mux);
-        completed[0] = true;
-        cv.notify_one();
-    }
-
-void signalCompletionOfT2() {
-    std::lock_guard<std::mutex> ul(mux);
-    completed[0] = false;
-    completed[1] = true;
-    cv.notify_one();
-}
-
-void signalCompletionOfT3() {
-    std::lock_guard<std::mutex> ul(mux);
-    completed[0] = false;
-    completed[1] = false;
-    completed[2] = true;
-    cv.notify_one();
-}
-
-void waitForCompletionOfT1() {
-    std::unique_lock<std::mutex> ul(mux);             
-    cv.wait(ul, [&]() {return !completed[2]; });         
-}
-
-void waitForCompletionOfT2() {
-    std::unique_lock<std::mutex> ul(mux);             
-    cv.wait(ul, [&]() {return !completed[0]; });         
-}
-
-void waitForCompletionOfT3() {
-    std::unique_lock<std::mutex> ul(mux);         
-    cv.wait(ul, [&]() {return !completed[1]; });           
-}      
-
-std::binary_semaphore BS1{1};
-std::binary_semaphore BS2{0};
-std::binary_semaphore BS3{0};
-
-*/
 
 
-
-
-// int g_data = 0;
-// xxxx remove all unnecessary sleep()s
-// xxxx check cadac for sleeps too
-// xxxx "int" i ? ++i or i++ ? xxxx always size_t? maybe unsigned?
-// xxxx what abouth factory design pattern? how can it be implemented in mojo?
 
 int main(int argc, char *argv[])
 { 
