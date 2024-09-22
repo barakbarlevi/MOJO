@@ -22,14 +22,10 @@ struct BITA_params { // XXXX name... member names...
     std::string BITA_time = "0";
     std::string BITA_mass = "0";
     std::string BITA_height = "0";
-    std::string vbal = "0";
-    std::string gamalbal = "0";
-    std::string azimlbal = "0";
-    //std::string dvbal = "0";
-    //std::string etabal = "0";
-    //std::string phibal = "0";
-    // xxxx keep only what's needed
-    std::string lat = "0";
+    std::string BITA_speed = "0";
+    std::string BITA_flightPath = "0";
+    std::string BITA_heading = "0";
+    std::string BITA_lat = "0";
     std::string lon = "0";
 };
 

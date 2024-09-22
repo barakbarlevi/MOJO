@@ -20,32 +20,19 @@ SensorTrajectoryCADAC::SensorTrajectoryCADAC(std::string kmlPath) : SensorTrajec
 void SensorTrajectoryCADAC::setBITA_Params()
 { // XXXX names.. make high level..
     
-    //std::cout << "currentRowIndex: " << currentRowIndex << std::endl;
-
-    /*
-    this->_BITA_Params.BITA_time = utils::SubStringStartTillReaching(data[currentRowIndex], ',', 1, 0); // XXXX check on func arguments to match cadac / general(?)
-    // BITA_mass: Cannot be detected by the sensor. It's added in he supplier's Update BITA routine, according to the supplier's models.  // XXXX VERIFY for example still calling it BITA_mass ? go over this line.
-    this->_BITA_Params.BITA_mass = "0";
-    this->_BITA_Params.lat = utils::SubStringStartTillReaching(data[currentRowIndex], ',', 5, 1); // XXXX check on func arguments to match cadac / general(?)
-    this->_BITA_Params.lon = utils::SubStringStartTillReaching(data[currentRowIndex], ',', 4, 1); // XXXX check on func arguments to match cadac / general(?)
-    this->_BITA_Params.BITA_height = utils::SubStringStartTillReaching(data[currentRowIndex], ',', 6, 1);  // XXXX check on func arguments to match cadac / general(?)
-    this->_BITA_Params.vbal = utils::SubStringStartTillReaching(data[currentRowIndex], ',', 7, 1);  // XXXX check on func arguments to match cadac / general(?)
-    // xxxx write that assuming alpha = 0 because can't sense it !
-    this->_BITA_Params.gamalbal = utils::SubStringStartTillReaching(data[currentRowIndex], ',', 3, 1);    // XXXX name gamalbal, XXXX to_string more modern way?  
-    this->_BITA_Params.azimlbal = utils::SubStringStartTillReaching(data[currentRowIndex], ',', 2, 1); // XXXX check on func arguments to match cadac / general(?) XXXX name azimlbal change
-    */
+    
 
 
     this->_BITA_Params.BITA_time = utils::SubStringStartTillReaching(data[currentRowIndex], ',', 1, 0, currentRowIndex, "SensorTrajectoryCADAC::setBITA_Params 1"); // XXXX check on func arguments to match cadac / general(?)
     // BITA_mass: Cannot be detected by the sensor. It's added in he supplier's Update BITA routine, according to the supplier's models.  // XXXX VERIFY for example still calling it BITA_mass ? go over this line.
     this->_BITA_Params.BITA_mass = "0";
-    this->_BITA_Params.lat = utils::SubStringStartTillReaching(data[currentRowIndex], ',', 5, 1, currentRowIndex, "SensorTrajectoryCADAC::setBITA_Params 2"); // XXXX check on func arguments to match cadac / general(?)
+    this->_BITA_Params.BITA_lat = utils::SubStringStartTillReaching(data[currentRowIndex], ',', 5, 1, currentRowIndex, "SensorTrajectoryCADAC::setBITA_Params 2"); // XXXX check on func arguments to match cadac / general(?)
     this->_BITA_Params.lon = utils::SubStringStartTillReaching(data[currentRowIndex], ',', 4, 1, currentRowIndex, "SensorTrajectoryCADAC::setBITA_Params 3"); // XXXX check on func arguments to match cadac / general(?)
     this->_BITA_Params.BITA_height = utils::SubStringStartTillReaching(data[currentRowIndex], ',', 6, 1, currentRowIndex, "SensorTrajectoryCADAC::setBITA_Params 4");  // XXXX check on func arguments to match cadac / general(?)
-    this->_BITA_Params.vbal = utils::SubStringStartTillReaching(data[currentRowIndex], ',', 7, 1, currentRowIndex, "SensorTrajectoryCADAC::setBITA_Params 5");  // XXXX check on func arguments to match cadac / general(?)
+    this->_BITA_Params.BITA_speed = utils::SubStringStartTillReaching(data[currentRowIndex], ',', 7, 1, currentRowIndex, "SensorTrajectoryCADAC::setBITA_Params 5");  // XXXX check on func arguments to match cadac / general(?)
     // xxxx write that assuming alpha = 0 because can't sense it !
-    this->_BITA_Params.gamalbal = utils::SubStringStartTillReaching(data[currentRowIndex], ',', 3, 1, currentRowIndex, "SensorTrajectoryCADAC::setBITA_Params 6");    // XXXX name gamalbal, XXXX to_string more modern way?  
-    this->_BITA_Params.azimlbal = utils::SubStringStartTillReaching(data[currentRowIndex], ',', 2, 1, currentRowIndex, "SensorTrajectoryCADAC::setBITA_Params 7"); // XXXX check on func arguments to match cadac / general(?) XXXX name azimlbal change
+    this->_BITA_Params.BITA_flightPath = utils::SubStringStartTillReaching(data[currentRowIndex], ',', 3, 1, currentRowIndex, "SensorTrajectoryCADAC::setBITA_Params 6");    // XXXX name BITA_flightPath, XXXX to_string more modern way?  
+    this->_BITA_Params.BITA_heading = utils::SubStringStartTillReaching(data[currentRowIndex], ',', 2, 1, currentRowIndex, "SensorTrajectoryCADAC::setBITA_Params 7"); // XXXX check on func arguments to match cadac / general(?) XXXX name BITA_heading change
 
 }
 
@@ -55,11 +42,7 @@ void SensorTrajectoryCADAC::setBITA_Params()
 
 void SensorTrajectoryCADAC::setSingleCoordsLine()
 {
-    /*
-    std::string lon = utils::SubStringStartTillReaching(this->data[this->currentRowIndex], ',', 4, 1); // XXXX check on func arguments to match cadac / general(?)  XXXX here i put this-> and below not. do both work? why? which to choose?
-    std::string lat = utils::SubStringStartTillReaching(data[currentRowIndex], ',', 5, 1); // XXXX check on func arguments to match cadac / general(?)
-    std::string alt = utils::SubStringStartTillReaching(data[currentRowIndex], ',', 6, 1); // XXXX check on func arguments to match cadac / general(?)
-    */
+   
 
     std::string lon = utils::SubStringStartTillReaching(this->data[this->currentRowIndex], ',', 4, 1, currentRowIndex, "SensorTrajectoryCADAC::setSingleCoordsLine 1"); // XXXX check on func arguments to match cadac / general(?)  XXXX here i put this-> and below not. do both work? why? which to choose?
     std::string lat = utils::SubStringStartTillReaching(data[currentRowIndex], ',', 5, 1, currentRowIndex, "SensorTrajectoryCADAC::setSingleCoordsLine 2"); // XXXX check on func arguments to match cadac / general(?)

@@ -46,7 +46,7 @@ int PredictionSupplierCADAC::updateBITA_ParamsInSupplierInput(BITA_params BITA_p
     else
         std::cout << "Key not found in AeroDecks unordered map.\n" << std::endl; // XXXX really not sure that when cheaping out on {}s like this, the if else structure works well.. CHECK !
 
-    kml_file << "TITLE input_ballistic.asc  Three-stage rocket ascent followed by ballistic\nMONTE 1 1234\nOPTIONS y_plot\nMODULES\nkinematics		def,init,exec\nenvironment		def,init,exec\npropulsion		def,init,exec\naerodynamics	def,init,exec\nforces			def,exec\nnewton			def,init,exec\neuler			def,init,exec\nintercept		def,exec\nEND\nTIMING\nscrn_step 10\nplot_step 0.5\ntraj_step 1\nint_step 0.003\ncom_step 20\nEND\nVEHICLES 1\nHYPER6 SLV\nlonx  " + BITA_params.lon + "\nlatx  " + BITA_params.lat + "\nalt  " + BITA_params.BITA_height + "\ndvbe  " + BITA_params.vbal + "\nphibdx  0\nthtbdx  " + BITA_params.gamalbal + "\npsibdx  " + BITA_params.azimlbal + "\nalpha0x  0\nbeta0x  0\n//environment\nmair  0\nWEATHER_DECK  /home/barak/Source_Files/CADAC/Custom/Version7/weather_deck_Wallops.asc\nRAYL dvae  5\ntwind  1\nturb_length  100\nturb_sigma  0.5\n//aerodynamics\nmaero  11\nAERO_DECK /home/barak/Source_Files/CADAC/Custom/Version7/" + aeroDeck + "\nxcg_ref  0.01\nrefa  3.243\nrefd  2.032\nalplimx  20\nalimitx  5\n//propulsion\nmprop  0\nvmass0  " + momentaryMass + "\nfmass0  0.01\nxcg_0  0.01\nxcg_1  0.01\nmoi_roll_0  6.95e3\nmoi_roll_1  6.95e3\nmoi_trans_0  158.83e3\nmoi_trans_1  158.83e3\nspi  0.01\nfuel_flow_rate  0.0\nEND\nENDTIME 900\nSTOP"; // xxxx check what to do with path containing my name
+    kml_file << "TITLE input_ballistic.asc  Three-stage rocket ascent followed by ballistic\nMONTE 1 1234\nOPTIONS y_plot\nMODULES\nkinematics		def,init,exec\nenvironment		def,init,exec\npropulsion		def,init,exec\naerodynamics	def,init,exec\nforces			def,exec\nnewton			def,init,exec\neuler			def,init,exec\nintercept		def,exec\nEND\nTIMING\nscrn_step 10\nplot_step 0.5\ntraj_step 1\nint_step 0.003\ncom_step 20\nEND\nVEHICLES 1\nHYPER6 SLV\nlonx  " + BITA_params.lon + "\nlatx  " + BITA_params.BITA_lat + "\nalt  " + BITA_params.BITA_height + "\ndvbe  " + BITA_params.BITA_speed + "\nphibdx  0\nthtbdx  " + BITA_params.BITA_flightPath + "\npsibdx  " + BITA_params.BITA_heading + "\nalpha0x  0\nbeta0x  0\n//environment\nmair  0\nWEATHER_DECK  /home/barak/Source_Files/CADAC/Custom/Version7/weather_deck_Wallops.asc\nRAYL dvae  5\ntwind  1\nturb_length  100\nturb_sigma  0.5\n//aerodynamics\nmaero  11\nAERO_DECK /home/barak/Source_Files/CADAC/Custom/Version7/" + aeroDeck + "\nxcg_ref  0.01\nrefa  3.243\nrefd  2.032\nalplimx  20\nalimitx  5\n//propulsion\nmprop  0\nvmass0  " + momentaryMass + "\nfmass0  0.01\nxcg_0  0.01\nxcg_1  0.01\nmoi_roll_0  6.95e3\nmoi_roll_1  6.95e3\nmoi_trans_0  158.83e3\nmoi_trans_1  158.83e3\nspi  0.01\nfuel_flow_rate  0.0\nEND\nENDTIME 900\nSTOP"; // xxxx check what to do with path containing my name
     /*
     kml_file << "TITLE input_ballistic.asc  Three-stage rocket ascent followed by ballistic\n \
                 MONTE 1 1234\n \
@@ -71,12 +71,12 @@ int PredictionSupplierCADAC::updateBITA_ParamsInSupplierInput(BITA_params BITA_p
                 VEHICLES 1\n \
                 HYPER6 SLV\n \
                 lonx  " + BITA_params.lon + "\n \
-                latx  " + BITA_params.lat + "\n \
+                latx  " + BITA_params.BITA_lat + "\n \
                 alt  " + BITA_params.BITA_height + "\n \
-                dvbe  " + BITA_params.vbal + "\n \
+                dvbe  " + BITA_params.BITA_speed + "\n \
                 phibdx  0\n \
-                thtbdx  " + BITA_params.gamalbal + "\n \
-                psibdx  " + BITA_params.azimlbal + "\n \
+                thtbdx  " + BITA_params.BITA_flightPath + "\n \
+                psibdx  " + BITA_params.BITA_heading + "\n \
                 alpha0x  0\n \
                 beta0x  0\n \
                 //environment\n \
@@ -112,7 +112,7 @@ int PredictionSupplierCADAC::updateBITA_ParamsInSupplierInput(BITA_params BITA_p
     */
 
     kml_file.close();
-    std::cout << "Wrote to input file: lonx = " + BITA_params.lon + ", latx = " + BITA_params.lat + ", alt = " + BITA_params.BITA_height + ", dvbe = " + BITA_params.vbal + ", thtbdx = " + BITA_params.gamalbal + ", psibdx = " + BITA_params.azimlbal + ", Aerodeck = " + aeroDeck + ", vmass0 = " + momentaryMass << std::endl;
+    std::cout << "Wrote to input file: lonx = " + BITA_params.lon + ", latx = " + BITA_params.BITA_lat + ", alt = " + BITA_params.BITA_height + ", dvbe = " + BITA_params.BITA_speed + ", thtbdx = " + BITA_params.BITA_flightPath + ", psibdx = " + BITA_params.BITA_heading + ", Aerodeck = " + aeroDeck + ", vmass0 = " + momentaryMass << std::endl;
     
     
 }
