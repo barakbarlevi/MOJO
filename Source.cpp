@@ -87,11 +87,7 @@ https://geosoft.no/development/cppstyle.html.
 #include "SyncDataArrivalAndPredicting.h"
 #include "X11_window.h"
 
-std::mutex ChangeFiles_mutex; // IMPORTANT: Understand why the hell is this mutex needed? it was tough to say on the windows system and requires check here. XXXX
 
-std::mutex nameThisMutex;   // xxxx name this mutex
-
-std::mutex gSyncOutputReading_mutex;
 std::condition_variable gSyncOutputReading_cv;
 bool gSyncOutputReading_ready = false;
 bool loopMaintainer = true;  // xxxx needed?

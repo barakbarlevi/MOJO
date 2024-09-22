@@ -18,16 +18,7 @@ int Trajectory::readInput(bool isDetection) { //  XXXX MAKE SURE ALL VAR NAMES i
     
     
     if(!isDetection) {
-        //while(!readOnce) {
-
-            //std::unique_lock<std::mutex> ul(gSyncOutputReading_mutex); // xxxx delete the 2
-            //gSyncOutputReading_cv.wait(ul, [](){ return gSyncOutputReading_ready; });
-
-            //BS3.acquire();
-            // obj.waitForCompletionOfT2();
-            //waitForCompletionOfT2();
-            //std::unique_lock<std::mutex> ul(mux);             
-            //cv.wait(ul, [&]() {return !completed[0]; });
+        
 
 
             std::ifstream file(this->loadPath);

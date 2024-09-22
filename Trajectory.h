@@ -6,8 +6,6 @@
 //#include "SynchObj.h" // xxxx
 
 
-extern std::mutex KML_editing_mutex;    // WRITE HERE WHY EXTERN AND WHAT's ITS MEANING XXXX
-extern std::mutex nameThisMutex;
 
 // xxxx all needed here?
 
@@ -18,7 +16,6 @@ extern bool syncDetectSetBITA_ready;
 extern int g_data;
 */
 
-extern std::mutex gSyncOutputReading_mutex;
 extern std::condition_variable gSyncOutputReading_cv;
 extern bool gSyncOutputReading_ready;
 extern bool loopMaintainer;  // xxxx needed?

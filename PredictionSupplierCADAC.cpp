@@ -157,16 +157,8 @@ int PredictionSupplierCADAC::runSupplierOnce()
 */
 
 int PredictionSupplierCADAC::runSupplierOnce()
-//void PredictionSupplierCADAC::runSupplierOnce()
 { 
-    //while(!readOnce) {
-        //std::unique_lock<std::mutex> ul(gSyncOutputReading_mutex);   // xxxx 
-        
-        //BS2.acquire();
-        // obj.waitForCompletionOfT1();
-        //waitForCompletionOfT1();
-        //std::unique_lock<std::mutex> ul(mux);             
-        //cv.wait(ul, [&]() {return !completed[2]; }); 
+    
 
 
         std::string COMMAND = this->path_to_exe + " " + this->primaryInputFile;

@@ -7,10 +7,7 @@
 #include <cstring>
 
 extern std::mutex ChangeFiles_Mutex;    // XXXX IMPORTANT: UNDERSTAND WHY THE HELL is this mutex needed? on this machine also? XXXX give proper name. XXXX Explain in comment why extern. find in stackexchange examples of using extern for mutex.
-extern std::mutex KML_editing_mutex;
-extern std::mutex nameThisMutex;
 
-extern std::mutex gSyncOutputReading_mutex;
 extern std::condition_variable gSyncOutputReading_cv;
 extern bool gSyncOutputReading_ready;
 extern bool loopMaintainer;  // xxxx needed?
@@ -35,7 +32,6 @@ class PredictionSupplierCADAC : public PredictionSupplier {   // XXXX THIS MAKES
     int resultUpdateBITA = 0; // xxxx delete this when not needed.
 
     /*
-    std::mutex gSyncOutputReading_mutex;
     std::condition_variable gSyncOutputReading_cv;
     bool gSyncOutputReading_ready = false;
     bool loopMaintainer = true;  // xxxx needed?
@@ -94,63 +90,10 @@ class PredictionSupplierCADAC : public PredictionSupplier {   // XXXX THIS MAKES
 
     
     std::thread threadRunSupplierOnce() {
-        
-        //std::lock_guard<std::mutex> lock(nameThisMutex);  // xxxx needed?
-
-        // let's make this the producer 2 xxxx
-
-        //this->loopMaintainer = true;
-
-        //while(this->loopMaintainer) {
-            /*
-            std::unique_lock<std::mutex> ul(gSyncOutputReading_mutex);   // xxxx 
-
-            
-            
-
-            
-
-        
-            gSyncOutputReading_ready = true;
-            ul.unlock();
-            gSyncOutputReading_cv.notify_one();
-
-            //this->loopMaintainer = false;
-
-            ul.lock();
-            
-            if(!input_read) {
-                gSyncOutputReading_cv.wait(ul, [this](){ return gSyncOutputReading_ready == false; });
-                //loopMaintainer = true;
-            }
-            */
-        //}
-        
-        //std::cout << "Hello\n" << std::endl;
-
         return std::thread([=] { runSupplierOnce(); });
     }
 
-    /*
-    void threadRunSupplierOnce2() {
-        
-        //std::lock_guard<std::mutex> lock(nameThisMutex);  // xxxx needed?
-
-        // let's make this the producer 2 xxxx
-
-        std::unique_lock<std::mutex> ul(this->gSyncOutputReading_mutex);   // xxxx 
-
-        std::thread runSupplier([=] { runSupplierOnce(); });
-        runSupplier.join();
-
-        this->gSyncOutputReading_ready = true;
-        ul.unlock();
-        this->gSyncOutputReading_cv.notify_one();
-        ul.lock();
-        this->gSyncOutputReading_cv.wait(ul, [this](){ return this->gSyncOutputReading_ready == false;});
-
-    }
-    */
+    
 
     // xxxx delete if unused
     /*
