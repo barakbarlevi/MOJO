@@ -88,14 +88,7 @@ https://geosoft.no/development/cppstyle.html.
 #include "X11_window.h"
 
 
-bool gSyncOutputReading_ready = false;
-bool loopMaintainer = true;  // xxxx needed?
-bool input_read = false;
-int readOnce = 0;
 
-std::mutex mux;
-std::condition_variable cv;  
-bool completed[3]{ false, false, false };
 bool check{false};  // xxxx for checking, delete
 
 
@@ -191,7 +184,6 @@ int main(int argc, char *argv[])
 
     SensorTrajectoryCADAC trajectoryFromSensor(detectedTrajectories.at(0), detectionKML); // XXXX Make sure about position units.. km / m... write in nice comment..
     trajectoryFromSensor.readInput(true);
-    //loopMaintainer = true; // xxxx
     std::thread pltThread = trajectoryFromSensor.threadplotTrajectoryCoordByCoord(5, 200); // XXXX give better name. XXXX parameterize
 
 #endif
@@ -207,7 +199,6 @@ int main(int argc, char *argv[])
     SensorTrajectoryCADAC trajectoryFromSensor("RT", detectionKML); // XXXX Make sure about position units.. km / m... write in nice comment..
     
     //trajectoryFromSensor.readInput(true);
-    //loopMaintainer = true; // xxxx
 
     //SyncDataArrivalAndPredicting* syncSingleton;
     

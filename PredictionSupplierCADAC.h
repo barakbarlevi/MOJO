@@ -8,12 +8,7 @@
 
 extern std::mutex ChangeFiles_Mutex;    // XXXX IMPORTANT: UNDERSTAND WHY THE HELL is this mutex needed? on this machine also? XXXX give proper name. XXXX Explain in comment why extern. find in stackexchange examples of using extern for mutex.
 
-extern bool gSyncOutputReading_ready;
-extern bool loopMaintainer;  // xxxx needed?
-extern int readOnce;
 
-extern std::mutex mux;
-extern std::condition_variable cv;  
 extern bool completed[3];
 extern void signalCompletionOfT1();
 extern void signalCompletionOfT2();
@@ -30,10 +25,7 @@ class PredictionSupplierCADAC : public PredictionSupplier {   // XXXX THIS MAKES
     public:
     int resultUpdateBITA = 0; // xxxx delete this when not needed.
 
-    /*
-    bool gSyncOutputReading_ready = false;
-    bool loopMaintainer = true;  // xxxx needed?
-    */
+    
 
     // XXXX IMPORTANT: UNORDERED map the right solution? maybe write altenatives in comments and explain why picked it.
     // xxxx maybe play with the mass numbers themselves? if flight trajectory is not nice. delete this when finished xxxx

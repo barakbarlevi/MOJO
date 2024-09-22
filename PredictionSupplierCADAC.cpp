@@ -31,8 +31,6 @@ int PredictionSupplierCADAC::updateBITA_ParamsInSupplierInput(BITA_params BITA_p
     //BS1.acquire();
     //obj.waitForCompletionOfT3();
     //waitForCompletionOfT3();
-    //std::unique_lock<std::mutex> ul(mux);         
-    //cv.wait(ul, [&]() {return !completed[1]; }); 
 
 
     std::string inputPath = this->primaryInputFile;
@@ -125,9 +123,7 @@ int PredictionSupplierCADAC::updateBITA_ParamsInSupplierInput(BITA_params BITA_p
     //BS2.release();
     //obj.signalCompletionOfT1();
     //signalCompletionOfT1();
-    //std::lock_guard<std::mutex> ul(mux);
     //completed[0] = true;
-    //cv.notify_one();
     
     //return 1;
 }
@@ -167,15 +163,12 @@ int PredictionSupplierCADAC::runSupplierOnce()
         //BS3.release();
         // obj.signalCompletionOfT2();
         //signalCompletionOfT2();
-        //std::lock_guard<std::mutex> ul(mux);
         //completed[0] = false;
         //completed[1] = true;
-        //cv.notify_one();
 
 
         
 
-    //readOnce = 0;
     
     //return 0;
 }

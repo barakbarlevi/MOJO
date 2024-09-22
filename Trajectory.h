@@ -16,14 +16,7 @@ extern bool syncDetectSetBITA_ready;
 extern int g_data;
 */
 
-extern bool gSyncOutputReading_ready;
-extern bool loopMaintainer;  // xxxx needed?
-extern bool input_read;
-extern int readOnce;
 
-extern std::mutex mux;
-extern std::condition_variable cv;  
-extern bool completed[3];
 extern void signalCompletionOfT1();
 extern void signalCompletionOfT2();
 extern void signalCompletionOfT3();

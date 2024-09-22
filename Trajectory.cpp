@@ -38,14 +38,10 @@ int Trajectory::readInput(bool isDetection) { //  XXXX MAKE SURE ALL VAR NAMES i
 
             // obj.signalCompletionOfT3();
             //signalCompletionOfT3();
-            //std::lock_guard<std::mutex> ul(mux);
             //completed[0] = false;
             //completed[1] = false;
             //completed[2] = true;
-            //cv.notify_one();
 
-            //gSyncOutputReading_ready = false;
-            //readOnce = 1;
             //ul.unlock();
             //ul.lock();
         //}
