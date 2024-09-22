@@ -222,7 +222,7 @@ int main(int argc, char *argv[])
     // just a mutex doesn't let setbitaparams run. it doesn't get released in plottrahcoordbycoord.
     
     // xxxx could have used a semaphore instead?
-    while ((std::stof(trajectoryFromSensor._BITA_Params.height) < detectionHeight) && (trajectoryFromSensor.get_vVertical() <= 0)) // XXXX height not a good name. nor vVertical. explain on coordinate system. XXXX nor detectionHeight. specify it's FIRST detect. be clear
+    while ((std::stof(trajectoryFromSensor._BITA_Params.BITA_height) < detectionHeight) && (trajectoryFromSensor.get_vVertical() <= 0)) // XXXX height not a good name. nor vVertical. explain on coordinate system. XXXX nor detectionHeight. specify it's FIRST detect. be clear
     {
         // https://stackoverflow.com/questions/12551341/when-is-a-condition-variable-needed-isnt-a-mutex-enough
         // let's make this the consumer 1 xxxx
@@ -231,7 +231,7 @@ int main(int argc, char *argv[])
         trajectoryFromSensor.syncDetectSetBITA_cv.wait(ul, [&](){ return trajectoryFromSensor.syncDetectSetBITA_ready; }); // xxxx here i learned in the tough way the imprtance of capturing by reference and not by value ENGLISH. put it?
 
         trajectoryFromSensor.setBITA_Params();                                            // xxxx i generally don't wanna wait till setting bita params is done when plotting. it's very important to plot in relevant time. what if setting up bita params will take a very long time? the target doesn't wait for me.
-        std::cout << "height: " << trajectoryFromSensor._BITA_Params.height << std::endl; // XXXX can't keep "height". change.
+        std::cout << "height: " << trajectoryFromSensor._BITA_Params.BITA_height << std::endl; // XXXX can't keep "height". change.
 
         trajectoryFromSensor.syncDetectSetBITA_ready = false;
         ul.unlock();

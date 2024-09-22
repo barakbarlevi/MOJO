@@ -20,10 +20,8 @@
 struct BITA_params { // XXXX name... member names...
     // XXXX edit..
     std::string BITA_time = "0";
-    std::string massbal = "0";
-    //std::string sxbal = "0";    // xxxx remove this...
-    //std::string sybal = "0";
-    std::string height = "0";
+    std::string BITA_mass = "0";
+    std::string BITA_height = "0";
     std::string vbal = "0";
     std::string gamalbal = "0";
     std::string azimlbal = "0";
