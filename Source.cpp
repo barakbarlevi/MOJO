@@ -101,7 +101,10 @@ https://geosoft.no/development/cppstyle.html.
 
 
 
-
+enum availableSuppliers {
+    CADAC,
+    // Add more prediction suppliers (simulations) here
+};
 
 
 int main(int argc, char *argv[])
@@ -131,7 +134,7 @@ int main(int argc, char *argv[])
     std::array<std::string, 2> detectedTrajectories = {home + "/Source_Files/CADAC/Custom/Version7/Vandenberg_az180_hUP",
                                                        home + "/Source_Files/CADAC/Custom/Version7/Vandenberg_az180"}; // Absolute / relative paths of detection plots/tracks/simulation data. xxxx absolute path looks like crap FIX change to relative path    
 
-    std::vector<predictionSuppliers> predictionSuppliers = {CADAC, CADAC, CADAC};
+    std::vector<availableSuppliers> predictionSuppliers = {CADAC, CADAC, CADAC};
 
     std::vector<std::string> currentCollectorPriamryInputFiles = {home + "/Source_Files/CADAC/Custom/Version7/inputOriginal.asc",
                                                                   home + "/Source_Files/CADAC/Custom/Version7/input_Drag0p7.asc",

@@ -8,7 +8,6 @@ namespace utils {
     std::string SubStringStartTillReaching(const std::string &str, char c, int NumOfEncounterToExclude, int functionality, int currentRowIndex,  std::string caller); // xxxx after solving the problem, delete the currentrowindex and caller arguments
     void replaceLastWord(std::string &line, const std::string& old_word, const std::string& new_word);
     std::string replaceLastWord(const std::string& line, const std::string& newWord);
-    //predictionSuppliers hashIt(std::string const & inString); // xxxx delete if not needed
 
     // xxxx is it possible, will it compile, if moveing this to Header.h?
     typedef struct {

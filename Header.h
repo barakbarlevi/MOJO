@@ -28,7 +28,3 @@ struct BITA_params {
     std::string BITA_lon = "0";
 };
 
-enum predictionSuppliers {
-    CADAC,
-    // Add more prediction suppliers (simulations) here
-};

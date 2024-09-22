@@ -54,13 +54,7 @@ namespace utils
         }
     }
 
-    // xxxx delete if not neededutils::hashIt(
-    /*
-    predictionSuppliers hashIt(std::string const & inString) {
-        if (inString == "CADAC") return CADAC;
-        // Add more prediction suppliers (simulations) here
-    }
-    */
+    
 
     hsv rgb2hsv(rgb in)
     {
