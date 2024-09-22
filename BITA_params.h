@@ -1,5 +1,6 @@
 #pragma once
 
+/*
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -15,7 +16,8 @@
 #include <condition_variable>
 #include <math.h>
 
-
+*/
+#include <string>
 
 struct BITA_params {
     std::string BITA_time = "0";
@@ -27,4 +29,3 @@ struct BITA_params {
     std::string BITA_lat = "0";
     std::string BITA_lon = "0";
 };
-

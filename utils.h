@@ -1,6 +1,30 @@
 #pragma once
-#include "Header.h"
+
 #include <memory>
+
+
+
+#include "BITA_params.h"
+
+// xxxx minimize includes
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <sstream>
+#include <chrono>
+#include <thread>
+#include <functional>
+#include <cstdlib>
+#include <vector>
+#include <algorithm>
+#include <iomanip>
+#include <mutex>
+#include <condition_variable>
+#include <math.h>
+
+
+
+
 
 
 namespace utils {
@@ -9,14 +33,14 @@ namespace utils {
     void replaceLastWord(std::string &line, const std::string& old_word, const std::string& new_word);
     std::string replaceLastWord(const std::string& line, const std::string& newWord);
 
-    // xxxx is it possible, will it compile, if moveing this to Header.h?
+    // xxxx is it possible, will it compile, if moveing this to BITA_params.h?
     typedef struct {
         double h;   // Angle in degrees
         double s;   // Fraction between 0 and 1
         double v;   // Fraction between 0 and 1
     } hsv;
 
-    // xxxx is it possible, will it compile, if moveing this to Header.h?
+    // xxxx is it possible, will it compile, if moveing this to BITA_params.h?
     typedef struct {
         double r;   // Fraction between 0 and 1
         double g;   // Fraction between 0 and 1

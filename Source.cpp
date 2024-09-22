@@ -53,7 +53,10 @@ https://geosoft.no/development/cppstyle.html.
 // xxxx what abouth factory design pattern? how can it be implemented in mojo?
 // XXXX difference from typedef struct?
 
-#include "Header.h"
+
+
+#include "BITA_params.h"
+
 
 #include <iostream>
 #include <fstream>
@@ -65,13 +68,36 @@ https://geosoft.no/development/cppstyle.html.
 #include <cstdlib>
 #include <vector>
 #include <algorithm>
+#include <iomanip>
 #include <mutex>
+#include <condition_variable>
+#include <math.h>
+
+
+
+
+
+
+
+
+
+//#include <iostream>
+//#include <fstream>
+//#include <string>
+//#include <sstream>
+//#include <chrono>
+//#include <thread>
+//#include <functional>
+//#include <cstdlib>
+//#include <vector>
+//#include <algorithm>
+//#include <mutex>
 #include <memory>
 #include <filesystem>
 #include <pthread.h>
 #include <stdlib.h>
-#include <string>
-#include <sstream>
+//#include <string>
+//#include <sstream>
 #include <semaphore>
 
 //#include <iostream>
