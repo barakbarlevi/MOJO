@@ -43,22 +43,6 @@
 				<styleUrl>sn_shaded_dot1</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.507,33.3306,51024.1</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.507,33.3143,51214.4</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
 					<coordinates>-120.508,33.298,51395.5</coordinates>
 				</Point>
 			</Placemark>
@@ -67,7 +51,7 @@
 				<styleUrl>sn_shaded_dot1</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.508,33.2816,51567.6</coordinates>
+					<coordinates>-120.508,33.2817,51567.5</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -75,7 +59,7 @@
 				<styleUrl>sn_shaded_dot1</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.508,33.2653,51730.5</coordinates>
+					<coordinates>-120.509,33.2654,51730.4</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -83,7 +67,7 @@
 				<styleUrl>sn_shaded_dot1</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.508,33.249,51884.3</coordinates>
+					<coordinates>-120.509,33.249,51884.1</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -91,7 +75,7 @@
 				<styleUrl>sn_shaded_dot1</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.509,33.2327,52029</coordinates>
+					<coordinates>-120.509,33.2327,52028.7</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -99,7 +83,7 @@
 				<styleUrl>sn_shaded_dot1</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.509,33.2163,52164.5</coordinates>
+					<coordinates>-120.51,33.2164,52164.2</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -107,7 +91,7 @@
 				<styleUrl>sn_shaded_dot1</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.509,33.2,52290.9</coordinates>
+					<coordinates>-120.51,33.2001,52290.6</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -115,7 +99,7 @@
 				<styleUrl>sn_shaded_dot1</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.51,33.1837,52408.3</coordinates>
+					<coordinates>-120.51,33.1838,52407.9</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -123,7 +107,7 @@
 				<styleUrl>sn_shaded_dot1</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.51,33.1674,52516.5</coordinates>
+					<coordinates>-120.51,33.1674,52516</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -131,7 +115,7 @@
 				<styleUrl>sn_shaded_dot1</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.51,33.1511,52615.5</coordinates>
+					<coordinates>-120.511,33.1511,52615.1</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -139,7 +123,7 @@
 				<styleUrl>sn_shaded_dot1</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.511,33.1348,52705.5</coordinates>
+					<coordinates>-120.511,33.1348,52705</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -147,7 +131,7 @@
 				<styleUrl>sn_shaded_dot1</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.511,33.1185,52786.4</coordinates>
+					<coordinates>-120.511,33.1185,52785.8</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -155,7 +139,7 @@
 				<styleUrl>sn_shaded_dot1</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.511,33.1021,52858.1</coordinates>
+					<coordinates>-120.512,33.1022,52857.5</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -163,7 +147,7 @@
 				<styleUrl>sn_shaded_dot1</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.512,33.0858,52920.7</coordinates>
+					<coordinates>-120.512,33.0859,52920.1</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -171,7 +155,7 @@
 				<styleUrl>sn_shaded_dot1</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.512,33.0695,52974.2</coordinates>
+					<coordinates>-120.512,33.0696,52973.5</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -179,7 +163,7 @@
 				<styleUrl>sn_shaded_dot1</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.512,33.0532,53018.6</coordinates>
+					<coordinates>-120.513,33.0533,53017.9</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -187,7 +171,7 @@
 				<styleUrl>sn_shaded_dot1</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.513,33.0369,53053.9</coordinates>
+					<coordinates>-120.513,33.037,53053.1</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -195,7 +179,7 @@
 				<styleUrl>sn_shaded_dot1</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.513,33.0206,53080</coordinates>
+					<coordinates>-120.513,33.0207,53079.3</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -203,7 +187,7 @@
 				<styleUrl>sn_shaded_dot1</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.513,33.0043,53097.1</coordinates>
+					<coordinates>-120.514,33.0044,53096.3</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -211,7 +195,7 @@
 				<styleUrl>sn_shaded_dot1</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.514,32.988,53105</coordinates>
+					<coordinates>-120.514,32.9881,53104.2</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -219,7 +203,7 @@
 				<styleUrl>sn_shaded_dot1</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.514,32.9717,53103.8</coordinates>
+					<coordinates>-120.514,32.9718,53102.9</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -227,7 +211,7 @@
 				<styleUrl>sn_shaded_dot1</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.514,32.9554,53093.4</coordinates>
+					<coordinates>-120.515,32.9555,53092.6</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -235,7 +219,7 @@
 				<styleUrl>sn_shaded_dot1</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.515,32.9391,53074</coordinates>
+					<coordinates>-120.515,32.9392,53073.1</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -243,7 +227,7 @@
 				<styleUrl>sn_shaded_dot1</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.515,32.9228,53045.4</coordinates>
+					<coordinates>-120.515,32.9229,53044.5</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -251,2180 +235,12 @@
 				<styleUrl>sn_shaded_dot1</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.515,32.9065,53007.7</coordinates>
+					<coordinates>-120.516,32.9066,53006.8</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
 			<name></name>
 				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.516,32.8902,52960.8</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.516,32.8739,52904.9</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.516,32.8576,52839.8</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.517,32.8414,52765.6</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.517,32.8251,52682.2</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.517,32.8088,52589.8</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.518,32.7925,52488.2</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.518,32.7762,52377.5</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.518,32.7599,52257.7</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.519,32.7436,52128.7</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.519,32.7273,51990.6</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.519,32.711,51843.5</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.52,32.6947,51687.2</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.52,32.6785,51521.7</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.52,32.6622,51347.2</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.521,32.6459,51163.6</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.521,32.6296,50970.9</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.522,32.6133,50769</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.522,32.597,50558.1</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.522,32.5807,50338</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.523,32.5645,50108.9</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.523,32.5482,49870.6</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.523,32.5319,49623.2</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.524,32.5156,49366.8</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.524,32.4993,49101.2</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.524,32.483,48826.6</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.525,32.4667,48542.8</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.525,32.4505,48249.9</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.526,32.4342,47947.9</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.526,32.4179,47636.8</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.526,32.4016,47316.6</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.527,32.3853,46987.3</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.527,32.369,46648.8</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.527,32.3527,46301.2</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.528,32.3365,45944.6</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.528,32.3202,45578.8</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.529,32.3039,45203.9</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.529,32.2876,44819.8</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.529,32.2713,44426.7</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.53,32.2551,44024.5</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.53,32.2388,43613.3</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.53,32.2225,43192.9</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.531,32.2062,42763.5</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.531,32.1899,42325.1</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.532,32.1737,41877.6</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.532,32.1574,41421.1</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.532,32.1411,40955.5</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.533,32.1248,40480.8</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.533,32.1086,39997.1</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.534,32.0923,39504.4</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.534,32.076,39002.6</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.534,32.0598,38491.8</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.535,32.0435,37972</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.535,32.0273,37443.2</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.535,32.011,36905.5</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.536,31.9948,36358.9</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.536,31.9785,35803.4</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.537,31.9623,35239</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.537,31.9461,34665.7</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.537,31.9298,34083.6</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.538,31.9136,33492.6</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.538,31.8974,32893</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.539,31.8812,32284.6</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.539,31.865,31667.7</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.539,31.8489,31042.1</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.54,31.8327,30408</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.54,31.8166,29765.5</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.541,31.8004,29114.6</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.541,31.7843,28455.5</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.541,31.7683,27788.2</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.542,31.7522,27112.9</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.542,31.7362,26429.8</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.543,31.7202,25739</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.543,31.7042,25040.6</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.543,31.6883,24335</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.544,31.6725,23622.2</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.544,31.6566,22902.8</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.544,31.6409,22176.8</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.545,31.6252,21444.8</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.545,31.6096,20706.9</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.546,31.594,19963.9</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.546,31.5786,19216.1</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.546,31.5632,18464.1</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.547,31.548,17708.7</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.547,31.5328,16950.3</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.548,31.5179,16189.8</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.548,31.5031,15428.2</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.548,31.4884,14666.4</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.549,31.474,13905.3</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.549,31.4597,13146.2</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.549,31.4457,12390.3</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.55,31.4319,11638.9</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.55,31.4185,10893.7</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.55,31.4053,10155.8</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.551,31.3924,9426.69</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.551,31.3799,8707.56</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.551,31.3677,7999.49</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.552,31.3559,7303.57</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.552,31.3445,6620.78</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.552,31.3335,5951.97</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.552,31.3228,5297.98</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.553,31.3126,4659.51</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.553,31.3028,4037.12</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.553,31.2933,3431.2</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.553,31.2843,2842.03</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.554,31.2757,2269.71</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.554,31.2675,1714.22</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.554,31.2597,1175.41</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.554,31.2522,653.084</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot1</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.554,31.2451,147.108</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.507,33.3306,51024.1</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.507,33.3143,51214.4</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.508,33.298,51395.5</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.508,33.2816,51567.6</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.508,33.2653,51730.5</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.508,33.249,51884.3</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.509,33.2327,52029</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.509,33.2163,52164.6</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.509,33.2,52291</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.51,33.1837,52408.4</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.51,33.1674,52516.6</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.51,33.1511,52615.7</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.511,33.1347,52705.7</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.511,33.1184,52786.6</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.511,33.1021,52858.4</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.512,33.0858,52921.1</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.512,33.0695,52974.6</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.512,33.0532,53019</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.513,33.0369,53054.4</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.513,33.0206,53080.6</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.513,33.0043,53097.6</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.514,32.988,53105.6</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.514,32.9717,53104.4</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.514,32.9553,53094.1</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.515,32.939,53074.7</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.515,32.9227,53046.2</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.515,32.9064,53008.5</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.516,32.8901,52961.7</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.516,32.8738,52905.8</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.516,32.8575,52840.8</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.517,32.8412,52766.6</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.517,32.8249,52683.3</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.517,32.8086,52590.9</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.518,32.7923,52489.3</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.518,32.776,52378.6</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.518,32.7597,52258.8</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.519,32.7434,52129.9</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.519,32.7271,51991.9</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.519,32.7108,51844.7</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.52,32.6946,51688.5</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.52,32.6783,51523.1</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.52,32.662,51348.6</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.521,32.6457,51165</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.521,32.6294,50972.2</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.522,32.6131,50770.4</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.522,32.5968,50559.5</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.522,32.5805,50339.4</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.523,32.5642,50110.3</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.523,32.5479,49872</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.523,32.5316,49624.7</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.524,32.5153,49368.2</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.524,32.499,49102.6</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.524,32.4827,48828</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.525,32.4664,48544.2</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.525,32.4501,48251.3</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.526,32.4338,47949.2</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.526,32.4175,47638.1</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.526,32.4012,47317.8</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.527,32.3849,46988.4</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.527,32.3686,46649.9</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.527,32.3523,46302.3</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.528,32.336,45945.5</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.528,32.3197,45579.6</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.529,32.3034,45204.6</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.529,32.2871,44820.4</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.529,32.2708,44427.2</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.53,32.2545,44024.8</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.53,32.2382,43613.4</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.53,32.2219,43192.8</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.531,32.2056,42763.2</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.531,32.1892,42324.5</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.532,32.1729,41876.8</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.532,32.1566,41419.9</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.532,32.1403,40954</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.533,32.124,40479.1</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.533,32.1077,39995</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.534,32.0914,39501.8</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.534,32.0751,38999.6</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.534,32.0588,38488.2</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.535,32.0426,37967.9</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.535,32.0263,37438.5</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.535,32.01,36900.1</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.536,31.9937,36352.7</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.536,31.9774,35796.4</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.537,31.9611,35231.1</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.537,31.9448,34656.9</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.537,31.9286,34073.6</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.538,31.9123,33481.5</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.538,31.896,32880.4</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.539,31.8798,32270.7</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.539,31.8635,31652.1</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.539,31.8473,31024.7</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.54,31.831,30388.6</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.54,31.8148,29743.8</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.541,31.7986,29090.5</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.541,31.7824,28428.7</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.541,31.7662,27758.3</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.542,31.7501,27079.7</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.542,31.7339,26392.8</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.543,31.7178,25697.8</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.543,31.7017,24994.8</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.543,31.6856,24283.9</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.544,31.6696,23565.4</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.544,31.6536,22839.4</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.545,31.6376,22106.2</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.545,31.6217,21366</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.545,31.6058,20619.1</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.546,31.59,19866</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.546,31.5743,19106.9</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.547,31.5586,18342.2</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.547,31.543,17572.7</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.547,31.5276,16798.6</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.548,31.5122,16020.6</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.548,31.4969,15239.5</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.548,31.4818,14456</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.549,31.4668,13671</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.549,31.4519,12885.5</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.55,31.4373,12100.4</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.55,31.4228,11317</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.55,31.4086,10536.6</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.551,31.3946,9760.11</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.551,31.3809,8989.07</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.551,31.3675,8224.43</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.552,31.3543,7467.47</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.552,31.3415,6719.31</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.552,31.329,5981.15</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.553,31.3168,5253.98</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.553,31.305,4538.83</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.553,31.2935,3836.6</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.553,31.2825,3148.15</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.554,31.2718,2474.27</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.554,31.2615,1815.61</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.554,31.2516,1172.71</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot2</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.554,31.2421,545.956</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot3</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.507,33.3306,51024.1</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot3</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.507,33.3143,51214.4</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot3</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.508,33.298,51395.5</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot3</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.508,33.2816,51567.6</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot3</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.508,33.2653,51730.5</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot3</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.508,33.249,51884.2</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot3</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.509,33.2327,52028.9</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot3</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.509,33.2163,52164.4</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot3</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.509,33.2,52290.8</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot3</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.51,33.1837,52408.1</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot3</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.51,33.1674,52516.3</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot3</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.51,33.1511,52615.3</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot3</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.511,33.1348,52705.3</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot3</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.511,33.1185,52786.1</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot3</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.511,33.1022,52857.8</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot3</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.512,33.0859,52920.4</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot3</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.512,33.0696,52973.8</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot3</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.512,33.0533,53018.2</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot3</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.513,33.037,53053.4</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot3</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.513,33.0207,53079.5</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot3</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.513,33.0044,53096.5</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot3</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.514,32.9881,53104.4</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot3</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.514,32.9718,53103.1</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot3</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.514,32.9555,53092.7</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot3</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.515,32.9392,53073.2</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot3</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.515,32.9229,53044.6</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot3</styleUrl>
-				<Point>
-					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.515,32.9066,53006.8</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-			<name></name>
-				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
 					<coordinates>-120.516,32.8903,52960</coordinates>
@@ -2432,10 +248,2146 @@
 			</Placemark>
 			<Placemark>
 			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.516,32.874,52904</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.517,32.8577,52838.9</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.517,32.8414,52764.7</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.517,32.8251,52681.4</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.518,32.8088,52588.9</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.518,32.7925,52487.3</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.518,32.7763,52376.6</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.519,32.76,52256.8</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.519,32.7437,52127.8</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.519,32.7274,51989.7</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.52,32.7111,51842.5</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.52,32.6948,51686.2</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.521,32.6785,51520.8</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.521,32.6622,51346.2</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.521,32.6459,51162.5</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.522,32.6297,50969.7</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.522,32.6134,50767.9</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.522,32.5971,50556.9</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.523,32.5808,50336.8</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.523,32.5645,50107.5</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.523,32.5482,49869.2</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.524,32.5319,49621.8</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.524,32.5157,49365.3</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.524,32.4994,49099.7</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.525,32.4831,48825</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.525,32.4668,48541.2</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.526,32.4505,48248.3</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.526,32.4342,47946.3</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.526,32.4179,47635.1</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.527,32.4017,47314.9</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.527,32.3854,46985.6</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.527,32.3691,46647.1</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.528,32.3528,46299.6</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.528,32.3365,45942.9</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.529,32.3202,45577.1</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.529,32.304,45202.2</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.529,32.2877,44818.2</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.53,32.2714,44425</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.53,32.2551,44022.8</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.53,32.2388,43611.5</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.531,32.2226,43191.1</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.531,32.2063,42761.7</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.532,32.19,42323.2</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.532,32.1737,41875.6</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.532,32.1574,41419</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.533,32.1412,40953.4</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.533,32.1249,40478.7</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.534,32.1086,39995.1</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.534,32.0924,39502.3</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.534,32.0761,39000.5</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.535,32.0598,38489.7</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.535,32.0436,37969.9</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.535,32.0273,37441.1</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.536,32.0111,36903.3</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.536,31.9948,36356.7</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.537,31.9786,35801.1</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.537,31.9623,35236.7</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.537,31.9461,34663.4</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.538,31.9299,34081.3</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.538,31.9137,33490.3</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.539,31.8975,32890.6</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.539,31.8813,32282.2</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.539,31.8651,31665.3</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.54,31.8489,31039.7</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.54,31.8328,30405.6</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.541,31.8166,29763</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.541,31.8005,29112.1</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.541,31.7844,28453</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.542,31.7683,27785.7</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.542,31.7523,27110.4</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.543,31.7362,26427.2</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.543,31.7203,25736.4</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.543,31.7043,25038</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.544,31.6884,24332.4</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.544,31.6725,23619.6</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.545,31.6567,22900.1</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.545,31.6409,22174.1</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.545,31.6252,21442</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.546,31.6096,20704.2</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.546,31.5941,19961.2</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.546,31.5786,19213.3</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.547,31.5633,18461.4</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.547,31.548,17705.9</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.548,31.5329,16947.4</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.548,31.5179,16187.1</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.548,31.5031,15425.5</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.549,31.4885,14663.7</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.549,31.474,13902.6</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.549,31.4598,13143.5</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.55,31.4458,12387.6</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.55,31.432,11636.2</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.55,31.4185,10891</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.551,31.4054,10153.1</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.551,31.3925,9424.1</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.551,31.38,8704.99</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.552,31.3678,7996.96</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.552,31.356,7301.09</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.552,31.3446,6618.34</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.553,31.3335,5949.59</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.553,31.3229,5295.66</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.553,31.3127,4657.25</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.553,31.3029,4034.91</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.554,31.2934,3429.06</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.554,31.2844,2839.95</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.554,31.2758,2267.69</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.554,31.2676,1712.26</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.554,31.2597,1173.51</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.555,31.2523,651.239</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot1</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.555,31.2452,145.322</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.508,33.298,51395.5</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.508,33.2817,51567.5</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.509,33.2654,51730.4</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.509,33.249,51884.1</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.509,33.2327,52028.8</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.51,33.2164,52164.3</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.51,33.2001,52290.7</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.51,33.1838,52408</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.51,33.1674,52516.1</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.511,33.1511,52615.2</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.511,33.1348,52705.1</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.511,33.1185,52786</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.512,33.1022,52857.7</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.512,33.0859,52920.3</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.512,33.0696,52973.8</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.513,33.0533,53018.2</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.513,33.0369,53053.5</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.513,33.0206,53079.6</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.514,33.0043,53096.7</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.514,32.988,53104.6</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.514,32.9717,53103.4</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.515,32.9554,53093.1</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.515,32.9391,53073.7</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.515,32.9228,53045.1</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.516,32.9065,53007.5</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.516,32.8902,52960.7</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.516,32.8739,52904.7</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.517,32.8576,52839.7</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.517,32.8413,52765.5</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.517,32.825,52682.2</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.518,32.8087,52589.8</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.518,32.7924,52488.2</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.518,32.7761,52377.5</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.519,32.7598,52257.7</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.519,32.7435,52128.8</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.519,32.7272,51990.7</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.52,32.7109,51843.5</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.52,32.6946,51687.2</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.521,32.6783,51521.8</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.521,32.662,51347.3</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.521,32.6457,51163.6</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.522,32.6294,50970.8</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.522,32.6131,50768.9</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.522,32.5969,50557.9</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.523,32.5806,50337.8</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.523,32.5643,50108.6</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.523,32.548,49870.3</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.524,32.5317,49622.9</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.524,32.5154,49366.4</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.524,32.4991,49100.7</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.525,32.4828,48826</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.525,32.4665,48542.2</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.526,32.4502,48249.2</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.526,32.4339,47947.2</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.526,32.4176,47636</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.527,32.4013,47315.7</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.527,32.385,46986.3</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.527,32.3687,46647.8</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.528,32.3524,46300.1</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.528,32.3361,45943.3</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.529,32.3198,45577.4</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.529,32.3035,45202.4</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.529,32.2872,44818.2</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.53,32.2709,44425</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.53,32.2546,44022.6</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.53,32.2383,43611.1</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.531,32.222,43190.5</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.531,32.2057,42760.8</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.532,32.1894,42322</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.532,32.173,41874.2</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.532,32.1567,41417.3</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.533,32.1404,40951.4</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.533,32.1241,40476.4</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.534,32.1078,39992.3</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.534,32.0915,39499.1</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.534,32.0752,38996.9</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.535,32.059,38485.5</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.535,32.0427,37965.1</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.536,32.0264,37435.7</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.536,32.0101,36897.2</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.536,31.9938,36349.8</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.537,31.9775,35793.4</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.537,31.9612,35228.1</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.537,31.9449,34653.9</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.538,31.9287,34070.6</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.538,31.9124,33478.4</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.539,31.8961,32877.4</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.539,31.8799,32267.5</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.539,31.8636,31648.9</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.54,31.8474,31021.5</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.54,31.8311,30385.4</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.541,31.8149,29740.5</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.541,31.7987,29087.2</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.541,31.7825,28425.3</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.542,31.7663,27755</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.542,31.7502,27076.3</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.543,31.734,26389.4</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.543,31.7179,25694.3</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.543,31.7018,24991.2</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.544,31.6857,24280.4</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.544,31.6697,23561.8</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.545,31.6537,22835.8</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.545,31.6377,22102.6</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.545,31.6218,21362.3</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.546,31.606,20615.5</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.546,31.5902,19862.3</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.547,31.5744,19103.1</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.547,31.5588,18338.5</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.547,31.5432,17568.9</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.548,31.5277,16794.7</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.548,31.5123,16016.8</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.548,31.497,15235.7</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.549,31.4819,14452.3</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.549,31.4669,13667.3</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.55,31.4521,12881.7</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.55,31.4374,12096.7</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.55,31.423,11313.2</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.551,31.4088,10532.8</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.551,31.3948,9756.38</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.551,31.3811,8985.35</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.552,31.3676,8220.71</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.552,31.3545,7463.81</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.552,31.3416,6715.72</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.553,31.3291,5977.58</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.553,31.317,5250.47</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.553,31.3051,4535.37</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.554,31.2937,3833.2</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.554,31.2826,3144.82</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.554,31.2719,2471</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.554,31.2617,1812.42</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.555,31.2517,1169.59</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot2</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.555,31.2422,542.905</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot3</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.508,33.298,51395.5</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot3</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.508,33.2817,51567.5</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot3</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.509,33.2654,51730.4</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot3</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.509,33.249,51884.1</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot3</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.509,33.2327,52028.7</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot3</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.51,33.2164,52164.2</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot3</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.51,33.2001,52290.6</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot3</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.51,33.1838,52407.8</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot3</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.51,33.1675,52516</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot3</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.511,33.1511,52615</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot3</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.511,33.1348,52704.9</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot3</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.511,33.1185,52785.6</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot3</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.512,33.1022,52857.3</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot3</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.512,33.0859,52919.8</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot3</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.512,33.0696,52973.3</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot3</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.513,33.0533,53017.6</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot3</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.513,33.037,53052.8</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot3</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.513,33.0207,53078.9</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot3</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.514,33.0044,53095.8</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot3</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.514,32.9881,53103.7</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot3</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.514,32.9718,53102.4</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot3</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.515,32.9555,53092</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot3</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.515,32.9392,53072.5</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot3</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.515,32.923,53043.9</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot3</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.516,32.9067,53006.2</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
+				<styleUrl>sn_shaded_dot3</styleUrl>
+				<Point>
+					<altitudeMode>absolute</altitudeMode>
+					<coordinates>-120.516,32.8904,52959.3</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+			<name></name>
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.516,32.874,52903.9</coordinates>
+					<coordinates>-120.516,32.8741,52903.3</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2443,7 +2395,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.516,32.8578,52838.8</coordinates>
+					<coordinates>-120.517,32.8578,52838.2</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2451,7 +2403,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.517,32.8415,52764.6</coordinates>
+					<coordinates>-120.517,32.8415,52763.9</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2459,7 +2411,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.517,32.8252,52681.2</coordinates>
+					<coordinates>-120.517,32.8252,52680.5</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2467,7 +2419,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.517,32.8089,52588.7</coordinates>
+					<coordinates>-120.518,32.8089,52588</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2475,7 +2427,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.518,32.7926,52487.1</coordinates>
+					<coordinates>-120.518,32.7927,52486.4</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2483,7 +2435,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.518,32.7763,52376.3</coordinates>
+					<coordinates>-120.518,32.7764,52375.7</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2491,7 +2443,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.518,32.7601,52256.5</coordinates>
+					<coordinates>-120.519,32.7601,52255.8</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2499,7 +2451,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.519,32.7438,52127.5</coordinates>
+					<coordinates>-120.519,32.7438,52126.8</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2507,7 +2459,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.519,32.7275,51989.4</coordinates>
+					<coordinates>-120.519,32.7275,51988.7</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2515,7 +2467,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.519,32.7112,51842.2</coordinates>
+					<coordinates>-120.52,32.7113,51841.5</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2523,7 +2475,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.52,32.6949,51685.9</coordinates>
+					<coordinates>-120.52,32.695,51685.2</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2531,7 +2483,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.52,32.6787,51520.4</coordinates>
+					<coordinates>-120.521,32.6787,51519.7</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2539,7 +2491,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.52,32.6624,51345.9</coordinates>
+					<coordinates>-120.521,32.6624,51345.1</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2547,7 +2499,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.521,32.6461,51162.2</coordinates>
+					<coordinates>-120.521,32.6461,51161.5</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2555,7 +2507,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.521,32.6298,50969.5</coordinates>
+					<coordinates>-120.522,32.6299,50968.7</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2563,7 +2515,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.522,32.6136,50767.6</coordinates>
+					<coordinates>-120.522,32.6136,50766.8</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2571,7 +2523,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.522,32.5973,50556.7</coordinates>
+					<coordinates>-120.522,32.5973,50555.8</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2579,7 +2531,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.522,32.581,50336.6</coordinates>
+					<coordinates>-120.523,32.581,50335.7</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2587,7 +2539,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.523,32.5647,50107.4</coordinates>
+					<coordinates>-120.523,32.5648,50106.5</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2595,7 +2547,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.523,32.5485,49869.2</coordinates>
+					<coordinates>-120.523,32.5485,49868.2</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2603,7 +2555,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.523,32.5322,49621.8</coordinates>
+					<coordinates>-120.524,32.5322,49620.8</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2611,7 +2563,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.524,32.5159,49365.4</coordinates>
+					<coordinates>-120.524,32.516,49364.3</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2619,7 +2571,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.524,32.4996,49099.8</coordinates>
+					<coordinates>-120.524,32.4997,49098.7</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2627,7 +2579,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.524,32.4834,48825.2</coordinates>
+					<coordinates>-120.525,32.4834,48824</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2635,7 +2587,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.525,32.4671,48541.4</coordinates>
+					<coordinates>-120.525,32.4671,48540.2</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2643,7 +2595,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.525,32.4508,48248.6</coordinates>
+					<coordinates>-120.526,32.4509,48247.3</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2651,7 +2603,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.526,32.4346,47946.6</coordinates>
+					<coordinates>-120.526,32.4346,47945.4</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2659,7 +2611,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.526,32.4183,47635.5</coordinates>
+					<coordinates>-120.526,32.4183,47634.3</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2667,7 +2619,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.526,32.402,47315.4</coordinates>
+					<coordinates>-120.527,32.4021,47314.1</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2675,7 +2627,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.527,32.3858,46986.1</coordinates>
+					<coordinates>-120.527,32.3858,46984.9</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2683,7 +2635,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.527,32.3695,46647.7</coordinates>
+					<coordinates>-120.527,32.3695,46646.5</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2691,7 +2643,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.527,32.3532,46300.2</coordinates>
+					<coordinates>-120.528,32.3533,46299</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2699,7 +2651,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.528,32.337,45943.6</coordinates>
+					<coordinates>-120.528,32.337,45942.4</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2707,7 +2659,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.528,32.3207,45577.9</coordinates>
+					<coordinates>-120.529,32.3207,45576.7</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2715,7 +2667,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.529,32.3044,45203.2</coordinates>
+					<coordinates>-120.529,32.3045,45202</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2723,7 +2675,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.529,32.2882,44819.3</coordinates>
+					<coordinates>-120.529,32.2882,44818.1</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2731,7 +2683,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.529,32.2719,44426.3</coordinates>
+					<coordinates>-120.53,32.2719,44425.1</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2739,7 +2691,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.53,32.2557,44024.3</coordinates>
+					<coordinates>-120.53,32.2557,44023.1</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2747,7 +2699,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.53,32.2394,43613.2</coordinates>
+					<coordinates>-120.53,32.2394,43611.9</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2755,7 +2707,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.53,32.2231,43193.1</coordinates>
+					<coordinates>-120.531,32.2232,43191.8</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2763,7 +2715,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.531,32.2069,42763.9</coordinates>
+					<coordinates>-120.531,32.2069,42762.5</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2771,7 +2723,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.531,32.1906,42325.7</coordinates>
+					<coordinates>-120.532,32.1906,42324.3</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2779,7 +2731,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.532,32.1744,41878.4</coordinates>
+					<coordinates>-120.532,32.1744,41877</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2787,7 +2739,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.532,32.1581,41422.2</coordinates>
+					<coordinates>-120.532,32.1581,41420.7</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2795,7 +2747,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.532,32.1419,40956.9</coordinates>
+					<coordinates>-120.533,32.1419,40955.4</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2803,7 +2755,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.533,32.1256,40482.6</coordinates>
+					<coordinates>-120.533,32.1257,40481.1</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2811,7 +2763,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.533,32.1094,39999.3</coordinates>
+					<coordinates>-120.534,32.1094,39997.8</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2819,7 +2771,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.533,32.0932,39507</coordinates>
+					<coordinates>-120.534,32.0932,39505.5</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2827,7 +2779,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.534,32.0769,39005.7</coordinates>
+					<coordinates>-120.534,32.0769,39004.2</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2835,7 +2787,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.534,32.0607,38495.4</coordinates>
+					<coordinates>-120.535,32.0607,38493.9</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2843,7 +2795,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.535,32.0445,37976.1</coordinates>
+					<coordinates>-120.535,32.0445,37974.7</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2851,7 +2803,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.535,32.0283,37448</coordinates>
+					<coordinates>-120.535,32.0283,37446.5</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2859,7 +2811,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.535,32.012,36910.9</coordinates>
+					<coordinates>-120.536,32.0121,36909.4</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2867,7 +2819,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.536,31.9958,36365.1</coordinates>
+					<coordinates>-120.536,31.9959,36363.5</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2875,7 +2827,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.536,31.9796,35810.4</coordinates>
+					<coordinates>-120.537,31.9797,35808.8</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2883,7 +2835,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.537,31.9635,35246.9</coordinates>
+					<coordinates>-120.537,31.9635,35245.3</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2891,7 +2843,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.537,31.9473,34674.6</coordinates>
+					<coordinates>-120.537,31.9473,34673</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2899,7 +2851,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.537,31.9311,34093.5</coordinates>
+					<coordinates>-120.538,31.9311,34091.9</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2907,7 +2859,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.538,31.9149,33503.8</coordinates>
+					<coordinates>-120.538,31.915,33502.2</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2915,7 +2867,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.538,31.8988,32905.4</coordinates>
+					<coordinates>-120.539,31.8988,32903.8</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2923,7 +2875,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.539,31.8827,32298.6</coordinates>
+					<coordinates>-120.539,31.8827,32296.9</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2931,7 +2883,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.539,31.8665,31683.3</coordinates>
+					<coordinates>-120.539,31.8666,31681.5</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2939,7 +2891,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.539,31.8504,31059.5</coordinates>
+					<coordinates>-120.54,31.8505,31057.8</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2947,7 +2899,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.54,31.8344,30427.3</coordinates>
+					<coordinates>-120.54,31.8344,30425.6</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2955,7 +2907,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.54,31.8183,29787</coordinates>
+					<coordinates>-120.541,31.8183,29785.2</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2963,7 +2915,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.541,31.8023,29138.6</coordinates>
+					<coordinates>-120.541,31.8023,29136.8</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2971,7 +2923,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.541,31.7863,28482.2</coordinates>
+					<coordinates>-120.541,31.7863,28480.4</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2979,7 +2931,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.541,31.7703,27817.8</coordinates>
+					<coordinates>-120.542,31.7703,27816.1</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2987,7 +2939,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.542,31.7543,27145.9</coordinates>
+					<coordinates>-120.542,31.7544,27144.1</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -2995,7 +2947,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.542,31.7384,26466.5</coordinates>
+					<coordinates>-120.543,31.7384,26464.7</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -3003,7 +2955,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.542,31.7226,25779.7</coordinates>
+					<coordinates>-120.543,31.7226,25778</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -3011,7 +2963,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.543,31.7068,25085.9</coordinates>
+					<coordinates>-120.543,31.7068,25084.1</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -3019,7 +2971,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.543,31.691,24385.4</coordinates>
+					<coordinates>-120.544,31.691,24383.6</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -3027,7 +2979,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.544,31.6753,23678.3</coordinates>
+					<coordinates>-120.544,31.6753,23676.5</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -3035,7 +2987,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.544,31.6597,22965.1</coordinates>
+					<coordinates>-120.544,31.6597,22963.3</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -3043,7 +2995,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.544,31.6441,22246.2</coordinates>
+					<coordinates>-120.545,31.6441,22244.4</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -3051,7 +3003,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.545,31.6286,21521.9</coordinates>
+					<coordinates>-120.545,31.6286,21520</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -3059,7 +3011,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.545,31.6132,20792.8</coordinates>
+					<coordinates>-120.546,31.6132,20791</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -3067,7 +3019,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.546,31.5979,20059.4</coordinates>
+					<coordinates>-120.546,31.5979,20057.6</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -3075,7 +3027,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.546,31.5827,19322.3</coordinates>
+					<coordinates>-120.546,31.5827,19320.5</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -3083,7 +3035,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.546,31.5677,18582.4</coordinates>
+					<coordinates>-120.547,31.5677,18580.5</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -3091,7 +3043,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.547,31.5528,17840.1</coordinates>
+					<coordinates>-120.547,31.5528,17838.2</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -3099,7 +3051,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.547,31.538,17096.4</coordinates>
+					<coordinates>-120.547,31.538,17094.6</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -3107,7 +3059,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.547,31.5234,16352.3</coordinates>
+					<coordinates>-120.548,31.5234,16350.5</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -3115,7 +3067,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.548,31.509,15608.6</coordinates>
+					<coordinates>-120.548,31.509,15606.8</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -3123,7 +3075,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.548,31.4948,14866.5</coordinates>
+					<coordinates>-120.549,31.4948,14864.7</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -3131,7 +3083,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.548,31.4809,14127.2</coordinates>
+					<coordinates>-120.549,31.4809,14125.4</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -3139,7 +3091,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.549,31.4671,13391.9</coordinates>
+					<coordinates>-120.549,31.4671,13390.1</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -3147,7 +3099,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.549,31.4537,12662.1</coordinates>
+					<coordinates>-120.55,31.4537,12660.3</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -3155,7 +3107,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.549,31.4405,11939.2</coordinates>
+					<coordinates>-120.55,31.4405,11937.4</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -3163,7 +3115,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.55,31.4277,11224.6</coordinates>
+					<coordinates>-120.55,31.4277,11222.9</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -3171,7 +3123,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.55,31.4152,10520</coordinates>
+					<coordinates>-120.551,31.4152,10518.4</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -3179,7 +3131,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.55,31.4031,9826.72</coordinates>
+					<coordinates>-120.551,31.4031,9825.08</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -3187,7 +3139,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.551,31.3914,9145.74</coordinates>
+					<coordinates>-120.551,31.3914,9144.14</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -3195,7 +3147,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.551,31.38,8478.11</coordinates>
+					<coordinates>-120.551,31.38,8476.55</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -3203,7 +3155,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.551,31.369,7824.73</coordinates>
+					<coordinates>-120.552,31.3691,7823.22</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -3211,7 +3163,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.552,31.3585,7186.43</coordinates>
+					<coordinates>-120.552,31.3585,7184.96</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -3219,7 +3171,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.552,31.3484,6563.92</coordinates>
+					<coordinates>-120.552,31.3484,6562.49</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -3227,7 +3179,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.552,31.3386,5957.77</coordinates>
+					<coordinates>-120.552,31.3387,5956.39</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -3235,7 +3187,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.552,31.3293,5368.37</coordinates>
+					<coordinates>-120.553,31.3294,5367.04</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -3243,7 +3195,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.552,31.3205,4795.98</coordinates>
+					<coordinates>-120.553,31.3205,4794.69</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -3251,7 +3203,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.553,31.312,4240.67</coordinates>
+					<coordinates>-120.553,31.312,4239.43</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -3259,7 +3211,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.553,31.3039,3702.39</coordinates>
+					<coordinates>-120.553,31.3039,3701.2</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -3267,7 +3219,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.553,31.2962,3180.95</coordinates>
+					<coordinates>-120.554,31.2962,3179.8</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -3275,7 +3227,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.553,31.2889,2676.1</coordinates>
+					<coordinates>-120.554,31.2889,2674.99</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -3283,7 +3235,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.553,31.282,2187.67</coordinates>
+					<coordinates>-120.554,31.282,2186.61</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -3291,7 +3243,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.554,31.2754,1715.41</coordinates>
+					<coordinates>-120.554,31.2755,1714.39</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -3299,7 +3251,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.554,31.2692,1258.91</coordinates>
+					<coordinates>-120.554,31.2692,1257.94</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -3307,7 +3259,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.554,31.2634,817.698</coordinates>
+					<coordinates>-120.554,31.2634,816.764</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
@@ -3315,7 +3267,7 @@
 				<styleUrl>sn_shaded_dot3</styleUrl>
 				<Point>
 					<altitudeMode>absolute</altitudeMode>
-					<coordinates>-120.554,31.2578,391.209</coordinates>
+					<coordinates>-120.554,31.2578,390.315</coordinates>
 				</Point>
 			</Placemark>
 		</Folder>

@@ -27,6 +27,7 @@ all: $(EXECUTABLE)
 $(EXECUTABLE): $(OBJECTS)
 	$(CC) -o $@ $^ $(LDFLAGS)
 
+# XXXX missing %.h? check
 %.o: %.cpp
 		echo $@
 		echo $<

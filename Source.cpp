@@ -10,7 +10,7 @@
 #include <chrono>
 #include <thread> // XXXX pthread !
 #include <functional>
-// #include <process.h>    // XXXX change?
+
 #include <cstdlib>
 #include <vector>
 #include <algorithm>
@@ -21,7 +21,7 @@
 
 #include "PredictionSupplierCADAC.h"
 #include "SensorTrajectoryCADAC.h"
-#include "PredSuppTrajectoryCADAC.h" // XXXX see if can bring the two together, or must have the seperation as sensor and supplier.
+#include "PredSuppTrajectoryCADAC.h"
 #include "SuppliersCollector.h"
 #include "utils.h"
 #include <stdlib.h>
