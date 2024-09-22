@@ -60,7 +60,7 @@
         "*.kml": "xml",
         "cstring": "cpp"
     },
-
+/*
     "todohighlight.keywords": [
   {
     "text": "Description",
@@ -99,6 +99,6 @@
     "overviewRulerColor": "grey"
   }
 ]
-
+*/
 
 }

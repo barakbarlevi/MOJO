@@ -26,7 +26,13 @@ Output: The program doesn't return a value other than '0' for success. If
 specified conditions relating the target track data and the simulation output
 are met, a notification is sent.
    
-Notes: h_detect
+Notes: 
+1. As target detections are simulation output themselves, the point at
+which calculations on the live 6-DOF executions start can be the detected
+target in its starting conditions. This doesn't represnt a real life case for
+ballisitic targets, since first detection is expected to occur after the object
+has gained height. Parameter 'detectionHeight' of type double is set for this
+reason.
   
 ******************************************************************************/
 
@@ -282,10 +288,10 @@ int main(int argc, char *argv[])
 
     // XXXX Operate / do something when reaching a specific height on ascent:  
 
-    float H_detection(15000); // XXXX best way to init ints / floats? they have a name... with dobule, long etc.. these types xxxx units - meter ?
-    //float H_detection(500); // XXXX best way to init ints / floats? they have a name... with dobule, long etc.. these types xxxx units - meter ?
+    float detectionHeight(15000); // XXXX best way to init ints / floats? they have a name... with dobule, long etc.. these types xxxx units - meter ?
+    //float detectionHeight(500); // XXXX best way to init ints / floats? they have a name... with dobule, long etc.. these types xxxx units - meter ?
 
-    // xxxx in this case we are operating when reaching a certain height. on its face, we could have passed h_detection to threadplotTrajectoryCoordByCoord(5, 200, H),
+    // xxxx in this case we are operating when reaching a certain height. on its face, we could have passed detectionHeight to threadplotTrajectoryCoordByCoord(5, 200, H),
     // assign bita_params.height there, and wait for reaching it. but what if we want to operate based on any other feature of bita_params? pass that too? so i decided
     // that i do want to update bita params every time i can until reaching that condition. or maybe, put a condition in there that is changeable.
     // and in main, it will only look like conditionIsMet, waiting for a notification on it. but then i would be forced to check on it every time even after
@@ -294,7 +300,7 @@ int main(int argc, char *argv[])
     // just a mutex doesn't let setbitaparams run. it doesn't get released in plottrahcoordbycoord.
     
     // xxxx could have used a semaphore instead?
-    while ((std::stof(trajectoryFromSensor._BITA_Params.height) < H_detection) && (trajectoryFromSensor.get_vVertical() <= 0)) // XXXX height not a good name. nor vVertical. explain on coordinate system. XXXX nor H_detection. specify it's FIRST detect. be clear
+    while ((std::stof(trajectoryFromSensor._BITA_Params.height) < detectionHeight) && (trajectoryFromSensor.get_vVertical() <= 0)) // XXXX height not a good name. nor vVertical. explain on coordinate system. XXXX nor detectionHeight. specify it's FIRST detect. be clear
     {
         // https://stackoverflow.com/questions/12551341/when-is-a-condition-variable-needed-isnt-a-mutex-enough
         // let's make this the consumer 1 xxxx
@@ -312,7 +318,7 @@ int main(int argc, char *argv[])
         ul.lock();
     }
     std::this_thread::sleep_for(std::chrono::milliseconds(1));
-    std::cout << "Reached " << H_detection << "[m], at currentRowIndex: " << trajectoryFromSensor.currentRowIndex << std::endl; // XXXX choose what to cout, only necessary.
+    std::cout << "Reached " << detectionHeight << "[m], at currentRowIndex: " << trajectoryFromSensor.currentRowIndex << std::endl; // XXXX choose what to cout, only necessary.
     float detectionTime = std::stof(trajectoryFromSensor._BITA_Params.tbal);
     trajectoryFromSensor.reachedHdetection = true;
 
