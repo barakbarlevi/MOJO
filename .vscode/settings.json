@@ -59,5 +59,46 @@
         "codecvt": "cpp",
         "*.kml": "xml",
         "cstring": "cpp"
-    }
+    },
+
+    "todohighlight.keywords": [
+  {
+    "text": "Description",
+    "color": "#4CBB17",
+    "backgroundColor": "black",
+    "overviewRulerColor": "grey"
+  },
+  {
+    "text": "Purpose",
+    "color": "#4CBB17",
+    "backgroundColor": "black",
+    "overviewRulerColor": "grey"
+  },
+  {
+    "text": "MOJO - a ballistic trajectory analyzer",
+    "color": "#32CD32",
+    "backgroundColor": "black",
+    "overviewRulerColor": "grey"
+  },
+  {
+    "text": "Input",
+    "color": "#4CBB17",
+    "backgroundColor": "black",
+    "overviewRulerColor": "grey"
+  },
+  {
+    "text": "Output",
+    "color": "#4CBB17",
+    "backgroundColor": "black",
+    "overviewRulerColor": "grey"
+  },
+  {
+    "text": "Notes",
+    "color": "#4CBB17",
+    "backgroundColor": "black",
+    "overviewRulerColor": "grey"
+  }
+]
+
+
 }

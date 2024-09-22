@@ -1,27 +1,37 @@
-/***************************************************************
- * Code for a ballistic trajectory analyzer.
- * 
- * Purpose: Analyze live detection data of a single ballistic target, comparing it to expected behavior from 6-DOF simulation outputs.
- * 
- * The program receives detections live over the network. Detection data may contain any information that a generic sensor could be
- * able to measure, such as estimated position, velocity etc. Starting at a pre-determined point along the trajectory, the program
- * will start executing a series of 6-DOF simulation runs for an array of potential airframe models, with the initial conditions being 
- * passed to it at the moment, from the tracked data. The 6-DOF is a separate project. The simulation's results for all airframe models
- * will be stored. The program will continue to receive the live ballistic target data until it hits the ground, and will be able generate
- * simulation outputs during the entire flight time. As soon as the first set of simulation output is ready, the program will run a backgroud
- * process to compare target detections and simulation output against each other. This background process can implement any logic coded into
- * it, its purpose to send a notification when some programmer-defined conditions have been met.
- * 
- * 
- * Notes: h_detect
- * 
- * ************************************************************/
+/******************************************************************************
+MOJO - a ballistic trajectory analyzer
+ 
+Purpose: Analyze live detection data of a single ballistic target, comparing it
+to expected behavior from 6-DOF simulation outputs.
+ 
+Description: The program receives detections live over the network. Detection 
+data may contain any information that a generic sensor could be able to 
+measure, such as estimated position, velocity etc. Starting at a pre-
+determined point along the trajectory, the program will start executing a
+series of 6-DOF simulation runs for an array of potential airframe models,
+with the initial conditions being passed to it at the moment, from the tracked
+data. The 6-DOF is a separate project. The simulation's results for all
+airframe models will be stored. The program will continue to receive the live
+ballistic target data until it hits the ground, and will be able generate
+simulation outputs during the entire flight time. As soon as the first set of
+simulation output is ready, the program will run a backgroud process to compare
+target detections and simulation output against each other. This background
+process can implement any logic coded into it, its purpose to send a
+notification when some programmer-defined conditions have been met.
 
+Input: The program isn't provided input parameters. It listens on a socket, and
+handles data arriving on it.
 
-#include "Header.h"
-// XXXX organize all code in most appriopriate manner
+Output: The program doesn't return a value other than '0' for success. If 
+specified conditions relating the target track data and the simulation output
+are met, a notification is sent.
+   
+Notes: h_detect
+  
+******************************************************************************/
+
 // XXXX go though all public / protected / private sections and decide on the best declarations.
-//  XXXX    A FIGURE EXPLAINING THE LAYOUT: MAIN TRAJECTORY SENSOR, SUPPLIER, COLLOCTOR, ETC. can be done with screenshop from ge.    XXXX delete if not needed here
+#include "Header.h"
 
 #include <iostream>
 #include <fstream>
