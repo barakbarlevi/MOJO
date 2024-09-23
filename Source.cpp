@@ -1,4 +1,4 @@
-/******************************************************************************
+/*=============================================================================
 MOJO - a ballistic trajectory analyzer
  
 Purpose: Analyze live detection data of a single ballistic target, comparing it
@@ -44,7 +44,10 @@ metadata structure.
 https://geosoft.no/development/cppstyle.html.
 
   
-******************************************************************************/
+=============================================================================*/
+
+// minimize headers, including adding include guards and #pragma onces
+// get rid of vector unnecessary class
 
 // xxxx put big intro text in grammarly
 // XXXX go though all public / protected / private sections and decide on the best declarations.
@@ -80,16 +83,15 @@ https://geosoft.no/development/cppstyle.html.
 #include "SensorTrajectoryCADAC.h"
 #include "PredSuppTrajectoryCADAC.h"
 #include "SuppliersCollector.h"
-#include "SuppliersCollectorsVector.h"
+//#include "SuppliersCollectorsVector.h"
 #include "DecisionMaker.h"
 #include "SyncDataArrivalAndPredicting.h"
 #include "X11_window.h"
 
 
-
 enum availableSuppliers {
     CADAC,
-    // Add more prediction suppliers (simulations) here
+    // Add more prediction suppliers (simulations) here.
 };
 
 
@@ -254,19 +256,22 @@ int main(int argc, char *argv[])
 
 
 #if 1
-    //int suppliersCollectorsVectorIndex(0);                                      // XXXX best init way ? bring up.
-    //std::vector<std::shared_ptr<SuppliersCollector>> suppliersCollectorsVector; // XXXX SuppliersCollectorsVector is this the right name? plural / singular wise. XXXX bring up. xxxx should it be a vector or is it constant size? go through all vector definitions in the code and decide.
     
-    SuppliersCollectorsVector suppliersCollectorsVector;
-    DecisionMaker decisionMaker(&suppliersCollectorsVector, &trajectoryFromSensor);    // xxxx no faults in this line?
-    //while (trajectoryFromSensor.currentRowIndex <= trajectoryFromSensor.data.size()) // as long as ballistic motion still takes place. loop on collectors xxxx english
+    //SuppliersCollectorsVector suppliersCollectorsVector;
+    std::vector<std::shared_ptr<SuppliersCollector>> VECTOR;
+
+    //DecisionMaker decisionMaker(&suppliersCollectorsVector, &trajectoryFromSensor);    // xxxx no faults in this line?
+    DecisionMaker decisionMaker(&VECTOR, &trajectoryFromSensor);    // xxxx no faults in this line?
+
     do
     {
         std::shared_ptr<SuppliersCollector> currentCollector = std::make_shared<SuppliersCollector>(std::stof(trajectoryFromSensor._BITA_Params.BITA_time) - detectionTime);
-        suppliersCollectorsVector.suppliersCollectorsVector_.push_back(currentCollector);
-        //suppliersCollectorsVector.push_back(currentCollector);
+        
+        //suppliersCollectorsVector.suppliersCollectorsVector_.push_back(currentCollector);
+        VECTOR.push_back(currentCollector);
 
-        currentCollector->collectorKML_ = "Collector" + std::to_string(suppliersCollectorsVector.currentNumOfSuppliersCollectors_) + ".kml";
+        //currentCollector->collectorKML_ = "Collector" + std::to_string(suppliersCollectorsVector.currentNumOfSuppliersCollectors_) + ".kml";
+        currentCollector->collectorKML_ = "Collector" + std::to_string(VECTOR.size()) + ".kml";
 
         for (size_t i = 0; i < currentCollectorPriamryInputFiles.size(); ++i) // loop on number of current suppliers for the current collector xxxx english
         {                                                                     
@@ -386,26 +391,29 @@ int main(int argc, char *argv[])
                     third = second + 1;   
                     
 
-                    //suppliersCollectorsVector.at(suppliersCollectorsVectorIndex)->suppliersVector.push_back(predictionSupplierCADAC->trajectoryCADAC); // XXXX
-                    suppliersCollectorsVector.suppliersCollectorsVector_.at(suppliersCollectorsVector.getCurrentNumOfSuppliersCollectors())->suppliersVector.push_back(predictionSupplierCADAC->trajectoryCADAC);
-                    //.at(suppliersCollectorsVectorIndex)->suppliersVector.push_back(predictionSupplierCADAC->trajectoryCADAC); // XXXX
+                    //suppliersCollectorsVector.suppliersCollectorsVector_.at(suppliersCollectorsVector.getCurrentNumOfSuppliersCollectors())->suppliersVector.push_back(predictionSupplierCADAC->trajectoryCADAC);
+                    VECTOR.back()->suppliersVector.push_back(predictionSupplierCADAC->trajectoryCADAC);
                 }
             }
-            suppliersCollectorsVector.suppliersCollectorsVector_.at(suppliersCollectorsVector.getCurrentNumOfSuppliersCollectors())->currentNumOfSuppliers++;
-            //suppliersCollectorsVector.at(suppliersCollectorsVectorIndex)->currentNumOfSuppliers++;
+
+            //suppliersCollectorsVector.suppliersCollectorsVector_.at(suppliersCollectorsVector.getCurrentNumOfSuppliersCollectors())->currentNumOfSuppliers++;
+            VECTOR.back()->currentNumOfSuppliers++;
+
         }
-        suppliersCollectorsVector.suppliersCollectorsVector_.at(suppliersCollectorsVector.getCurrentNumOfSuppliersCollectors())->plotCollectorAtOnce(2); // xxxx no "2" cases
+
+        //suppliersCollectorsVector.suppliersCollectorsVector_.at(suppliersCollectorsVector.getCurrentNumOfSuppliersCollectors())->plotCollectorAtOnce(2); // xxxx no "2" cases
+        VECTOR.back()->plotCollectorAtOnce(2); // xxxx no "2" cases
         
-        //suppliersCollectorsVector.at(suppliersCollectorsVectorIndex)->plotCollectorAtOnce(2); // xxxx parameterize xxxx try lock_guard with this and the two above in the loop to prevent from plotting 2 at the same time
-        //suppliersCollectorsVectorIndex++; // XXXX leave in comment? do something else?
-        suppliersCollectorsVector.currentNumOfSuppliersCollectors_++;
+        //suppliersCollectorsVector.currentNumOfSuppliersCollectors_++;
+        //increase VECTOR's size by one. needed manually? probably done by <vector> xxxx
 
         //std::this_thread::sleep_for(std::chrono::milliseconds(1750)); // xxxx why is this needed..?
         std::this_thread::sleep_for(std::chrono::milliseconds(1450)); // xxxx why is this needed..?
 
         trajectoryFromSensor.setBITA_Params();
         
-    } while (suppliersCollectorsVector.currentNumOfSuppliersCollectors_ <= 1);
+    } while (VECTOR.size() <= 1);
+    //while (suppliersCollectorsVector.currentNumOfSuppliersCollectors_ <= 1);
 
     //globalcount = 0; // xxxx
 

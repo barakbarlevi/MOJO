@@ -12,7 +12,8 @@ void DecisionMaker::calculate(SyncDataArrivalAndPredicting * syncSingleton) {
     //std::unique_lock<std::mutex> ul(sensorTrajectory_->syncDetectSetBITA_mutex);
     //sensorTrajectory_->syncDetectSetBITA_cv.wait(ul, [&](){ return sensorTrajectory_->syncDetectSetBITA_ready; }); // xxxx here i learned in the tough way the imprtance of capturing by reference and not by value ENGLISH. put it?
 
-    collectorsVector_->suppliersCollectorsVector_.at(1)->suppliersVector.at(0)->setAltData();
+    //collectorsVector_->suppliersCollectorsVector_.at(1)->suppliersVector.at(0)->setAltData();
+    collectorsVector_->at(1)->suppliersVector.at(0)->setAltData();
 
     //sensorTrajectory_->syncDetectSetBITA_ready = false;
     //ul.unlock();
@@ -21,7 +22,9 @@ void DecisionMaker::calculate(SyncDataArrivalAndPredicting * syncSingleton) {
     //ul.lock();
 
 
-    std::vector<float> collector1supplier0alt = collectorsVector_->suppliersCollectorsVector_.at(1)->suppliersVector.at(0)->getAltData();
+    //std::vector<float> collector1supplier0alt = collectorsVector_->suppliersCollectorsVector_.at(1)->suppliersVector.at(0)->getAltData();
+    std::vector<float> collector1supplier0alt = collectorsVector_->at(1)->suppliersVector.at(0)->getAltData();
+    
 
     int consequtiveConditionCount = 0;
     

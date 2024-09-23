@@ -7,16 +7,22 @@
 
 class DecisionMaker {
     public:
-    //std::shared_ptr<PredSuppTrajectoryCADAC> trajectoryCADAC;   // XXXX CHANGE NAME
-    SuppliersCollectorsVector* collectorsVector_;
+    
+    //SuppliersCollectorsVector* collectorsVector_;
+    std::vector<std::shared_ptr<SuppliersCollector>>* collectorsVector_;
     
     //SensorTrajectory* sensorTrajectory_; // xxxx check whether this is upcast/downcast
     SensorTrajectoryCADAC* sensorTrajectory_;
     
     float estimation_;
     
-    //DecisionMaker(SuppliersCollectorsVector* suppliersCollectorsVector, SensorTrajectory* sensorTrajectory) {
-    DecisionMaker(SuppliersCollectorsVector* suppliersCollectorsVector, SensorTrajectoryCADAC* sensorTrajectory) {
+    // DecisionMaker(SuppliersCollectorsVector* suppliersCollectorsVector, SensorTrajectoryCADAC* sensorTrajectory) {
+    //     collectorsVector_ = suppliersCollectorsVector;
+    //     sensorTrajectory_ = sensorTrajectory;
+    //     estimation_ = 0;
+    // }
+
+    DecisionMaker(std::vector<std::shared_ptr<SuppliersCollector>>* suppliersCollectorsVector, SensorTrajectoryCADAC* sensorTrajectory) {
         collectorsVector_ = suppliersCollectorsVector;
         sensorTrajectory_ = sensorTrajectory;
         estimation_ = 0;
