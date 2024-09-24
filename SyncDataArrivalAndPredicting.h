@@ -19,7 +19,13 @@ class SyncDataArrivalAndPredicting {
     pthread_mutex_t  condition_lock_finished;
     pthread_cond_t   condition_variable_finished;
 
-    SyncDataArrivalAndPredicting() {firstMsgArrived = false;}
+    SyncDataArrivalAndPredicting() {
+        pthread_mutex_init(&this->condition_lock_color, NULL);
+        pthread_cond_init(&this->condition_variable_color, NULL);
+        pthread_mutex_init(&this->condition_lock_finished, NULL);
+        pthread_cond_init(&this->condition_variable_finished, NULL);
+        firstMsgArrived = false;
+    }
 
     void WaitForFirstMsg();
 

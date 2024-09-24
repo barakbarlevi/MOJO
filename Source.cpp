@@ -46,47 +46,17 @@ https://geosoft.no/development/cppstyle.html.
   
 =============================================================================*/
 
-// minimize headers, including adding include guards and #pragma onces
-// get rid of vector unnecessary class
-
 // xxxx put big intro text in grammarly
 // XXXX go though all public / protected / private sections and decide on the best declarations.
-// xxxx turn suppliersCollectorsVector into just a vector.. no actual need to create a class for it.
 // xxxx "int" i ? ++i or i++ ? xxxx always size_t? maybe unsigned?
 // xxxx what abouth factory design pattern? how can it be implemented in mojo?
 // XXXX difference from typedef struct?
+// xxxx add option to specify port number as input and print out command structue and throw out if given wrongly
 // XXXX EVERY LINE OF CODE SAYING CADAC SHOULD BE SWITCHED TO SOMETHING GENERAL. or maybe explain that it's general until at some level u have to be percise on simulation. but as less as possible.
 // xxxx add std::cout << "log(-1) failed: " << std::strerror(errno) << '\n'; EVERYWHERE
 
-#include <algorithm>
-#include <chrono>
-#include <condition_variable>
-#include <cstdlib>
-#include <filesystem>
-#include <fstream>
-#include <functional>
-#include <iomanip>
-#include <iostream>
-#include <math.h>
-#include <memory>
-#include <mutex>
-#include <pthread.h>
-#include <semaphore>
-#include <sstream>
-#include <stdlib.h>
-#include <string>
-#include <thread>
-#include <vector>
-
-#include "BITA_params.h"
-#include "utils.h"
 #include "PredictionSupplierCADAC.h"
-#include "SensorTrajectoryCADAC.h"
-#include "PredSuppTrajectoryCADAC.h"
-#include "SuppliersCollector.h"
-//#include "SuppliersCollectorsVector.h"
 #include "DecisionMaker.h"
-#include "SyncDataArrivalAndPredicting.h"
 #include "X11_window.h"
 
 
@@ -101,13 +71,13 @@ int main(int argc, char *argv[])
     (void)argc;
     (void)argv;
   
-    pthread_t thread1;
+    pthread_t windowThread;
     SyncDataArrivalAndPredicting *syncSingleton = new SyncDataArrivalAndPredicting();
-    pthread_mutex_init(&syncSingleton->condition_lock_color, NULL);
-    pthread_cond_init(&syncSingleton->condition_variable_color, NULL);
-    pthread_mutex_init(&syncSingleton->condition_lock_finished, NULL);
-    pthread_cond_init(&syncSingleton->condition_variable_finished, NULL);
-    pthread_create( &thread1, NULL, init15, (void*) syncSingleton);
+    // pthread_mutex_init(&syncSingleton->condition_lock_color, NULL);
+    // pthread_cond_init(&syncSingleton->condition_variable_color, NULL);
+    // pthread_mutex_init(&syncSingleton->condition_lock_finished, NULL);
+    // pthread_cond_init(&syncSingleton->condition_variable_finished, NULL);
+    pthread_create( &windowThread, NULL, windowWork, (void*) syncSingleton);
     
     //SyncDataArrivalAndPredicting *syncSingleton = new SyncDataArrivalAndPredicting();
 
@@ -451,9 +421,8 @@ int main(int argc, char *argv[])
     printf("Signaling \"finished\"\n");
     pthread_cond_signal(&syncSingleton->condition_variable_finished);
     pthread_mutex_unlock(&syncSingleton->condition_lock_finished);
-    pthread_join(thread1, NULL);
+    pthread_join(windowThread, NULL);
     
-   //pthread_join(thread1, NULL);
 
     //  XXXX Operate / do something when reaching a specific detect time value
 
