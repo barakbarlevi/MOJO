@@ -219,6 +219,7 @@ void SensorTrajectoryCADAC::plotDataFromRT(SyncDataArrivalAndPredicting* syncSin
                     buf_string = buf;
                     data.push_back(buf);
                     
+                    // This is the reason why this whole code is inside CADAC (bottom of the hierarchy...) xxxx
                     this->setSingleCoordsLine();
                     utils::kmlAppendOneCoord(this->KML_path, this->SingleCoordsLine, "0"); // XXXX HERE this->SingleCoordsLine and line above just SingleCoordsLine ?xxxx fix this method to the one i printed on one paper that only does appending
                     this->currentDetectionIndex++; // XXXX fix name of indexJump (?)

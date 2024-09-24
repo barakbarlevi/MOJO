@@ -70,6 +70,8 @@ int main(int argc, char *argv[])
 { 
     (void)argc;
     (void)argv;
+
+    int effective_dtPlot = 2;
   
     char* homeENV = getenv("HOME");
     std::stringstream ss;
@@ -156,168 +158,62 @@ int main(int argc, char *argv[])
 
     #if 1
 
-        // Once we've met the condition on the former while(), we can start do any kind of analysis we want. The do-while loop below
-        // 
+        // Once we've met the condition on the former while(), we can start do any kind of analysis we want. Each iteration of the do-while loop below
+        // appends a 'Collector' element to a std::vector containing objects of this type. A 'Collector' is an entity that gathers simulation outputs
+        // for all airframe models stored in 'currentCollectorPriamryInputFiles', run with the momentary detected target state as initial conditions.
+        // In this particular implementation, two 'Collectors' are calculated: the first just as soon as 'heightFirstDetection' is reached, the second
+        // some fixed amount of time afterwards. We then exit the loop and run 'DecisionMaker' object method that has access to the entire simulated data
+        // as well as to target detection. This method checks whether conditions relating the two are met. One can choose to move it inside the do-while loop.
 
-        std::vector<std::shared_ptr<SuppliersCollector>> VECTOR;
-        DecisionMaker decisionMaker(&VECTOR, &trajectoryFromSensor);
+        std::vector<std::shared_ptr<SuppliersCollector>> suppliersCollectorsVector;
+        DecisionMaker decisionMaker(&suppliersCollectorsVector, &trajectoryFromSensor);
 
         do
         {
             std::shared_ptr<SuppliersCollector> currentCollector = std::make_shared<SuppliersCollector>(std::stof(trajectoryFromSensor._BITA_Params.BITA_time) - detectionTime);
-            VECTOR.push_back(currentCollector);
-            currentCollector->collectorKML_ = "Collector" + std::to_string(VECTOR.size()) + ".kml";
+            suppliersCollectorsVector.push_back(currentCollector);
+            currentCollector->collectorKML_ = "Collector" + std::to_string(suppliersCollectorsVector.size() - 1) + ".kml";
 
+            // Iterating over all the airframe model we currently want to check. Those are stored in a std::vector and can be added/removed during the scenario.
+            // This loop is representing a single point in time where we sample the detected data, insert it to all relevant simulation input files one by one,
+            // run the simulation and store its outputs. The next time this loop is executed is at a subsequent time during the flight, with different detected
+            // target conditions.
             for (size_t i = 0; i < currentCollectorPriamryInputFiles.size(); ++i) // loop on number of current suppliers for the current collector xxxx english
             {                                                                     
-
                 switch (predictionSuppliers.at(i))
                 {
                     case CADAC:
                     {
-                        std::shared_ptr<PredictionSupplierCADAC> predictionSupplierCADAC = std::make_shared<PredictionSupplierCADAC>(currentCollectorExecutables.at(i), currentCollectorPriamryInputFiles.at(i)); // xxxx this is the point where polymorphism has to be reduced to monomorphism ENGLISH. need to understand what kind of derived class dealing with, because can't use the pure virtual functions of PredictionSupplier.h. should mention how to create a distinguishment between different types of suppliers, cause now it's not really given. maybe have seperate intervals of i for each simulation. for instance: i=0 to 3 is CADAC. i = 4 to 7 is something else. i = 8 to 10 is third etc.
+                        std::shared_ptr<PredictionSupplierCADAC> predictionSupplierCADAC = std::make_shared<PredictionSupplierCADAC>(currentCollectorExecutables.at(i), currentCollectorPriamryInputFiles.at(i));
 
-                        // xxxx Leave this here in comment so ppl will know that it exists and what's its purpose
-                        // std::thread T0 = unq_ptr_to_PredictionSupplierCADAC->threadPrepareInputFiles();   // XXXX wrinte as a comment: this would have been the place to any supplementary input files editing. for example: change simulation dt or any other type of simulation-depended necessary editing. xxxx english. i don't need it right now so i'm not implementing it. // XXXX name T0 to indicative. POSIX
-                        
-                        
-
-                        // Threaded version, delete if not needed xxxx
-                        //std::thread T1 = predictionSupplierCADAC->threadupdateBITA_ParamsInSupplierInput(trajectoryFromSensor.getBITA_Params()); // XXXX names XXXX POSIX xxxx mention: way of updating bita params in input files may vary.
-                        //T1.join();                                                                                                            // XXXX name XXXX POSIX                
-
-                        
-
-                        /*******************************************
-                        int first, second, third;
-
-                        first = predictionSupplierCADAC->updateBITA_ParamsInSupplierInput(trajectoryFromSensor.getBITA_Params()); // XXXX names XXXX POSIX xxxx mention: way of updating bita params in input files may vary.
-                        first ++;
-                                                                                                                    // XXXX name XXXX POSIX                
-                        second = predictionSupplierCADAC->runSupplierOnce(); // XXXX POSIX XXXX names xxxx no matter what, this will have to include process sych. cuz on the one hand displaying radar data and on the other hand running simulation and plotting it. i think it's a good first step to let it run on a seperate thread. xxxx mention: way of running once may vary.
-                        second = first + 1;
-
-                        predictionSupplierCADAC->trajectoryCADAC = std::make_shared<PredSuppTrajectoryCADAC>(currentCollectorLoadPaths.at(i), currentCollector->collectorKML_);
-                        
-                        third = second;
-                        third = predictionSupplierCADAC->trajectoryCADAC->readInput(false);
-                        third = second + 1;                    
-
-                        // Had the lines above not been synchronized in some way, a situation where the same input file is read would occur from time to time.
-                        // A visualization of this is given in the document, where one could see trajectories completely overlap, since they're identicle.
-                        // They could be two subsequent trajectories inside the same supplier, or within two suppliers, one being the last of the preceeding supplier
-                        // and the other one being the first of the succeeding supplier.
-                        // I had a hard time trying to understand why this synchronization is needed. Presumably, the method running the supplier once should block the current program
-                        // from executing the line for input reading, since the method uses std::system() which is blocking. I tweeked the code a bit and witness it does block.
-                        // I first assumed that if the call to read input only happens after the trajectory simulation had ended and generated a new output file, there should be no problem.
-                        // When debugging, I saw that the overlapping trajectories contain the exact same data, which means my assumption above wasn't right.
-                        // I also tried to rule out sequential inconsistency due to debugger optimization by using the functions return values.
-                        // I assumed sequential consistency that didn't exist.
-                        // My estimation of this situation is based on this post about sequential consistency https://stackoverflow.com/questions/38425920/memory-model-in-c-sequential-consistency-and-atomicity 
-                        // and specifically the statement that: "If you just use plain non-atomic operations, or relaxed atomics, and no mutexes, then sequential consistency is not guaranteed."                
-                        // At first I tried to run the lines as threads and use join() on the in a sequential order. That performed exactly like not threadding at all !
-                        // It's in my assumption that the structure of joinning a thread right after instantiating it is meanningless and interperted as if it was written
-                        // in exactly in the above form. 
-                        // I then tried to overcome the overlapping trajectories issue by synchronizing the simulation run, which ends in an output file being written,
-                        // and its reading. I think i got it right using a conditional variable, see https://stackoverflow.com/questions/78794995/synchronizing-simulation-output-generation-and-reading-using-producer-and-consum?noredirect=1#comment138922877_78794995:
-                        
-                        std::thread T1 = predictionSupplierCADAC->threadupdateBITA_ParamsInSupplierInput(trajectoryFromSensor.getBITA_Params()); // XXXX names XXXX POSIX xxxx mention: way of updating bita params in input files may vary.
-                        T1.join();
-
-                        std::thread T2 = predictionSupplierCADAC->threadRunSupplierOnce();
-                        
-                        predictionSupplierCADAC->trajectoryCADAC = std::make_shared<PredSuppTrajectoryCADAC>(currentCollectorLoadPaths.at(i), currentCollector->collectorKML_);
-
-                        std::thread T3 = predictionSupplierCADAC->trajectoryCADAC->threadReadInput(false);
-        
-                        T2.join();
-
-                        T3.join();
-
-                        // After this, there were still overlapping trajectories, though they seemed less likely to occur. I assumed there's still an issue
-                        // with synching the BITA parameters writing to the input file. So I tried to synchronize all three threads to basically run in
-                        // concurrency. This didn't seem logical to me to have threads that I force to run one after the other, because it misses the whole
-                        // idea of threading, letting them run in parallel. On the other hand though, no other solution seemed to work as I still got
-                        // overlaps.
-
-
-                        // If 3 way synchronizing works: I'm not sure synchronization overhead in this solution is preferred over a sleep() between threads. xxxx if sleeps even solves it.
-                        *******************************************/
-                        
-                        /*
-                        std::thread T2 = predictionSupplierCADAC->threadRunSupplierOnce(); // XXXX POSIX XXXX names xxxx no matter what, this will have to include process sych. cuz on the one hand displaying radar data and on the other hand running simulation and plotting it. i think it's a good first step to let it run on a seperate thread. xxxx mention: way of running once may vary.
-                        predictionSupplierCADAC->trajectoryCADAC = std::make_shared<PredSuppTrajectoryCADAC>(currentCollectorLoadPaths.at(i), currentCollector->collectorKML_);
-                        std::thread T3 = predictionSupplierCADAC->trajectoryCADAC->threadReadInput(false);                        
-                        T2.join();
-                        T3.join();
-                        */
-                        
-
-                        /*
-                        std::thread t1 = predictionSupplierCADAC->threadupdateBITA_ParamsInSupplierInput(trajectoryFromSensor.getBITA_Params());
-                        t1.join();
-
-                        std::thread t2 = predictionSupplierCADAC->threadRunSupplierOnce();
-                        t2.join();
-
-                        std::this_thread::sleep_for(std::chrono::milliseconds(30));
-
-                        predictionSupplierCADAC->trajectoryCADAC = std::make_shared<PredSuppTrajectoryCADAC>(currentCollectorLoadPaths.at(i), currentCollector->collectorKML_);
-                        std::thread t3 = predictionSupplierCADAC->trajectoryCADAC->threadReadInput(false);
-                        //t1.join();
-                        //t2.join();
-                        t3.join();
-                        */
-                    
-                        /* Not threaded*/
-                        /* https://stackoverflow.com/questions/78799285/synchronize-three-threads-in-c-one-after-the-other/78801530#78801530 */
-
-
-                    // int first, second, third;
-
-                    //     first = predictionSupplierCADAC->updateBITA_ParamsInSupplierInput(trajectoryFromSensor.getBITA_Params()); // XXXX names XXXX POSIX xxxx mention: way of updating bita params in input files may vary.
-                    //     first ++;
-                    //                                                                                                 // XXXX name XXXX POSIX                
-                    //     second = predictionSupplierCADAC->runSupplierOnce(); // XXXX POSIX XXXX names xxxx no matter what, this will have to include process sych. cuz on the one hand displaying radar data and on the other hand running simulation and plotting it. i think it's a good first step to let it run on a seperate thread. xxxx mention: way of running once may vary.
-                    //     second = first + 1;
-
-                    //     predictionSupplierCADAC->trajectoryCADAC = std::make_shared<PredSuppTrajectoryCADAC>(currentCollectorLoadPaths.at(i), currentCollector->collectorKML_);
-                        
-                    //     third = second;
-                    //     third = predictionSupplierCADAC->trajectoryCADAC->readInput(false);
-                    //     third = second + 1;   
-                        
-
+                        // Injecting the state of the detected target into the current input file for a simulations.
+                        // At the first time executing this line, BITA params are from 'heightFirstDetection'.
                         predictionSupplierCADAC->updateBITA_ParamsInSupplierInput(trajectoryFromSensor.getBITA_Params()); // XXXX names XXXX POSIX xxxx mention: way of updating bita params in input files may vary.
-                        predictionSupplierCADAC->runSupplierOnce(); // XXXX POSIX XXXX names xxxx no matter what, this will have to include process sych. cuz on the one hand displaying radar data and on the other hand running simulation and plotting it. i think it's a good first step to let it run on a seperate thread. xxxx mention: way of running once may vary.
+
+                        // Run a single simulation run with the adequate initial conditions.
+                        predictionSupplierCADAC->runSupplierOnce();
+
+                        // Instantiate a trajectory object
                         predictionSupplierCADAC->trajectoryCADAC = std::make_shared<PredSuppTrajectoryCADAC>(currentCollectorLoadPaths.at(i), currentCollector->collectorKML_);
+                        
+                        // Read simulation results
                         predictionSupplierCADAC->trajectoryCADAC->readInput(false);
 
-                        //suppliersCollectorsVector.suppliersCollectorsVector_.at(suppliersCollectorsVector.getCurrentNumOfSuppliersCollectors())->suppliersVector.push_back(predictionSupplierCADAC->trajectoryCADAC);
-                        VECTOR.back()->suppliersVector.push_back(predictionSupplierCADAC->trajectoryCADAC);
+                        // Push the simulation results to the correct place inside 'suppliersCollectorsVector's back().
+                        suppliersCollectorsVector.back()->suppliersVector.push_back(predictionSupplierCADAC->trajectoryCADAC);
                     }
                 }
-
-                //suppliersCollectorsVector.suppliersCollectorsVector_.at(suppliersCollectorsVector.getCurrentNumOfSuppliersCollectors())->currentNumOfSuppliers++;
-                VECTOR.back()->currentNumOfSuppliers++;
-
+                suppliersCollectorsVector.back()->currentNumOfSuppliers++;
             }
 
-            //suppliersCollectorsVector.suppliersCollectorsVector_.at(suppliersCollectorsVector.getCurrentNumOfSuppliersCollectors())->plotCollectorAtOnce(2); // xxxx no "2" cases
-            VECTOR.back()->plotCollectorAtOnce(2); // xxxx no "2" cases
-            
-            //suppliersCollectorsVector.currentNumOfSuppliersCollectors_++;
-            //increase VECTOR's size by one. needed manually? probably done by <vector> xxxx
+            suppliersCollectorsVector.back()->plotCollectorAtOnce(effective_dtPlot);
+            std::this_thread::sleep_for(std::chrono::milliseconds(1450));
 
-            //std::this_thread::sleep_for(std::chrono::milliseconds(1750)); // xxxx why is this needed..?
-            std::this_thread::sleep_for(std::chrono::milliseconds(1450)); // xxxx why is this needed..?
-
+            // Capture detected target state
             trajectoryFromSensor.setBITA_Params();
-            
-        } while (VECTOR.size() <= 1);
-        //while (suppliersCollectorsVector.currentNumOfSuppliersCollectors_ <= 1);
 
-        //globalcount = 0; // xxxx
+        } while (suppliersCollectorsVector.size() <= 1);
+        
 
         std::thread giveEstimation = decisionMaker.threadCalculate(syncSingleton);
         giveEstimation.join();

@@ -6,12 +6,7 @@
 
 // xxxx all needed here?
 
-/*
-extern std::mutex syncDetectSetBITA_mutex;
-extern std::condition_variable syncDetectSetBITA_cv;
-extern bool syncDetectSetBITA_ready;
-extern int g_data;
-*/
+
 
 
 class Trajectory {
