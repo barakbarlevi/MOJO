@@ -38,7 +38,7 @@ class Trajectory {
     std::string scale =  "0.4";
     std::vector<std::string> data;  // XXXX nothing is left protected :(
     BITA_params _BITA_Params;   // XXXX Make sure all variable names _areOK. stackexchange on when to put _ before it at all. also cobra
-    unsigned int currentRowIndex = 0;    // Row index inside the file containing all information about the trajectory.
+    unsigned int currentDetectionIndex = 0;    // Row index inside the file containing all information about the trajectory.
     bool finishedPlotting = false;
     
     //Trajectory(std::string loadPath, std::string KML_path, std::string in, std::string pl, std::string mo, int FirstLineOfNumericData);  // XXXX ADD CONSTS? WHEN TO ADD CONSTS? WRITE IN COMMENT TO CLARFIYIF NEEDED

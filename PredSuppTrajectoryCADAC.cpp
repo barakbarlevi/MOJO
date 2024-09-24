@@ -2,7 +2,7 @@
 
 PredSuppTrajectoryCADAC::PredSuppTrajectoryCADAC(std::string loadPath, std::string kmlPath) : PredictionSupplierTrajectory(loadPath, kmlPath) { 
     this->FirstLineOfNumericData_ = 0; 
-    this->currentRowIndex = this->FirstLineOfNumericData_;
+    this->currentDetectionIndex = this->FirstLineOfNumericData_;
     
 };
 
@@ -18,9 +18,9 @@ void PredSuppTrajectoryCADAC::setSingleCoordsLine()
 {
     
 
-    std::string lon = utils::SubStringStartTillReaching(this->data[this->currentRowIndex], ',', 4, 1, currentRowIndex, "PredSuppTrajectoryCADAC::setSingleCoordsLine 1"); // XXXX check on func arguments to match cadac / general(?)  XXXX here i put this-> and below not. do both work? why? which to choose?
-    std::string lat = utils::SubStringStartTillReaching(data[currentRowIndex], ',', 5, 1, currentRowIndex, "PredSuppTrajectoryCADAC::setSingleCoordsLine 2"); // XXXX check on func arguments to match cadac / general(?)
-    std::string alt = utils::SubStringStartTillReaching(data[currentRowIndex], ',', 6, 1, currentRowIndex, "PredSuppTrajectoryCADAC::setSingleCoordsLine 3"); // XXXX check on func arguments to match cadac / general(?)
+    std::string lon = utils::SubStringStartTillReaching(this->data[this->currentDetectionIndex], ',', 4, 1, currentDetectionIndex, "PredSuppTrajectoryCADAC::setSingleCoordsLine 1"); // XXXX check on func arguments to match cadac / general(?)  XXXX here i put this-> and below not. do both work? why? which to choose?
+    std::string lat = utils::SubStringStartTillReaching(data[currentDetectionIndex], ',', 5, 1, currentDetectionIndex, "PredSuppTrajectoryCADAC::setSingleCoordsLine 2"); // XXXX check on func arguments to match cadac / general(?)
+    std::string alt = utils::SubStringStartTillReaching(data[currentDetectionIndex], ',', 6, 1, currentDetectionIndex, "PredSuppTrajectoryCADAC::setSingleCoordsLine 3"); // XXXX check on func arguments to match cadac / general(?)
 
 
     this->SingleCoordsLine = lon + "," + lat + "," + alt;   // XXXX THERE MUST be a much more efficient way... ask chatgpt or think... at the end, in enhancements

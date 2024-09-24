@@ -2,7 +2,7 @@
 
 SensorTrajectoryCADAC::SensorTrajectoryCADAC(std::string loadPath, std::string kmlPath) : SensorTrajectory(loadPath, kmlPath) {
     this->FirstLineOfNumericData_ = 0;
-    this->currentRowIndex = this->FirstLineOfNumericData_;
+    this->currentDetectionIndex = this->FirstLineOfNumericData_;
        
 } // XXXX names, : chain, an so
 
@@ -10,7 +10,7 @@ SensorTrajectoryCADAC::SensorTrajectoryCADAC(std::string loadPath, std::string k
 // xxxx for now i just added "RT" in the instatiation line in main
 SensorTrajectoryCADAC::SensorTrajectoryCADAC(std::string kmlPath) : SensorTrajectory(loadPath, kmlPath) {
     this->FirstLineOfNumericData_ = 1;
-    this->currentRowIndex = this->FirstLineOfNumericData_;
+    this->currentDetectionIndex = this->FirstLineOfNumericData_;
     loadPath = "RT"; // xxxx check that this actually moves along that chain
        
 } // XXXX names, : chain, an so
@@ -22,16 +22,16 @@ void SensorTrajectoryCADAC::setBITA_Params()
     
 
 
-    this->_BITA_Params.BITA_time = utils::SubStringStartTillReaching(data[currentRowIndex], ',', 1, 0, currentRowIndex, "SensorTrajectoryCADAC::setBITA_Params 1"); // XXXX check on func arguments to match cadac / general(?)
+    this->_BITA_Params.BITA_time = utils::SubStringStartTillReaching(data[currentDetectionIndex], ',', 1, 0, currentDetectionIndex, "SensorTrajectoryCADAC::setBITA_Params 1"); // XXXX check on func arguments to match cadac / general(?)
     // BITA_mass: Cannot be detected by the sensor. It's added in he supplier's Update BITA routine, according to the supplier's models.  // XXXX VERIFY for example still calling it BITA_mass ? go over this line.
     this->_BITA_Params.BITA_mass = "0";
-    this->_BITA_Params.BITA_lat = utils::SubStringStartTillReaching(data[currentRowIndex], ',', 5, 1, currentRowIndex, "SensorTrajectoryCADAC::setBITA_Params 2"); // XXXX check on func arguments to match cadac / general(?)
-    this->_BITA_Params.BITA_lon = utils::SubStringStartTillReaching(data[currentRowIndex], ',', 4, 1, currentRowIndex, "SensorTrajectoryCADAC::setBITA_Params 3"); // XXXX check on func arguments to match cadac / general(?)
-    this->_BITA_Params.BITA_height = utils::SubStringStartTillReaching(data[currentRowIndex], ',', 6, 1, currentRowIndex, "SensorTrajectoryCADAC::setBITA_Params 4");  // XXXX check on func arguments to match cadac / general(?)
-    this->_BITA_Params.BITA_speed = utils::SubStringStartTillReaching(data[currentRowIndex], ',', 7, 1, currentRowIndex, "SensorTrajectoryCADAC::setBITA_Params 5");  // XXXX check on func arguments to match cadac / general(?)
+    this->_BITA_Params.BITA_lat = utils::SubStringStartTillReaching(data[currentDetectionIndex], ',', 5, 1, currentDetectionIndex, "SensorTrajectoryCADAC::setBITA_Params 2"); // XXXX check on func arguments to match cadac / general(?)
+    this->_BITA_Params.BITA_lon = utils::SubStringStartTillReaching(data[currentDetectionIndex], ',', 4, 1, currentDetectionIndex, "SensorTrajectoryCADAC::setBITA_Params 3"); // XXXX check on func arguments to match cadac / general(?)
+    this->_BITA_Params.BITA_height = utils::SubStringStartTillReaching(data[currentDetectionIndex], ',', 6, 1, currentDetectionIndex, "SensorTrajectoryCADAC::setBITA_Params 4");  // XXXX check on func arguments to match cadac / general(?)
+    this->_BITA_Params.BITA_speed = utils::SubStringStartTillReaching(data[currentDetectionIndex], ',', 7, 1, currentDetectionIndex, "SensorTrajectoryCADAC::setBITA_Params 5");  // XXXX check on func arguments to match cadac / general(?)
     // xxxx write that assuming alpha = 0 because can't sense it !
-    this->_BITA_Params.BITA_flightPath = utils::SubStringStartTillReaching(data[currentRowIndex], ',', 3, 1, currentRowIndex, "SensorTrajectoryCADAC::setBITA_Params 6");    // XXXX name BITA_flightPath, XXXX to_string more modern way?  
-    this->_BITA_Params.BITA_heading = utils::SubStringStartTillReaching(data[currentRowIndex], ',', 2, 1, currentRowIndex, "SensorTrajectoryCADAC::setBITA_Params 7"); // XXXX check on func arguments to match cadac / general(?) XXXX name BITA_heading change
+    this->_BITA_Params.BITA_flightPath = utils::SubStringStartTillReaching(data[currentDetectionIndex], ',', 3, 1, currentDetectionIndex, "SensorTrajectoryCADAC::setBITA_Params 6");    // XXXX name BITA_flightPath, XXXX to_string more modern way?  
+    this->_BITA_Params.BITA_heading = utils::SubStringStartTillReaching(data[currentDetectionIndex], ',', 2, 1, currentDetectionIndex, "SensorTrajectoryCADAC::setBITA_Params 7"); // XXXX check on func arguments to match cadac / general(?) XXXX name BITA_heading change
 
 }
 
@@ -43,9 +43,9 @@ void SensorTrajectoryCADAC::setSingleCoordsLine()
 {
    
 
-    std::string lon = utils::SubStringStartTillReaching(this->data[this->currentRowIndex], ',', 4, 1, currentRowIndex, "SensorTrajectoryCADAC::setSingleCoordsLine 1"); // XXXX check on func arguments to match cadac / general(?)  XXXX here i put this-> and below not. do both work? why? which to choose?
-    std::string lat = utils::SubStringStartTillReaching(data[currentRowIndex], ',', 5, 1, currentRowIndex, "SensorTrajectoryCADAC::setSingleCoordsLine 2"); // XXXX check on func arguments to match cadac / general(?)
-    std::string alt = utils::SubStringStartTillReaching(data[currentRowIndex], ',', 6, 1, currentRowIndex, "SensorTrajectoryCADAC::setSingleCoordsLine 3"); // XXXX check on func arguments to match cadac / general(?)
+    std::string lon = utils::SubStringStartTillReaching(this->data[this->currentDetectionIndex], ',', 4, 1, currentDetectionIndex, "SensorTrajectoryCADAC::setSingleCoordsLine 1"); // XXXX check on func arguments to match cadac / general(?)  XXXX here i put this-> and below not. do both work? why? which to choose?
+    std::string lat = utils::SubStringStartTillReaching(data[currentDetectionIndex], ',', 5, 1, currentDetectionIndex, "SensorTrajectoryCADAC::setSingleCoordsLine 2"); // XXXX check on func arguments to match cadac / general(?)
+    std::string alt = utils::SubStringStartTillReaching(data[currentDetectionIndex], ',', 6, 1, currentDetectionIndex, "SensorTrajectoryCADAC::setSingleCoordsLine 3"); // XXXX check on func arguments to match cadac / general(?)
 
 
     this->SingleCoordsLine = lon + "," + lat + "," + alt;   // XXXX THERE MUST be a much more efficient way... ask chatgpt or think... at the end, in enhancements
@@ -60,7 +60,7 @@ void SensorTrajectoryCADAC::plotDataFromRT(SyncDataArrivalAndPredicting* syncSin
 {
     utils::kmlInsertOneNetworkLink("Secondary_Controller.kml",this->KML_path); // xxxx names!
         
-    this->currentRowIndex = this->FirstLineOfNumericData_; // XXXX raw pointers ? move to smart ? or is it ok when a function argument? i think that its possible to pass smart pointers as function args..? https://stackoverflow.com/questions/65035189/whether-to-pass-shared-pointer-or-raw-pointer-to-a-function . do i take ownership here?
+    this->currentDetectionIndex = this->FirstLineOfNumericData_; // XXXX raw pointers ? move to smart ? or is it ok when a function argument? i think that its possible to pass smart pointers as function args..? https://stackoverflow.com/questions/65035189/whether-to-pass-shared-pointer-or-raw-pointer-to-a-function . do i take ownership here?
 
     std::cout << "Initializing server" << std::endl;
 
@@ -126,7 +126,7 @@ void SensorTrajectoryCADAC::plotDataFromRT(SyncDataArrivalAndPredicting* syncSin
                 buf_string = buf;
                 data.push_back(buf);
                 this->setSingleCoordsLine();
-                //this->currentRowIndex++; // XXXX fix name of indexJump (?)
+                //this->currentDetectionIndex++; // XXXX fix name of indexJump (?)
                 
                 syncSingleton->FirstMsgArrived(); // xxxx the name. NAMES
             }
@@ -154,7 +154,7 @@ void SensorTrajectoryCADAC::plotDataFromRT(SyncDataArrivalAndPredicting* syncSin
 
                 if(buf[0] == '\0') 
                 {
-                    //this->currentRowIndex--;
+                    //this->currentDetectionIndex--;
                     //std::cout << "Turning syncDetectSetBITA_ready = true" << std::endl;
                     //this->syncDetectSetBITA_ready = true;
                     //finishedOneDetection = true;
@@ -174,9 +174,9 @@ void SensorTrajectoryCADAC::plotDataFromRT(SyncDataArrivalAndPredicting* syncSin
                     
                     //this->setSingleCoordsLine();
                     //utils::kmlAppendOneCoord(this->KML_path, this->SingleCoordsLine, "0"); // XXXX HERE this->SingleCoordsLine and line above just SingleCoordsLine ?xxxx fix this method to the one i printed on one paper that only does appending
-                    //this->currentRowIndex++; // XXXX fix name of indexJump (?)
+                    //this->currentDetectionIndex++; // XXXX fix name of indexJump (?)
 
-                    this->currentRowIndex--;
+                    this->currentDetectionIndex--;
                     finishedOneDetection = true;
                     printf("Assigning finishedOneDetection = true;\n");
                     this->finishedplotting2 = true;
@@ -208,9 +208,9 @@ void SensorTrajectoryCADAC::plotDataFromRT(SyncDataArrivalAndPredicting* syncSin
                     printf("rval is:%d\n", rval);
                     printf("%s\n", buf);
                     std::cout << "Getting RT data and inserting it to KML: " << this->KML_path << std::endl; // XXXX English. check that this cout is needed. fix what needs to be fixed. maybe remove that cout maybe not
-                    //for (unsigned int i = this->currentRowIndex; i < this->data.size() / indexJump; i++) {
+                    //for (unsigned int i = this->currentDetectionIndex; i < this->data.size() / indexJump; i++) {
 
-                    // currentRowIndex = i * indexJump; // XXXX makes sense to put in comment, add comment about it.
+                    // currentDetectionIndex = i * indexJump; // XXXX makes sense to put in comment, add comment about it.
                     
                     
                     std::unique_lock<std::mutex> ul(this->syncDetectSetBITA_mutex);   // xxxx inside the loop, initialized every time? try putting outside of the loop see what happens.
@@ -221,7 +221,7 @@ void SensorTrajectoryCADAC::plotDataFromRT(SyncDataArrivalAndPredicting* syncSin
                     
                     this->setSingleCoordsLine();
                     utils::kmlAppendOneCoord(this->KML_path, this->SingleCoordsLine, "0"); // XXXX HERE this->SingleCoordsLine and line above just SingleCoordsLine ?xxxx fix this method to the one i printed on one paper that only does appending
-                    this->currentRowIndex++; // XXXX fix name of indexJump (?)
+                    this->currentDetectionIndex++; // XXXX fix name of indexJump (?)
 
                     this->syncDetectSetBITA_ready = true;
                     std::cout << "Turning syncDetectSetBITA_ready = true" << std::endl;
@@ -240,8 +240,8 @@ void SensorTrajectoryCADAC::plotDataFromRT(SyncDataArrivalAndPredicting* syncSin
         std::cout << "Turning syncDetectSetBITA_ready = true from right before closing socket" << std::endl;
         close(msgsock);
         printf("Closed msgsock\n");
-        this->currentRowIndex--;
-        printf("Decremented currentRowIndex by 1\n");
+        this->currentDetectionIndex--;
+        printf("Decremented currentDetectionIndex by 1\n");
         finishedPlotting = true;
 
     } while (!finishedOneDetection);

@@ -20,15 +20,15 @@ class SensorTrajectory : public Trajectory {
     virtual void setBITA_Params() = 0;  // XXXX names...
     BITA_params getBITA_Params() { return this->_BITA_Params; } // XXXX names...
     
-    //float get_vVertical() { return std::stof(utils::SubStringStartTillReaching(this->data[currentRowIndex], ',', 10, 1)); } // XXXX the ',', 15, and 1 ARE NOT GENERAL BUT DEPENDENT ON SIMULATION so need to change or atleast comment that this is not the focus of the project and this line can be manipulated by any one who chooses so and i made simplification to myself that arent the interesting or important case.
-    float get_vVertical() { return std::stof(utils::SubStringStartTillReaching(this->data[currentRowIndex], ',', 10, 1, currentRowIndex, "SensorTrajectory::get_vVertical")); } // xxxx does this need synchronization? accesses currentRowIndex XXXX the ',', 15, and 1 ARE NOT GENERAL BUT DEPENDENT ON SIMULATION so need to change or atleast comment that this is not the focus of the project and this line can be manipulated by any one who chooses so and i made simplification to myself that arent the interesting or important case.
+    //float get_vVertical() { return std::stof(utils::SubStringStartTillReaching(this->data[currentDetectionIndex], ',', 10, 1)); } // XXXX the ',', 15, and 1 ARE NOT GENERAL BUT DEPENDENT ON SIMULATION so need to change or atleast comment that this is not the focus of the project and this line can be manipulated by any one who chooses so and i made simplification to myself that arent the interesting or important case.
+    float get_vVertical() { return std::stof(utils::SubStringStartTillReaching(this->data[currentDetectionIndex], ',', 10, 1, currentDetectionIndex, "SensorTrajectory::get_vVertical")); } // xxxx does this need synchronization? accesses currentDetectionIndex XXXX the ',', 15, and 1 ARE NOT GENERAL BUT DEPENDENT ON SIMULATION so need to change or atleast comment that this is not the focus of the project and this line can be manipulated by any one who chooses so and i made simplification to myself that arent the interesting or important case.
     
     float getCurrentAlt() { 
-        return std::stof(utils::SubStringStartTillReaching(data[currentRowIndex], ',', 6, 1, currentRowIndex, "SensorTrajectory::getCurrentAlt"));
-    } // xxxx does this need synchronization? accesses currentRowIndex
+        return std::stof(utils::SubStringStartTillReaching(data[currentDetectionIndex], ',', 6, 1, currentDetectionIndex, "SensorTrajectory::getCurrentAlt"));
+    } // xxxx does this need synchronization? accesses currentDetectionIndex
 
 
-    std::thread threadPlotDataFromRT(SyncDataArrivalAndPredicting* syncSingleton) {
+    std::thread threadReceiveDataFromRT(SyncDataArrivalAndPredicting* syncSingleton) {
 
         utils::kmlInit_href(this->KML_path, this->KML_path, this->color);
         return std::thread([=]{plotDataFromRT(syncSingleton);});

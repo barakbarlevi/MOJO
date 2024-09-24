@@ -6,7 +6,7 @@ Trajectory::Trajectory(std::string loadPath, std::string kmlPath) {
     //this->ind = ind;    // xxxx
     //this->pl = pl;  // xxxx
     //this->mo = mo;  // xxxx
-    //this->currentRowIndex = FirstLineOfNumericData;   // xxxx delete if not used
+    //this->currentDetectionIndex = FirstLineOfNumericData;   // xxxx delete if not used
 }
 
 int Trajectory::readInput(bool isDetection) { //  XXXX MAKE SURE ALL VAR NAMES in all declaration and uses are the same. not like in cobra where there someIndex and SomeIdx for example.
@@ -176,12 +176,12 @@ void Trajectory::appendTrajectoryToKML(int indexJump, int delayms) {
         
         utils::kmlInsertOneNetworkLink("Secondary_Controller.kml",this->KML_path); // xxxx names!
         
-        this->currentRowIndex = this->FirstLineOfNumericData_; // XXXX raw pointers ? move to smart ? or is it ok when a function argument? i think that its possible to pass smart pointers as function args..? https://stackoverflow.com/questions/65035189/whether-to-pass-shared-pointer-or-raw-pointer-to-a-function . do i take ownership here?
+        this->currentDetectionIndex = this->FirstLineOfNumericData_; // XXXX raw pointers ? move to smart ? or is it ok when a function argument? i think that its possible to pass smart pointers as function args..? https://stackoverflow.com/questions/65035189/whether-to-pass-shared-pointer-or-raw-pointer-to-a-function . do i take ownership here?
       
         std::cout << "Inserting Coord-By-Coord CADAC Trajectory to KML: " << this->KML_path << " at index jumps of: " << indexJump << std::endl; // XXXX English. check that this cout is needed. fix what needs to be fixed. maybe remove that cout maybe not
-        for (unsigned int i = this->currentRowIndex; i < this->data.size() / indexJump; i++) {
+        for (unsigned int i = this->currentDetectionIndex; i < this->data.size() / indexJump; i++) {
 
-            // currentRowIndex = i * indexJump; // XXXX makes sense to put in comment, add comment about it.
+            // currentDetectionIndex = i * indexJump; // XXXX makes sense to put in comment, add comment about it.
             
             // let's make this the producer 1 xxxx
             std::unique_lock<std::mutex> ul(this->syncDetectSetBITA_mutex);   // xxxx inside the loop, initialized every time? try putting outside of the loop see what happens.
@@ -189,7 +189,7 @@ void Trajectory::appendTrajectoryToKML(int indexJump, int delayms) {
             this->setSingleCoordsLine();
             std::this_thread::sleep_for(std::chrono::milliseconds(delayms));  // xxxx Using sleep here but really not sure that's the right way... https://stackoverflow.com/questions/70697368/how-to-let-a-thread-wait-itself-out-without-using-sleep
             utils::kmlAppendOneCoord(this->KML_path, this->SingleCoordsLine, "0"); // XXXX HERE this->SingleCoordsLine and line above just SingleCoordsLine ?xxxx fix this method to the one i printed on one paper that only does appending
-            this->currentRowIndex += indexJump; // XXXX fix name of indexJump (?)
+            this->currentDetectionIndex += indexJump; // XXXX fix name of indexJump (?)
 
             this->syncDetectSetBITA_ready = true; // xxxx what the hell is syncDetectSetBITA_ready, and reachedHdetection. WRITE on how and why this synchronization is performed.
             ul.unlock();
@@ -212,11 +212,11 @@ void Trajectory::appendTrajectoryToKML(int indexJump, int currentSupplierNumber,
         if(!isCollector) utils::kmlInsertOneNetworkLink("Secondary_Controller.kml",this->KML_path); // xxxx names!    
         // xxxx if it is a collector, the collector will do it for itself ENGLISH
         
-        this->currentRowIndex = this->FirstLineOfNumericData_; // XXXX raw pointers ? move to smart ? or is it ok when a function argument? i think that its possible to pass smart pointers as function args..? https://stackoverflow.com/questions/65035189/whether-to-pass-shared-pointer-or-raw-pointer-to-a-function . do i take ownership here?
+        this->currentDetectionIndex = this->FirstLineOfNumericData_; // XXXX raw pointers ? move to smart ? or is it ok when a function argument? i think that its possible to pass smart pointers as function args..? https://stackoverflow.com/questions/65035189/whether-to-pass-shared-pointer-or-raw-pointer-to-a-function . do i take ownership here?
       
         //std::cout << "Inserting Coord-By-Coord CADAC Trajectory to KML: " << this->KML_path << " at index jumps of: " << indexJump << std::endl; // XXXX English. check that this cout is needed. fix what needs to be fixed. maybe remove that cout maybe not
-        for (unsigned int i = this->currentRowIndex; i < this->data.size() / indexJump; i++) {
-            // currentRowIndex = i * indexJump; // XXXX makes sense to put in comment, add comment about it.
+        for (unsigned int i = this->currentDetectionIndex; i < this->data.size() / indexJump; i++) {
+            // currentDetectionIndex = i * indexJump; // XXXX makes sense to put in comment, add comment about it.
             this->setSingleCoordsLine();
             if(isCollector) {
                 utils::kmlAppendOneCoord(this->KML_path, this->SingleCoordsLine, std::to_string(currentSupplierNumber + 1)); // XXXX HERE this->SingleCoordsLine and line above just SingleCoordsLine ?xxxx fix this method to the one i printed on one paper that only does appending
@@ -225,7 +225,7 @@ void Trajectory::appendTrajectoryToKML(int indexJump, int currentSupplierNumber,
             }
             
                    
-            this->currentRowIndex += indexJump; // XXXX fix name of indexJump (?)
+            this->currentDetectionIndex += indexJump; // XXXX fix name of indexJump (?)
         }
         
     }    
