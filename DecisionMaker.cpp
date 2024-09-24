@@ -1,6 +1,5 @@
 
 #include "DecisionMaker.h"
-#include <unistd.h>
 
 int mutexheld = 0;
 

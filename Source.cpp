@@ -55,7 +55,8 @@ https://geosoft.no/development/cppstyle.html.
 // xxxx "int" i ? ++i or i++ ? xxxx always size_t? maybe unsigned?
 // xxxx what abouth factory design pattern? how can it be implemented in mojo?
 // XXXX difference from typedef struct?
-
+// XXXX EVERY LINE OF CODE SAYING CADAC SHOULD BE SWITCHED TO SOMETHING GENERAL. or maybe explain that it's general until at some level u have to be percise on simulation. but as less as possible.
+// xxxx add std::cout << "log(-1) failed: " << std::strerror(errno) << '\n'; EVERYWHERE
 
 #include <algorithm>
 #include <chrono>

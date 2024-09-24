@@ -1,8 +1,4 @@
-// XXXX EVERY LINE OF CODE SAYING CADAC SHOULD BE SWITCHED TO SOMETHING GENERAL. or maybe explain that it's general until at some level u have to be percise on simulation. but as less as possible.
-
 #include "PredSuppTrajectoryCADAC.h"
-#include "utils.h"
-
 
 PredSuppTrajectoryCADAC::PredSuppTrajectoryCADAC(std::string loadPath, std::string kmlPath) : PredictionSupplierTrajectory(loadPath, kmlPath) { 
     this->FirstLineOfNumericData_ = 0; 

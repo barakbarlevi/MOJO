@@ -1,11 +1,8 @@
 #pragma once
-
-// ADD DOCUMENTATION !!!!!!!!!! XXXX
-//#include "utils.h"
-#include "utils.h" // WTF IS HEADER.h?? XXXX GIVE PROPER NAMES
-//#include "SynchObj.h" // xxxx
-
-
+#include <mutex>
+#include <condition_variable>
+#include "utils.h"
+#include "BITA_params.h"
 
 // xxxx all needed here?
 

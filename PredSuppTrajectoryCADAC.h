@@ -1,5 +1,4 @@
 #pragma once
-
 #include "PredictionSupplierTrajectory.h"
 
 class PredSuppTrajectoryCADAC : public PredictionSupplierTrajectory {

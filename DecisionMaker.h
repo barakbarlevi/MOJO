@@ -1,9 +1,5 @@
-#include "SuppliersCollectorsVector.h"
-
-//#include "SensorTrajectory.h"
+#include "SuppliersCollector.h"
 #include "SensorTrajectoryCADAC.h"
-
-//extern int globalcount; // xxxx
 
 class DecisionMaker {
     public:

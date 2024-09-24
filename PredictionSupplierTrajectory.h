@@ -1,5 +1,4 @@
 #pragma once
-
 #include "Trajectory.h"
 
 class PredictionSupplierTrajectory : public Trajectory {

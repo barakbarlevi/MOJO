@@ -1,5 +1,4 @@
 #include "SensorTrajectoryCADAC.h"
-#include "utils.h"
 
 SensorTrajectoryCADAC::SensorTrajectoryCADAC(std::string loadPath, std::string kmlPath) : SensorTrajectory(loadPath, kmlPath) {
     this->FirstLineOfNumericData_ = 0;

@@ -1,5 +1,4 @@
 #include "PredictionSupplierCADAC.h"
-#include "utils.h"
 
 // XXXX FOR THE FOLLOWING (AND OTHERS?) EXPLAING ON CHAIN something... " : " in the comments.
 PredictionSupplierCADAC::PredictionSupplierCADAC(std::string path_to_exe, std::string priamryInputFile) : PredictionSupplier(path_to_exe, priamryInputFile)

@@ -1,36 +1,5 @@
 #pragma once
-
-
-#include "Trajectory.h"
 #include "PredictionSupplierTrajectory.h"
-#include <memory>
-
-
-
-#include "BITA_params.h" // XXXX CHANGE HEADER.H TO SOMETHING MORE OFFICIAL.
-
-// xxxx minimize includes
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <sstream>
-#include <chrono>
-#include <thread>
-#include <functional>
-#include <cstdlib>
-#include <vector>
-#include <algorithm>
-#include <iomanip>
-#include <mutex>
-#include <condition_variable>
-#include <math.h>
-
-
-
-
-
-
-
 
 class SuppliersCollector {  // XXXX THIS IS SUPPLIERS OR SUPPLIER ? PICK ONE AND GO ALL THROUGHOUT.
     public:

@@ -1,4 +1,5 @@
 #include "utils.h"
+#include <math.h>
 
 // XXXX NumOfEncounterToExclude or NumOfEncountersToExclude ?
 // XXXX Use Chat GPT to write well and not crap. WRITE MODERN. GO OVER ALL CODE AND MAKE PRETTY.

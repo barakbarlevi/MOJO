@@ -1,13 +1,7 @@
 #pragma once
-
-#include "PredictionSupplier.h"
 #include <unordered_map>
+#include "PredictionSupplier.h"
 #include "PredSuppTrajectoryCADAC.h"   // XXXX previously: "Nakar_Trajectory.h"
-#include <fstream>
-#include <cstring>
-
-
-
 
 
 class PredictionSupplierCADAC : public PredictionSupplier {   // XXXX THIS MAKES NO SENSE convetions wise. start with a capital letter or no? decide and change throught all !

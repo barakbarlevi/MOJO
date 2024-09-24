@@ -1,8 +1,4 @@
 #include "Trajectory.h"
-#include <string.h>
-//#include <Windows.h>    // XXXX WHAT FOR ? PORT TO POSIX.
-#include "utils.h"
-#include <cstring>
 
 Trajectory::Trajectory(std::string loadPath, std::string kmlPath) {
     this->loadPath = loadPath;  // xxxx switch to loadPath_ i.e. add _ all throughout.

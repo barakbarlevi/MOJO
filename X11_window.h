@@ -1,11 +1,5 @@
 #pragma once
-#include <string.h>
-#include <stdlib.h>
-#include <stdio.h>
 #include <X11/Xlib.h>
-#include <pthread.h>
-#include <unistd.h>
-#include "SyncDataArrivalAndPredicting.h"
 
 unsigned long returnRGB(int r, int g, int b) {return b + (g<<8) + (r<<16);}
 

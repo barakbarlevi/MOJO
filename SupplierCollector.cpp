@@ -1,5 +1,4 @@
 #include "SuppliersCollector.h"
-#include "utils.h"
 
 void SuppliersCollector::plotCollectorAtOnce(int indexJump) {
 
