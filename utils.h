@@ -7,7 +7,7 @@
 
 namespace utils {
     
-    std::string SubStringStartTillReaching(const std::string &str, char c, int NumOfEncounterToExclude, int functionality, int currentDetectionIndex,  std::string caller); // xxxx after solving the problem, delete the currentrowindex and caller arguments
+    std::string SubStringStartTillReaching(const std::string &str, char c, int NumOfEncounterToExclude, int functionality, int currentDetectionIndex,  std::string caller, bool callerIsSensor); // xxxx after solving the problem, delete the currentrowindex and caller arguments
     void replaceLastWord(std::string &line, const std::string& old_word, const std::string& new_word);
     std::string replaceLastWord(const std::string& line, const std::string& newWord);
 

@@ -192,13 +192,13 @@ void Trajectory::appendTrajectoryToKML(int indexJump, int delayms) {
             utils::kmlAppendOneCoord(this->KML_path, this->SingleCoordsLine, "0"); // XXXX HERE this->SingleCoordsLine and line above just SingleCoordsLine ?xxxx fix this method to the one i printed on one paper that only does appending
             this->currentDetectionIndex += indexJump; // XXXX fix name of indexJump (?)
 
-            this->syncDetectSetBITA_ready = true; // xxxx what the hell is syncDetectSetBITA_ready, and reachedHdetection. WRITE on how and why this synchronization is performed.
+            this->syncDetectSetBITA_ready = true; // xxxx what the hell is syncDetectSetBITA_ready, and reachedheightFirstDetection. WRITE on how and why this synchronization is performed.
             ul.unlock();
             this->syncDetectSetBITA_cv.notify_one();
             
             ul.lock();
 
-            if (!reachedHdetection){
+            if (!reachedheightFirstDetection){
                 this->syncDetectSetBITA_cv.wait(ul, [this](){ return this->syncDetectSetBITA_ready == false; });
             }
 
@@ -208,27 +208,27 @@ void Trajectory::appendTrajectoryToKML(int indexJump, int delayms) {
 */
 
 
-void Trajectory::appendTrajectoryToKML(int indexJump, int currentSupplierNumber, int CollectorSize, bool isCollector) {
+// void Trajectory::appendTrajectoryToKML(int indexJump, int currentSupplierNumber, int CollectorSize, bool isCollector) {
         
-        (void)CollectorSize;    // xxxx had to pass two ints that have different meaning! can't overload like that cuz both int so had to put a third arg! english. consult someone about this maybe
+//         (void)CollectorSize;    // xxxx had to pass two ints that have different meaning! can't overload like that cuz both int so had to put a third arg! english. consult someone about this maybe
         
-        if(!isCollector) utils::kmlInsertOneNetworkLink("Secondary_Controller.kml",this->KML_path); // xxxx names!    
-        // xxxx if it is a collector, the collector will do it for itself ENGLISH
+//         if(!isCollector) utils::kmlInsertOneNetworkLink("Secondary_Controller.kml",this->KML_path); // xxxx names!    
+//         // xxxx if it is a collector, the collector will do it for itself ENGLISH
         
-        this->currentDetectionIndex = this->FirstLineOfNumericData_; // XXXX raw pointers ? move to smart ? or is it ok when a function argument? i think that its possible to pass smart pointers as function args..? https://stackoverflow.com/questions/65035189/whether-to-pass-shared-pointer-or-raw-pointer-to-a-function . do i take ownership here?
+//         this->currentDetectionIndex = this->FirstLineOfNumericData_; // XXXX raw pointers ? move to smart ? or is it ok when a function argument? i think that its possible to pass smart pointers as function args..? https://stackoverflow.com/questions/65035189/whether-to-pass-shared-pointer-or-raw-pointer-to-a-function . do i take ownership here?
       
-        //std::cout << "Inserting Coord-By-Coord CADAC Trajectory to KML: " << this->KML_path << " at index jumps of: " << indexJump << std::endl; // XXXX English. check that this cout is needed. fix what needs to be fixed. maybe remove that cout maybe not
-        for (unsigned int i = this->currentDetectionIndex; i < this->data.size() / indexJump; i++) {
-            // currentDetectionIndex = i * indexJump; // XXXX makes sense to put in comment, add comment about it.
-            this->setSingleCoordsLine();
-            if(isCollector) {
-                utils::kmlAppendOneCoord(this->KML_path, this->SingleCoordsLine, std::to_string(currentSupplierNumber + 1)); // XXXX HERE this->SingleCoordsLine and line above just SingleCoordsLine ?xxxx fix this method to the one i printed on one paper that only does appending
-            } else {
-                utils::kmlAppendOneCoord(this->KML_path, this->SingleCoordsLine, "0");
-            }
+//         //std::cout << "Inserting Coord-By-Coord CADAC Trajectory to KML: " << this->KML_path << " at index jumps of: " << indexJump << std::endl; // XXXX English. check that this cout is needed. fix what needs to be fixed. maybe remove that cout maybe not
+//         for (unsigned int i = this->currentDetectionIndex; i < this->data.size() / indexJump; i++) {
+//             // currentDetectionIndex = i * indexJump; // XXXX makes sense to put in comment, add comment about it.
+//             this->setSingleCoordsLine();
+//             if(isCollector) {
+//                 utils::kmlAppendOneCoord(this->KML_path, this->SingleCoordsLine, std::to_string(currentSupplierNumber + 1)); // XXXX HERE this->SingleCoordsLine and line above just SingleCoordsLine ?xxxx fix this method to the one i printed on one paper that only does appending
+//             } else {
+//                 utils::kmlAppendOneCoord(this->KML_path, this->SingleCoordsLine, "0");
+//             }
             
                    
-            this->currentDetectionIndex += indexJump; // XXXX fix name of indexJump (?)
-        }
+//             this->currentDetectionIndex += indexJump; // XXXX fix name of indexJump (?)
+//         }
         
-    }    
+//     }    

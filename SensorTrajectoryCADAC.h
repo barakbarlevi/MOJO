@@ -18,5 +18,5 @@ class SensorTrajectoryCADAC : public SensorTrajectory {
     // XXXX ADD A TEMPLATE .h and maybe .pp files all in comments for other users to use with their general simulation.
     //virtual int PlotTrajectoryAtOnce(std::string KML, int indexJump, int currentNumbebrOfSuppliers, int CollectorSize, float StyleScale);    //  XXXX    A FIGURE EXPLAINING THE LAYOUT: MAIN TRAJECTORY SENSOR, SUPPLIER, COLLOCTOR, ETC. can be done with screenshop from ge.    XXXX delete if not needed here
 
-    virtual void plotDataFromRT(SyncDataArrivalAndPredicting* syncSingleton);  // XXXX NAME 
+    virtual void plotDataFromRT(SyncDataArrivalAndPredicting* syncObject);  // XXXX NAME 
 };

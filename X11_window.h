@@ -87,7 +87,7 @@ static void set_up_font ()
 
 
 // Draw the window.
-static void draw_screen (SyncDataArrivalAndPredicting *syncSingleton)
+static void draw_screen (SyncDataArrivalAndPredicting *syncObject)
 {
     sleep(1);
     //printf("entered draw_screen\n");
@@ -112,9 +112,9 @@ static void draw_screen (SyncDataArrivalAndPredicting *syncSingleton)
     XSync(text_box.display, false);
     
     //printf("Here before wait line\n");
-    if(!syncSingleton->condition_predicate_color)
+    if(!syncObject->condition_predicate_color)
     {
-        pthread_cond_wait(&syncSingleton->condition_variable_color, &syncSingleton->condition_lock_color);
+        pthread_cond_wait(&syncObject->condition_variable_color, &syncObject->condition_lock_color);
         //printf("Here after wait line for color\n");
         XSetWindowBackground(text_box.display, text_box.window, text_box.red); 
         XClearWindow(text_box.display, text_box.window);
@@ -122,13 +122,18 @@ static void draw_screen (SyncDataArrivalAndPredicting *syncSingleton)
         XDrawString (text_box.display, text_box.window, text_box.gc,
                 x, y, text_box.text2, text_box.text_len2);
         XSync(text_box.display, false);
-        syncSingleton->condition_predicate_color = 1;
-        pthread_mutex_unlock(&syncSingleton->condition_lock_color);
+        syncObject->condition_predicate_color = 1;
+        pthread_mutex_unlock(&syncObject->condition_lock_color);
     }
     
-    pthread_cond_wait(&syncSingleton->condition_variable_finished, &syncSingleton->condition_lock_finished);
-    pthread_mutex_unlock(&syncSingleton->condition_lock_finished);
+    pthread_cond_wait(&syncObject->condition_variable_finished, &syncObject->condition_lock_finished);
+    pthread_mutex_unlock(&syncObject->condition_lock_finished);
     //printf("exiting draw_screen\n");
+    
+    XFreeGC(text_box.display, text_box.gc);
+    XDestroyWindow(text_box.display, text_box.window);
+    XCloseDisplay(text_box.display);
+    exit(0);
 }
 
 
@@ -139,7 +144,7 @@ void *windowWork(void *arg)
     text_box.text2 = "Not pure ballistic";
     text_box.text_len2 = strlen (text_box.text2);
 
-    SyncDataArrivalAndPredicting *syncSingleton = (SyncDataArrivalAndPredicting *) arg;
+    SyncDataArrivalAndPredicting *syncObject = (SyncDataArrivalAndPredicting *) arg;
 
     x_connect ();
     create_window ();
@@ -148,7 +153,7 @@ void *windowWork(void *arg)
     
     // There's no event loop here. The window only changes when a notification is recevied.
     //event_loop();
-    draw_screen(syncSingleton);
+    draw_screen(syncObject);
 
     return 0;
 }

@@ -54,6 +54,7 @@ https://geosoft.no/development/cppstyle.html.
 // xxxx add option to specify port number as input and also path to CADAC so no "home + ..." but just "pathToCADAC + ..." and print out command structue and throw out if given wrongly
 // XXXX EVERY LINE OF CODE SAYING CADAC SHOULD BE SWITCHED TO SOMETHING GENERAL. or maybe explain that it's general until at some level u have to be percise on simulation. but as less as possible.
 // xxxx add std::cout << "log(-1) failed: " << std::strerror(errno) << '\n'; EVERYWHERE
+// xxxx maybe according the the most right column, make all the lines align to the max column. tried 80 like it specified but that's not enough for even some assignments
 
 #include "PredictionSupplierCADAC.h"
 #include "DecisionMaker.h"
@@ -80,24 +81,30 @@ int main(int argc, char *argv[])
     
     // Create a window background thread. Joined at the end of the program, after ground impact.
     pthread_t windowThread;
-    SyncDataArrivalAndPredicting *syncSingleton = new SyncDataArrivalAndPredicting();
-    pthread_create( &windowThread, NULL, windowWork, (void*) syncSingleton);
+    SyncDataArrivalAndPredicting *syncObject = new SyncDataArrivalAndPredicting();
+    pthread_create( &windowThread, NULL, windowWork, (void*) syncObject);
     
+    std::string pathCADAC = home + "/Source_Files/CADAC/Custom/Version7/";
 
+    // The next four assignments can be thought of storing the data for the simulated trajectories in a table, that has constant columns and rows that can change throught the duration of the scenario.
+    // We have column 'predictionSuppliers', where each row element is the name of the simulation 'supplying' ballistic trajectories forecasts.
+    // Column 'currentCollectorPriamryInputFiles' lists the paths to simulations input files.
+    // Column 'currentCollectorExecutables' lists the paths to simulations executable files.
+    // Column 'currentCollectorLoadPaths' lists the paths to simulations output files.
+    // For example, if we look at the first 'row' of the table below, it states that we'll be running a simulation of type 'CADAC', with file 'inputOriginal.asc' taken as input, executable './SIX_DOF' and it will write its output to 'cadacOutputVDXVDX.asc'.
+    // Declaring these as vectors allows for dynamically changing the table's 'rows', enabling the live addition/elimination of airframe models, based on received target data such as energy levels, typical heights and speed etc.
     std::vector<availableSuppliers> predictionSuppliers = {CADAC, CADAC, CADAC};
 
-    // xxxx after changing to pathToCadac , mention it can be the path to any simulation
-    // xxxx add "this is where input files for a specific simulation are stored.. why primary, exes, output loadpaths etc. explain why this is actually a table, together with the suppliers: the next four vector type declarations are... this is basically a table of constant cols and changing rows, that can chagne throughout the scenario"
-    std::vector<std::string> currentCollectorPriamryInputFiles = {home + "/Source_Files/CADAC/Custom/Version7/inputOriginal.asc",
-                                                                  home + "/Source_Files/CADAC/Custom/Version7/input_Drag0p7.asc",
-                                                                  home + "/Source_Files/CADAC/Custom/Version7/input_Drag1p3.asc"}; // Absolute / relative paths of detection plots/tracks/simulation data. xxxx absolute path looks like crap FIX change to relative path. xxxx should be a vector in order to allow predictors modification in flight xxxx english
-    std::vector<std::string> currentCollectorExecutables = {home + "/Source_Files/CADAC/Custom/Version7/SIX_DOF",
-                                                            home + "/Source_Files/CADAC/Custom/Version7/SIX_DOF",
-                                                            home + "/Source_Files/CADAC/Custom/Version7/SIX_DOF"}; // Absolute / relative paths of detection plots/tracks/simulation data. xxxx absolute path looks like crap FIX change to relative path. xxxx should be a vector in order to allow predictors modification in flight xxxx english
-    std::vector<std::string> currentCollectorLoadPaths = {home + "/Source_Files/CADAC/Custom/Version7/cadacOutputVDXVDX.asc",
-                                                          home + "/Source_Files/CADAC/Custom/Version7/cadacOutputVDXVDX.asc",
-                                                          home + "/Source_Files/CADAC/Custom/Version7/cadacOutputVDXVDX.asc"}; // Absolute / relative paths of detection plots/tracks/simulation data. xxxx absolute path looks like crap FIX change to relative path. xxxx should be a vector in order to allow predictors modification in flight xxxx english xxxx explain that this also is a vector for the same reasons
-    
+    std::vector<std::string> currentCollectorPriamryInputFiles = {pathCADAC + "inputOriginal.asc",
+                                                                  pathCADAC + "input_Drag0p7.asc",
+                                                                  pathCADAC + "input_Drag1p3.asc"}; // Absolute / relative paths of detection plots/tracks/simulation data. xxxx absolute path looks like crap FIX change to relative path. xxxx should be a vector in order to allow predictors modification in flight xxxx english
+    std::vector<std::string> currentCollectorExecutables = {pathCADAC + "SIX_DOF",
+                                                            pathCADAC + "SIX_DOF",
+                                                            pathCADAC + "SIX_DOF"}; // Absolute / relative paths of detection plots/tracks/simulation data. xxxx absolute path looks like crap FIX change to relative path. xxxx should be a vector in order to allow predictors modification in flight xxxx english
+    std::vector<std::string> currentCollectorLoadPaths = {pathCADAC + "cadacOutputVDXVDX.asc",
+                                                          pathCADAC + "cadacOutputVDXVDX.asc",
+                                                          pathCADAC + "cadacOutputVDXVDX.asc"}; // Absolute / relative paths of detection plots/tracks/simulation data. xxxx absolute path looks like crap FIX change to relative path. xxxx should be a vector in order to allow predictors modification in flight xxxx english xxxx explain that this also is a vector for the same reasons
+
 
     // Initialize necessary .kml files. Only Primary_Controller.kml has to be dragged into Google Earth.
     utils::kmlInitPrimaryController();
@@ -109,11 +116,11 @@ int main(int argc, char *argv[])
     // until the last detection is recevied (ground impact).
     std::string detectionKML = "DetectionRT.kml";
     SensorTrajectoryCADAC trajectoryFromSensor("RT", detectionKML);
-    std::thread receiveDataFromRealtime = trajectoryFromSensor.threadReceiveDataFromRT(syncSingleton);
+    std::thread receiveDataFromRealtime = trajectoryFromSensor.threadReceiveDataFromRT(syncObject);
 
     
     // Blocks until the first target detetion (message) is recevied over network.
-    syncSingleton->WaitForFirstMsg();
+    syncObject->WaitForFirstMsg();
 
     // Once it's recevied, we no longer wait on it. Reminder: Primary_Controller.kml has to be opened inside Google Earth.
     std::cout << "Started plotting inspected trajectory\n" << std::endl;
@@ -130,23 +137,19 @@ int main(int argc, char *argv[])
         
         while ((std::stof(trajectoryFromSensor._BITA_Params.BITA_height) < heightFirstDetection) && (trajectoryFromSensor.get_vVertical() <= 0))
         {
-            //std::unique_lock<std::mutex> ul(trajectoryFromSensor.syncDetectSetBITA_mutex);
-            std::unique_lock<std::mutex> ul(syncSingleton->syncDetectSetBITA_mutex);
+            std::unique_lock<std::mutex> ul(syncObject->syncDetectSetBITA_mutex);
 
-            //trajectoryFromSensor.syncDetectSetBITA_cv.wait(ul, [&](){ return trajectoryFromSensor.syncDetectSetBITA_ready; });
-            syncSingleton->syncDetectSetBITA_cv.wait(ul, [&](){ return syncSingleton->syncDetectSetBITA_ready; });
+            syncObject->syncDetectSetBITA_cv.wait(ul, [&](){ return syncObject->syncDetectSetBITA_ready; });
 
             // Do work.
             trajectoryFromSensor.setBITA_Params();
             std::cout << "height: " << trajectoryFromSensor._BITA_Params.BITA_height << std::endl;
 
-            //trajectoryFromSensor.syncDetectSetBITA_ready = false;
-            syncSingleton->syncDetectSetBITA_ready = false;
+            syncObject->syncDetectSetBITA_ready = false;
 
             ul.unlock();
 
-            //trajectoryFromSensor.syncDetectSetBITA_cv.notify_one();
-            syncSingleton->syncDetectSetBITA_cv.notify_one();
+            syncObject->syncDetectSetBITA_cv.notify_one();
 
             ul.lock();
         }
@@ -154,7 +157,7 @@ int main(int argc, char *argv[])
         std::this_thread::sleep_for(std::chrono::milliseconds(1));
         std::cout << "Reached " << heightFirstDetection << "[m], at currentDetectionIndex: " << trajectoryFromSensor.currentDetectionIndex << std::endl;
         float detectionTime = std::stof(trajectoryFromSensor._BITA_Params.BITA_time);
-        trajectoryFromSensor.reachedHdetection = true;
+        trajectoryFromSensor.reachedheightFirstDetection = true;
 
     #endif
 
@@ -221,61 +224,30 @@ int main(int argc, char *argv[])
 
         } while (suppliersCollectorsVector.size() <= 1);
         
-
-        std::thread giveEstimation = decisionMaker.threadCalculate(syncSingleton);
+        // Start running the DecisionMaker object calculations. One can choose to move this elsewhere in the code, as long as there's enough information to handle.
+        std::thread giveEstimation = decisionMaker.threadCalculate(syncObject);
+        
+        receiveDataFromRealtime.join();
         giveEstimation.join();
 
-        receiveDataFromRealtime.join(); // XXXX posix XXXX name XXXX explain why here, explain also for all pthreads.
+        // Needed for visualization
         std::string command = "touch " + detectionKML;
         int systemReturn = std::system(command.c_str());
         
+        std::this_thread::sleep_for(std::chrono::seconds(1));
 
-
-
-
-
-
-
-
-
-
-
-
-        std::this_thread::sleep_for(std::chrono::seconds(1)); // XXXX why is this here?
-
-
-        
-        //sleep(4);
-        // printf("Signaling color\n");
-        // pthread_cond_signal(&syncSingleton->condition_variable_color);
-        // pthread_mutex_unlock(&syncSingleton->condition_lock_color);
-        // printf("At this stage window should change color\n");
-        
-        //sleep(4);
-        printf("Signaling \"finished\"\n");
-        pthread_cond_signal(&syncSingleton->condition_variable_finished);
-        pthread_mutex_unlock(&syncSingleton->condition_lock_finished);
+        printf("Signaling \"finished\" to close the text box.\n");
+        pthread_cond_signal(&syncObject->condition_variable_finished);
+        pthread_mutex_unlock(&syncObject->condition_lock_finished);
         pthread_join(windowThread, NULL);
-        
-
-        //  XXXX Operate / do something when reaching a specific detect time value
-
-        // while(std::stof(trajectoryFromSensor.getBITA_Params().BITA_time < 5)) {   // XXXX fix 5 XXXX fix names
-        //     std::cout << "BITA_time: " << trajectoryFromSensor.getBITA_Params().BITA_time << std::endl;    // XXXX fix BITA_time XXXX maybe omit entirely the cout
-        //     trajectoryFromSensor.setBITA_Params();
-        // }
-
-        // std::cout << "Reached detect time t = 5 [sec]" << std::endl;    // XXXX fix 5, fix english if needed.
-
-        //return 0;
 
     #endif
 
-    // std::string command = "touch " + detectionKML;
-	// int systemReturn = std::system(command.c_str());
+    // Needed for visualization
     std::string command2 = "touch " + detectionKML;
     int systemReturn2 = std::system(command2.c_str());
 
-    delete syncSingleton;
+    delete syncObject;
+
     return 0;
 }

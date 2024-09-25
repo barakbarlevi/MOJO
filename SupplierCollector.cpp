@@ -8,8 +8,9 @@ void SuppliersCollector::plotCollectorAtOnce(int indexJump) {
     
     for(size_t i = 0; i < suppliersVector.size(); i++) {
         
-        std::shared_ptr<Trajectory> supplierTrajectory = this->suppliersVector.at(i);
-        //utils::kmlInsertEntireTrajectory(sdf, kmlName, indexJump, i, this->currentNumOfSuppliers, styleScale, 0, 0);    //  XXXX names etc    
+        //std::shared_ptr<Trajectory> supplierTrajectory = this->suppliersVector.at(i);
+        std::shared_ptr<PredictionSupplierTrajectory> supplierTrajectory = this->suppliersVector.at(i);
+
         supplierTrajectory->appendTrajectoryToKML(indexJump, i, this->suppliersVector.size(), 1);
         
     }

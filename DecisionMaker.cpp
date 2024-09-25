@@ -3,7 +3,7 @@
 
 int mutexheld = 0;
 
-void DecisionMaker::calculate(SyncDataArrivalAndPredicting * syncSingleton) {
+void DecisionMaker::calculate(SyncDataArrivalAndPredicting * syncObject) {
 
     collectorsVector_->at(1)->suppliersVector.at(0)->setAltData();
 
@@ -24,15 +24,15 @@ void DecisionMaker::calculate(SyncDataArrivalAndPredicting * syncSingleton) {
             printf("Entered if(sensorTrajectory_->finishedplotting2 == false)\n");
 
             //std::unique_lock<std::mutex> ul(sensorTrajectory_->syncDetectSetBITA_mutex);
-            std::unique_lock<std::mutex> ul(syncSingleton->syncDetectSetBITA_mutex);
+            std::unique_lock<std::mutex> ul(syncObject->syncDetectSetBITA_mutex);
 
             
 
             //std::cout << "Right before wait(). syncDetectSetBITA_ready: " << sensorTrajectory_->syncDetectSetBITA_ready << ". finishedPlotting:" << sensorTrajectory_->finishedPlotting << std::endl; // xxxx necessary?
-            std::cout << "Right before wait(). syncDetectSetBITA_ready: " << syncSingleton->syncDetectSetBITA_ready << ". finishedPlotting:" << sensorTrajectory_->finishedPlotting << std::endl; // xxxx necessary?
+            std::cout << "Right before wait(). syncDetectSetBITA_ready: " << syncObject->syncDetectSetBITA_ready << ". finishedPlotting:" << sensorTrajectory_->finishedPlotting << std::endl; // xxxx necessary?
             
             //sensorTrajectory_->syncDetectSetBITA_cv.wait(ul, [&](){ return (sensorTrajectory_->syncDetectSetBITA_ready || sensorTrajectory_->finishedplotting2 == true); }); // xxxx here i learned in the tough way the imprtance of capturing by reference and not by value ENGLISH. put it?
-            syncSingleton->syncDetectSetBITA_cv.wait(ul, [&](){ return (syncSingleton->syncDetectSetBITA_ready || sensorTrajectory_->finishedplotting2 == true); }); // xxxx here i learned in the tough way the imprtance of capturing by reference and not by value ENGLISH. put it?
+            syncObject->syncDetectSetBITA_cv.wait(ul, [&](){ return (syncObject->syncDetectSetBITA_ready || sensorTrajectory_->finishedplotting2 == true); }); // xxxx here i learned in the tough way the imprtance of capturing by reference and not by value ENGLISH. put it?
 
 
             
@@ -42,13 +42,13 @@ void DecisionMaker::calculate(SyncDataArrivalAndPredicting * syncSingleton) {
 
 
             //sensorTrajectory_->syncDetectSetBITA_ready = false;
-            syncSingleton->syncDetectSetBITA_ready = false;
+            syncObject->syncDetectSetBITA_ready = false;
 
             std::cout << "Turning syncDetectSetBITA_ready = false  (from DecisitonMaker.cpp)" << std::endl;
             ul.unlock();
 
             //sensorTrajectory_->syncDetectSetBITA_cv.notify_one();
-            syncSingleton->syncDetectSetBITA_cv.notify_one();
+            syncObject->syncDetectSetBITA_cv.notify_one();
 
             ul.lock();
 
@@ -58,8 +58,8 @@ void DecisionMaker::calculate(SyncDataArrivalAndPredicting * syncSingleton) {
         if (consequtiveConditionCount >= 50) {
             std::cout << "consequtiveConditionCount >= 5" << std::endl;
             printf("Signaling color\n");
-            pthread_cond_signal(&syncSingleton->condition_variable_color);
-            pthread_mutex_unlock(&syncSingleton->condition_lock_color);
+            pthread_cond_signal(&syncObject->condition_variable_color);
+            pthread_mutex_unlock(&syncObject->condition_lock_color);
             printf("At this stage window should change color\n");
 
         }    

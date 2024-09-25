@@ -12,30 +12,22 @@
 class Trajectory {
     
     public:
-
-    // std::mutex syncDetectSetBITA_mutex;
-    // std::condition_variable syncDetectSetBITA_cv;
-    // bool syncDetectSetBITA_ready = false;
-
-    bool reachedHdetection = false;
-
-    //std::mutex syncPlotAndDecision_mutex;
-    //std::condition_variable syncPlotAndDecision_cv;
+    bool reachedheightFirstDetection = false;
+    bool finishedPlotting = false; // xxxx make order in these two and change names
     bool finishedplotting2 = false; // xxxx name
-
-    //SyncObj synchObj; // xxxx
-
+    int FirstLineOfNumericData_; // Output files for different simulations vary in their structure. The program reads the file line by line. This is the index of the first line containing numerical values to parse.
+    
+    //unsigned int currentDetectionIndex = 0;    // Row index inside the file containing all information about the trajectory.
 
     std::string loadPath;   // XXXX Make sure all variable names areAlright
-    int FirstLineOfNumericData_ = 0; // XXXX explain in good english that's different for each simulation etc.   XXXX MAKE THIS INSIDE CONSTRUCTOR ! cant cnstrt without knowing it !
     std::string KML_path;
     std::string SingleCoordsLine;   // XXXX So many publics.. organize...   
     std::string color =  "ff00AAff";
     std::string scale =  "0.4";
     std::vector<std::string> data;  // XXXX nothing is left protected :(
     BITA_params _BITA_Params;   // XXXX Make sure all variable names _areOK. stackexchange on when to put _ before it at all. also cobra
-    unsigned int currentDetectionIndex = 0;    // Row index inside the file containing all information about the trajectory.
-    bool finishedPlotting = false;
+    
+    
     
     //Trajectory(std::string loadPath, std::string KML_path, std::string in, std::string pl, std::string mo, int FirstLineOfNumericData);  // XXXX ADD CONSTS? WHEN TO ADD CONSTS? WRITE IN COMMENT TO CLARFIYIF NEEDED
     Trajectory(std::string loadPath, std::string kmlPath);  // XXXX ADD CONSTS? WHEN TO ADD CONSTS? WRITE IN COMMENT TO CLARFIYIF NEEDED
@@ -95,58 +87,32 @@ class Trajectory {
     
     //void plotTrajectoryCoordByCoord(int indexJump, int delayms);
     
-    void appendTrajectoryToKML(int indexJump, int currentSupplierNumber, int CollectorSize, bool isCollector);
-    void appendTrajectoryToKML(int indexJump, int delayms);
+    
+    //void appendTrajectoryToKML(int indexJump, int delayms);
    
    // xxxx not in use at all ? if so, delete
-    std::thread threadpPlotTrajectoryAtOnce(int indexJump, int currentNumberOfSuppliers, int CollectorSize, bool isCollector) {
-        if(!isCollector) {
-            utils::kmlInit_href(this->KML_path, this->KML_path, this->color);
 
-        }   // XXXX for simplicity ZMANIT assuming only plotting detections coord-by-coord. it's less meaningful for the prediction suppliers and i dont wanna mess up the code with tons of passed arguments or LEZAMZEM the option of plotting coord by coord to only detections and not predictions.
+    // std::thread threadpPlotTrajectoryAtOnce(int indexJump, int currentNumberOfSuppliers, int CollectorSize, bool isCollector) {
+    //     if(!isCollector) {
+    //         utils::kmlInit_href(this->KML_path, this->KML_path, this->color);
+
+    //     }   // XXXX for simplicity ZMANIT assuming only plotting detections coord-by-coord. it's less meaningful for the prediction suppliers and i dont wanna mess up the code with tons of passed arguments or LEZAMZEM the option of plotting coord by coord to only detections and not predictions.
         
-        return std::thread([=]{appendTrajectoryToKML(indexJump, currentNumberOfSuppliers, CollectorSize, isCollector);});
-    }
+    //     return std::thread([=]{appendTrajectoryToKML(indexJump, currentNumberOfSuppliers, CollectorSize, isCollector);});
+    // }
 
 
-    // xxxx why the hell is this method not in SensorTrajectoy ? I moved this piece as is to SensorTrajectory.h and commented out because I don't compile ATM. after compiling check. should be there by reason..
-    std::thread threadplotTrajectoryCoordByCoord(int indexJump, int delayms) {
-        utils::kmlInit_href(this->KML_path, this->KML_path, this->color);
-        return std::thread([=]{appendTrajectoryToKML(indexJump, delayms);});
-    }   // XXXX as of now i'm taking into consideration only 1 detection and predictofrs for it. that's why it has a defined style, written in Source.cpp. mention that if anybody wants to expand to multiple detections inspection simultaneously, then can pretty easily modify it. but not right now.
+    // // xxxx why the hell is this method not in SensorTrajectoy ? I moved this piece as is to SensorTrajectory.h and commented out because I don't compile ATM. after compiling check. should be there by reason..
+    // std::thread threadplotTrajectoryCoordByCoord(int indexJump, int delayms) {
+    //     utils::kmlInit_href(this->KML_path, this->KML_path, this->color);
+    //     return std::thread([=]{appendTrajectoryToKML(indexJump, delayms);});
+    // }   // XXXX as of now i'm taking into consideration only 1 detection and predictofrs for it. that's why it has a defined style, written in Source.cpp. mention that if anybody wants to expand to multiple detections inspection simultaneously, then can pretty easily modify it. but not right now.
 
 
     virtual void setSingleCoordsLine() = 0;  // XXXX this is what's really different for every trajectory. not inserting into kml...
 
-
-
-
-
-
-
-    // xxxx delete when finished 
-    void *hello(void)
-    {
-        std::cout << "Hello, world!" << std::endl;
-        return 0;
-    }
-
-    static void *hello_helper(void *context)
-    {
-        return ((Trajectory *)context)->hello();
-    }
-
-
-
-
-    /*
-    virtual int kmlAppendOneCoord(std::string KML, std::string styleID, std::string SensorOrSupplier); // XXXX Kinda looks like bad practive to have these arguments. see if can modify and write better.
-    virtual int kmlInsertOneStyle(std::string KML, std::string styleID, std::string color, std::string scale);
-    //virtual int kmlInsertEntireTrajectory(std::string KML, int indexJump, int currentNumbebrOfSuppliers, int CollectorSize, float StyleScale) = 0;    //  XXXX    A FIGURE EXPLAINING THE LAYOUT: MAIN TRAJECTORY SENSOR, SUPPLIER, COLLOCTOR, ETC. can be done with screenshop from ge.    XXXX delete if not needed here
-    */
-    
     protected:
-    
-    
+
+    private:
 
 };

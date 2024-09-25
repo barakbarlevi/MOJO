@@ -7,9 +7,11 @@
 
 namespace utils
 {
-    std::string SubStringStartTillReaching(const std::string &str, char c, int NumOfEncounterToExclude, int functionality, int currentDetectionIndex,  std::string caller)
+    std::string SubStringStartTillReaching(const std::string &str, char c, int NumOfEncounterToExclude, int functionality, int currentDetectionIndex,  std::string caller, bool callerIsSensor)
     {
-        std::cout << "currentDetectionIndex: " << currentDetectionIndex << " (Caller: " << caller << ")" << std::endl;
+        if(callerIsSensor) std::cout << "currentDetectionIndex: " << currentDetectionIndex << " (Caller: " << caller << ")" << std::endl;
+        else std::cout << "currentRowIndex: " << currentDetectionIndex << " (Caller: " << caller << ")" << std::endl;
+
         std::vector<size_t> pos; // XXXX ChatGPT doesnt use this.
         for (size_t i = 0; i < str.size(); ++i)
         {
