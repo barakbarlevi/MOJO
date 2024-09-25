@@ -13,9 +13,10 @@ class Trajectory {
     
     public:
 
-    std::mutex syncDetectSetBITA_mutex;
-    std::condition_variable syncDetectSetBITA_cv;
-    bool syncDetectSetBITA_ready = false;
+    // std::mutex syncDetectSetBITA_mutex;
+    // std::condition_variable syncDetectSetBITA_cv;
+    // bool syncDetectSetBITA_ready = false;
+
     bool reachedHdetection = false;
 
     //std::mutex syncPlotAndDecision_mutex;

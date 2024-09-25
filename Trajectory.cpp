@@ -172,6 +172,7 @@ void Trajectory::plotTrajectoryAtOnce(Trajectory* Trajectory, std::string KML, i
     }    
 */
 
+/*
 void Trajectory::appendTrajectoryToKML(int indexJump, int delayms) {
         
         utils::kmlInsertOneNetworkLink("Secondary_Controller.kml",this->KML_path); // xxxx names!
@@ -204,6 +205,8 @@ void Trajectory::appendTrajectoryToKML(int indexJump, int delayms) {
         }
         finishedPlotting = true;
 }
+*/
+
 
 void Trajectory::appendTrajectoryToKML(int indexJump, int currentSupplierNumber, int CollectorSize, bool isCollector) {
         

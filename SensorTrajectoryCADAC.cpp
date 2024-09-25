@@ -154,27 +154,10 @@ void SensorTrajectoryCADAC::plotDataFromRT(SyncDataArrivalAndPredicting* syncSin
 
                 if(buf[0] == '\0') 
                 {
-                    //this->currentDetectionIndex--;
-                    //std::cout << "Turning syncDetectSetBITA_ready = true" << std::endl;
-                    //this->syncDetectSetBITA_ready = true;
-                    //finishedOneDetection = true;
-                    //printf("Assigning finishedOneDetection = true;\n");
-                    //this->finishedplotting2 = true;
-                    //std::cout << "Assigning this->finishedplotting2 = true;" << std::endl;
-                    //rval=0;
-
-
-
-
-                    std::unique_lock<std::mutex> ul(this->syncDetectSetBITA_mutex);   // xxxx inside the loop, initialized every time? try putting outside of the loop see what happens.
-
-                    //buf[strlen(buf) - 1] = 0;
-                    //buf_string = buf;
-                    //data.push_back(buf);
                     
-                    //this->setSingleCoordsLine();
-                    //utils::kmlAppendOneCoord(this->KML_path, this->SingleCoordsLine, "0"); // XXXX HERE this->SingleCoordsLine and line above just SingleCoordsLine ?xxxx fix this method to the one i printed on one paper that only does appending
-                    //this->currentDetectionIndex++; // XXXX fix name of indexJump (?)
+                    //std::unique_lock<std::mutex> ul(this->syncDetectSetBITA_mutex);   // xxxx inside the loop, initialized every time? try putting outside of the loop see what happens.
+                    std::unique_lock<std::mutex> ul(syncSingleton->syncDetectSetBITA_mutex);   // xxxx inside the loop, initialized every time? try putting outside of the loop see what happens.
+
 
                     this->currentDetectionIndex--;
                     finishedOneDetection = true;
@@ -186,15 +169,20 @@ void SensorTrajectoryCADAC::plotDataFromRT(SyncDataArrivalAndPredicting* syncSin
                     std::string command = "touch " + this->KML_path;
 	                int systemReturn = std::system(command.c_str());
 
-                    this->syncDetectSetBITA_ready = true;
+                    //this->syncDetectSetBITA_ready = true;
+                    syncSingleton->syncDetectSetBITA_ready = true;
+
                     std::cout << "Turning syncDetectSetBITA_ready = true" << std::endl;
                     ul.unlock();
-                    this->syncDetectSetBITA_cv.notify_one();
+
+                    //this->syncDetectSetBITA_cv.notify_one();
+                    syncSingleton->syncDetectSetBITA_cv.notify_one();
                     
                     ul.lock();
 
                     if (!reachedHdetection){
-                        this->syncDetectSetBITA_cv.wait(ul, [this](){ return this->syncDetectSetBITA_ready == false; });
+                        //this->syncDetectSetBITA_cv.wait(ul, [this](){ return this->syncDetectSetBITA_ready == false; });
+                        syncSingleton->syncDetectSetBITA_cv.wait(ul, [&](){ return syncSingleton->syncDetectSetBITA_ready == false; });
                     }
 
 
@@ -213,7 +201,9 @@ void SensorTrajectoryCADAC::plotDataFromRT(SyncDataArrivalAndPredicting* syncSin
                     // currentDetectionIndex = i * indexJump; // XXXX makes sense to put in comment, add comment about it.
                     
                     
-                    std::unique_lock<std::mutex> ul(this->syncDetectSetBITA_mutex);   // xxxx inside the loop, initialized every time? try putting outside of the loop see what happens.
+                    //std::unique_lock<std::mutex> ul(this->syncDetectSetBITA_mutex);   // xxxx inside the loop, initialized every time? try putting outside of the loop see what happens.
+                    std::unique_lock<std::mutex> ul(syncSingleton->syncDetectSetBITA_mutex);   // xxxx inside the loop, initialized every time? try putting outside of the loop see what happens.
+
 
                     buf[strlen(buf) - 1] = 0;
                     buf_string = buf;
@@ -224,20 +214,27 @@ void SensorTrajectoryCADAC::plotDataFromRT(SyncDataArrivalAndPredicting* syncSin
                     utils::kmlAppendOneCoord(this->KML_path, this->SingleCoordsLine, "0"); // XXXX HERE this->SingleCoordsLine and line above just SingleCoordsLine ?xxxx fix this method to the one i printed on one paper that only does appending
                     this->currentDetectionIndex++; // XXXX fix name of indexJump (?)
 
-                    this->syncDetectSetBITA_ready = true;
+                    //this->syncDetectSetBITA_ready = true;
+                    syncSingleton->syncDetectSetBITA_ready = true;
+
                     std::cout << "Turning syncDetectSetBITA_ready = true" << std::endl;
                     ul.unlock();
-                    this->syncDetectSetBITA_cv.notify_one();
+
+                    //this->syncDetectSetBITA_cv.notify_one();
+                    syncSingleton->syncDetectSetBITA_cv.notify_one();
                     
                     ul.lock();
 
                     if (!reachedHdetection){
-                        this->syncDetectSetBITA_cv.wait(ul, [this](){ return this->syncDetectSetBITA_ready == false; });
+                        //this->syncDetectSetBITA_cv.wait(ul, [this](){ return this->syncDetectSetBITA_ready == false; });
+                        syncSingleton->syncDetectSetBITA_cv.wait(ul, [&](){ return syncSingleton->syncDetectSetBITA_ready == false; });
                     }
                 }
         } while (rval != 0); // If there was an error and rval was -1, it would still print and won't even break from the loop.. the code simply demostrates socket functionality. taken from BSD's document.
 
-        this->syncDetectSetBITA_ready = true;
+        //this->syncDetectSetBITA_ready = true;
+        syncSingleton->syncDetectSetBITA_ready = true;
+
         std::cout << "Turning syncDetectSetBITA_ready = true from right before closing socket" << std::endl;
         close(msgsock);
         printf("Closed msgsock\n");

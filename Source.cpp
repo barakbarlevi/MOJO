@@ -130,17 +130,24 @@ int main(int argc, char *argv[])
         
         while ((std::stof(trajectoryFromSensor._BITA_Params.BITA_height) < heightFirstDetection) && (trajectoryFromSensor.get_vVertical() <= 0))
         {
-            std::unique_lock<std::mutex> ul(trajectoryFromSensor.syncDetectSetBITA_mutex);
-            trajectoryFromSensor.syncDetectSetBITA_cv.wait(ul, [&](){ return trajectoryFromSensor.syncDetectSetBITA_ready; });
-            
+            //std::unique_lock<std::mutex> ul(trajectoryFromSensor.syncDetectSetBITA_mutex);
+            std::unique_lock<std::mutex> ul(syncSingleton->syncDetectSetBITA_mutex);
+
+            //trajectoryFromSensor.syncDetectSetBITA_cv.wait(ul, [&](){ return trajectoryFromSensor.syncDetectSetBITA_ready; });
+            syncSingleton->syncDetectSetBITA_cv.wait(ul, [&](){ return syncSingleton->syncDetectSetBITA_ready; });
+
             // Do work.
             trajectoryFromSensor.setBITA_Params();
             std::cout << "height: " << trajectoryFromSensor._BITA_Params.BITA_height << std::endl;
 
-            trajectoryFromSensor.syncDetectSetBITA_ready = false;
+            //trajectoryFromSensor.syncDetectSetBITA_ready = false;
+            syncSingleton->syncDetectSetBITA_ready = false;
+
             ul.unlock();
 
-            trajectoryFromSensor.syncDetectSetBITA_cv.notify_one();
+            //trajectoryFromSensor.syncDetectSetBITA_cv.notify_one();
+            syncSingleton->syncDetectSetBITA_cv.notify_one();
+
             ul.lock();
         }
 
