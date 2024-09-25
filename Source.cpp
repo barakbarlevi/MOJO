@@ -55,6 +55,7 @@ https://geosoft.no/development/cppstyle.html.
 // XXXX EVERY LINE OF CODE SAYING CADAC SHOULD BE SWITCHED TO SOMETHING GENERAL. or maybe explain that it's general until at some level u have to be percise on simulation. but as less as possible.
 // xxxx add std::cout << "log(-1) failed: " << std::strerror(errno) << '\n'; EVERYWHERE
 // xxxx maybe according the the most right column, make all the lines align to the max column. tried 80 like it specified but that's not enough for even some assignments
+// XXXX ADD CONSTS? WHEN TO ADD CONSTS? WRITE IN COMMENT TO CLARFIYIF NEEDED
 
 #include "PredictionSupplierCADAC.h"
 #include "DecisionMaker.h"
@@ -135,7 +136,8 @@ int main(int argc, char *argv[])
 
         float heightFirstDetection(15000); // [meters]
         
-        while ((std::stof(trajectoryFromSensor._BITA_Params.BITA_height) < heightFirstDetection) && (trajectoryFromSensor.get_vVertical() <= 0))
+        //while ((std::stof(trajectoryFromSensor.BITA_Params_.BITA_height) < heightFirstDetection) && (trajectoryFromSensor.get_vVertical() <= 0))
+        while ((std::stof(trajectoryFromSensor.getBITA_Params().BITA_height) < heightFirstDetection) && (trajectoryFromSensor.get_vVertical() <= 0))
         {
             std::unique_lock<std::mutex> ul(syncObject->syncDetectSetBITA_mutex);
 
@@ -143,7 +145,8 @@ int main(int argc, char *argv[])
 
             // Do work.
             trajectoryFromSensor.setBITA_Params();
-            std::cout << "height: " << trajectoryFromSensor._BITA_Params.BITA_height << std::endl;
+            //std::cout << "height: " << trajectoryFromSensor.BITA_Params_.BITA_height << std::endl;
+            std::cout << "height: " << trajectoryFromSensor.getBITA_Params().BITA_height << std::endl;
 
             syncObject->syncDetectSetBITA_ready = false;
 
@@ -156,8 +159,10 @@ int main(int argc, char *argv[])
 
         std::this_thread::sleep_for(std::chrono::milliseconds(1));
         std::cout << "Reached " << heightFirstDetection << "[m], at currentDetectionIndex: " << trajectoryFromSensor.currentDetectionIndex << std::endl;
-        float detectionTime = std::stof(trajectoryFromSensor._BITA_Params.BITA_time);
-        trajectoryFromSensor.reachedheightFirstDetection = true;
+        //float detectionTime = std::stof(trajectoryFromSensor.BITA_Params_.BITA_time);
+        float detectionTime = std::stof(trajectoryFromSensor.getBITA_Params().BITA_time);
+        //trajectoryFromSensor.reachedheightFirstDetection_ = true;
+        trajectoryFromSensor.setReachedheightFirstDetection(true);
 
     #endif
 
@@ -180,7 +185,8 @@ int main(int argc, char *argv[])
 
         do
         {
-            std::shared_ptr<SuppliersCollector> currentCollector = std::make_shared<SuppliersCollector>(std::stof(trajectoryFromSensor._BITA_Params.BITA_time) - detectionTime);
+            //std::shared_ptr<SuppliersCollector> currentCollector = std::make_shared<SuppliersCollector>(std::stof(trajectoryFromSensor.BITA_Params_.BITA_time) - detectionTime);
+            std::shared_ptr<SuppliersCollector> currentCollector = std::make_shared<SuppliersCollector>(std::stof(trajectoryFromSensor.getBITA_Params().BITA_time) - detectionTime);
             suppliersCollectorsVector.push_back(currentCollector);
             currentCollector->collectorKML_ = "Collector" + std::to_string(suppliersCollectorsVector.size() - 1) + ".kml";
 

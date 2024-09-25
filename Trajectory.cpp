@@ -1,8 +1,8 @@
 #include "Trajectory.h"
 
 Trajectory::Trajectory(std::string loadPath, std::string kmlPath) {
-    this->loadPath = loadPath;  // xxxx switch to loadPath_ i.e. add _ all throughout.
-    this->KML_path = kmlPath;
+    this->loadPath_ = loadPath;  // xxxx switch to loadPath_ i.e. add _ all throughout.
+    this->kmlPath_ = kmlPath;
     //this->ind = ind;    // xxxx
     //this->pl = pl;  // xxxx
     //this->mo = mo;  // xxxx
@@ -17,37 +17,37 @@ int Trajectory::readInput(bool isDetection) { //  XXXX MAKE SURE ALL VAR NAMES i
         
 
 
-            std::ifstream file(this->loadPath);
+            std::ifstream file(this->loadPath_);
             std::string line;
 
             if ((file.is_open()))   // XXXX THIS WAS ALL GENERATED WITH BAD GPT. REPLACE WHERE NEEDED. TO MODERN AND POSIX.
             {
                 while(std::getline(file, line)) {
-                    data.push_back(line + ',');
-                    SingleCoordsLine = "0 , 0, 0";  // IMPORTANT: KEEP? DELETE? MOVE ? supposedly, helped with GE's view moving. but redundant code wise. at the very least move to some other geographic location.   
+                    data_.push_back(line + ',');
+                    SingleCoordsLine_ = "0 , 0, 0";  // IMPORTANT: KEEP? DELETE? MOVE ? supposedly, helped with GE's view moving. but redundant code wise. at the very least move to some other geographic location.   
                 }
                 std::cout << "Finished a reading job" << std::endl;
                 file.close();
             }
-            else { std::cerr << "Unable to open file " << this->loadPath << std::endl;}  // XXXX std::cerr ? or something else? cout? are there other options? comment what std::cerr in fact IS. be consistent and change throught all code.    
+            else { std::cerr << "Unable to open file " << this->loadPath_ << std::endl;}  // XXXX std::cerr ? or something else? cout? are there other options? comment what std::cerr in fact IS. be consistent and change throught all code.    
 
     }
 
     else {
-        std::ifstream file(this->loadPath);
+        std::ifstream file(this->loadPath_);
         std::string line;
 
         if (file.is_open())   // XXXX THIS WAS ALL GENERATED WITH BAD GPT. REPLACE WHERE NEEDED. TO MODERN AND POSIX.
         {
             while(std::getline(file, line)) {
-                data.push_back(line + ',');
-                SingleCoordsLine = "0 , 0, 0";  // IMPORTANT: KEEP? DELETE? MOVE ? supposedly, helped with GE's view moving. but redundant code wise. at the very least move to some other geographic location.   
+                data_.push_back(line + ',');
+                SingleCoordsLine_ = "0 , 0, 0";  // IMPORTANT: KEEP? DELETE? MOVE ? supposedly, helped with GE's view moving. but redundant code wise. at the very least move to some other geographic location.   
             }
             file.close();
         }
         else { 
             std::cout << std::strerror(errno) << '\n';
-            std::cerr << "Unable to open file " << this->loadPath << std::endl;}  // XXXX std::cerr ? or something else? cout? are there other options? comment what std::cerr in fact IS. be consistent and change throught all code.    
+            std::cerr << "Unable to open file " << this->loadPath_ << std::endl;}  // XXXX std::cerr ? or something else? cout? are there other options? comment what std::cerr in fact IS. be consistent and change throught all code.    
     }
 
     //return 0;
@@ -93,7 +93,7 @@ int Trajectory::kmlAppendOneCoord(std::string KML, std::string styleID, std::str
             write_fileAOCIKML << "\t\t\t\t<description>Time: 15:00</description>\n";    // XXXX UPDATE description
             write_fileAOCIKML << "\t\t\t\t<Point>\n";
             write_fileAOCIKML << "\t\t\t\t\t<altitudeMode>absolute</altitudeMode>\n";   // XXXX Whats is it? check online. DELETE IF REDUNDANT. CHECK WITH AND WITHOUT
-            write_fileAOCIKML << "\t\t\t\t\t<coordinates>" + SingleCoordsLine + "</coordinates>\n";
+            write_fileAOCIKML << "\t\t\t\t\t<coordinates>" + SingleCoordsLine_ + "</coordinates>\n";
             write_fileAOCIKML << "\t\t\t\t</Point>\n";
             write_fileAOCIKML << "\t\t\t</Placemark>\n";
             write_fileAOCIKML << "\t\t</Folder>\n";
@@ -137,7 +137,7 @@ int Trajectory::kmlInsertOneStyle(std::string KML, std::string styleID, std::str
                 std::cout << "Found \"<Folder>\"" << std::endl;
                 write_file << "\t\t <Style id=\"\sn_shaded_dot" + styleID + "\"\>\n";   // XXXX is this working properly?
                 write_file << "\t\t\t<IconStyle>\n";
-                write_file << "\t\t\t\t<color>" + color + "</color>\n";
+                write_file << "\t\t\t\t<color>" + colorInGE_ + "</color>\n";
                 write_file << "\t\t\t\t<scale>" + scale + "</scale>\n";
                 write_file << "\t\t\t\t<Icon>\n";
                 write_file << "\t\t\t\t\t<href>http://maps.google.com/mapfiles/kml/shapes/shaded_dot.png</href>\n";
@@ -175,12 +175,12 @@ void Trajectory::plotTrajectoryAtOnce(Trajectory* Trajectory, std::string KML, i
 /*
 void Trajectory::appendTrajectoryToKML(int indexJump, int delayms) {
         
-        utils::kmlInsertOneNetworkLink("Secondary_Controller.kml",this->KML_path); // xxxx names!
+        utils::kmlInsertOneNetworkLink("Secondary_Controller.kml",this->kmlPath_); // xxxx names!
         
         this->currentDetectionIndex = this->FirstLineOfNumericData_; // XXXX raw pointers ? move to smart ? or is it ok when a function argument? i think that its possible to pass smart pointers as function args..? https://stackoverflow.com/questions/65035189/whether-to-pass-shared-pointer-or-raw-pointer-to-a-function . do i take ownership here?
       
-        std::cout << "Inserting Coord-By-Coord CADAC Trajectory to KML: " << this->KML_path << " at index jumps of: " << indexJump << std::endl; // XXXX English. check that this cout is needed. fix what needs to be fixed. maybe remove that cout maybe not
-        for (unsigned int i = this->currentDetectionIndex; i < this->data.size() / indexJump; i++) {
+        std::cout << "Inserting Coord-By-Coord CADAC Trajectory to KML: " << this->kmlPath_ << " at index jumps of: " << indexJump << std::endl; // XXXX English. check that this cout is needed. fix what needs to be fixed. maybe remove that cout maybe not
+        for (unsigned int i = this->currentDetectionIndex; i < this->data_.size() / indexJump; i++) {
 
             // currentDetectionIndex = i * indexJump; // XXXX makes sense to put in comment, add comment about it.
             
@@ -189,16 +189,16 @@ void Trajectory::appendTrajectoryToKML(int indexJump, int delayms) {
 
             this->setSingleCoordsLine();
             std::this_thread::sleep_for(std::chrono::milliseconds(delayms));  // xxxx Using sleep here but really not sure that's the right way... https://stackoverflow.com/questions/70697368/how-to-let-a-thread-wait-itself-out-without-using-sleep
-            utils::kmlAppendOneCoord(this->KML_path, this->SingleCoordsLine, "0"); // XXXX HERE this->SingleCoordsLine and line above just SingleCoordsLine ?xxxx fix this method to the one i printed on one paper that only does appending
+            utils::kmlAppendOneCoord(this->kmlPath_, this->SingleCoordsLine_, "0"); // XXXX HERE this->SingleCoordsLine_ and line above just SingleCoordsLine_ ?xxxx fix this method to the one i printed on one paper that only does appending
             this->currentDetectionIndex += indexJump; // XXXX fix name of indexJump (?)
 
-            this->syncDetectSetBITA_ready = true; // xxxx what the hell is syncDetectSetBITA_ready, and reachedheightFirstDetection. WRITE on how and why this synchronization is performed.
+            this->syncDetectSetBITA_ready = true; // xxxx what the hell is syncDetectSetBITA_ready, and reachedheightFirstDetection_. WRITE on how and why this synchronization is performed.
             ul.unlock();
             this->syncDetectSetBITA_cv.notify_one();
             
             ul.lock();
 
-            if (!reachedheightFirstDetection){
+            if (!reachedheightFirstDetection_){
                 this->syncDetectSetBITA_cv.wait(ul, [this](){ return this->syncDetectSetBITA_ready == false; });
             }
 
@@ -212,19 +212,19 @@ void Trajectory::appendTrajectoryToKML(int indexJump, int delayms) {
         
 //         (void)CollectorSize;    // xxxx had to pass two ints that have different meaning! can't overload like that cuz both int so had to put a third arg! english. consult someone about this maybe
         
-//         if(!isCollector) utils::kmlInsertOneNetworkLink("Secondary_Controller.kml",this->KML_path); // xxxx names!    
+//         if(!isCollector) utils::kmlInsertOneNetworkLink("Secondary_Controller.kml",this->kmlPath_); // xxxx names!    
 //         // xxxx if it is a collector, the collector will do it for itself ENGLISH
         
 //         this->currentDetectionIndex = this->FirstLineOfNumericData_; // XXXX raw pointers ? move to smart ? or is it ok when a function argument? i think that its possible to pass smart pointers as function args..? https://stackoverflow.com/questions/65035189/whether-to-pass-shared-pointer-or-raw-pointer-to-a-function . do i take ownership here?
       
-//         //std::cout << "Inserting Coord-By-Coord CADAC Trajectory to KML: " << this->KML_path << " at index jumps of: " << indexJump << std::endl; // XXXX English. check that this cout is needed. fix what needs to be fixed. maybe remove that cout maybe not
-//         for (unsigned int i = this->currentDetectionIndex; i < this->data.size() / indexJump; i++) {
+//         //std::cout << "Inserting Coord-By-Coord CADAC Trajectory to KML: " << this->kmlPath_ << " at index jumps of: " << indexJump << std::endl; // XXXX English. check that this cout is needed. fix what needs to be fixed. maybe remove that cout maybe not
+//         for (unsigned int i = this->currentDetectionIndex; i < this->data_.size() / indexJump; i++) {
 //             // currentDetectionIndex = i * indexJump; // XXXX makes sense to put in comment, add comment about it.
 //             this->setSingleCoordsLine();
 //             if(isCollector) {
-//                 utils::kmlAppendOneCoord(this->KML_path, this->SingleCoordsLine, std::to_string(currentSupplierNumber + 1)); // XXXX HERE this->SingleCoordsLine and line above just SingleCoordsLine ?xxxx fix this method to the one i printed on one paper that only does appending
+//                 utils::kmlAppendOneCoord(this->kmlPath_, this->SingleCoordsLine_, std::to_string(currentSupplierNumber + 1)); // XXXX HERE this->SingleCoordsLine_ and line above just SingleCoordsLine_ ?xxxx fix this method to the one i printed on one paper that only does appending
 //             } else {
-//                 utils::kmlAppendOneCoord(this->KML_path, this->SingleCoordsLine, "0");
+//                 utils::kmlAppendOneCoord(this->kmlPath_, this->SingleCoordsLine_, "0");
 //             }
             
                    

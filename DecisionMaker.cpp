@@ -12,14 +12,14 @@ void DecisionMaker::calculate(SyncDataArrivalAndPredicting * syncObject) {
 
     int consequtiveConditionCount = 0;
     
-    while(sensorTrajectory_->finishedPlotting == false) {
+    while(sensorTrajectory_->getFinishedPlotting() == false) {
 
         
         float tolerance = 50;
         
 
 
-        if (sensorTrajectory_->finishedplotting2 == false)
+        if (sensorTrajectory_->getFinishedPlotting2() == false)
         {
             printf("Entered if(sensorTrajectory_->finishedplotting2 == false)\n");
 
@@ -29,10 +29,10 @@ void DecisionMaker::calculate(SyncDataArrivalAndPredicting * syncObject) {
             
 
             //std::cout << "Right before wait(). syncDetectSetBITA_ready: " << sensorTrajectory_->syncDetectSetBITA_ready << ". finishedPlotting:" << sensorTrajectory_->finishedPlotting << std::endl; // xxxx necessary?
-            std::cout << "Right before wait(). syncDetectSetBITA_ready: " << syncObject->syncDetectSetBITA_ready << ". finishedPlotting:" << sensorTrajectory_->finishedPlotting << std::endl; // xxxx necessary?
+            std::cout << "Right before wait(). syncDetectSetBITA_ready: " << syncObject->syncDetectSetBITA_ready << ". finishedPlotting:" << sensorTrajectory_->getFinishedPlotting() << std::endl; // xxxx necessary?
             
             //sensorTrajectory_->syncDetectSetBITA_cv.wait(ul, [&](){ return (sensorTrajectory_->syncDetectSetBITA_ready || sensorTrajectory_->finishedplotting2 == true); }); // xxxx here i learned in the tough way the imprtance of capturing by reference and not by value ENGLISH. put it?
-            syncObject->syncDetectSetBITA_cv.wait(ul, [&](){ return (syncObject->syncDetectSetBITA_ready || sensorTrajectory_->finishedplotting2 == true); }); // xxxx here i learned in the tough way the imprtance of capturing by reference and not by value ENGLISH. put it?
+            syncObject->syncDetectSetBITA_cv.wait(ul, [&](){ return (syncObject->syncDetectSetBITA_ready || sensorTrajectory_->getFinishedPlotting2() == true); }); // xxxx here i learned in the tough way the imprtance of capturing by reference and not by value ENGLISH. put it?
 
 
             
@@ -57,7 +57,7 @@ void DecisionMaker::calculate(SyncDataArrivalAndPredicting * syncObject) {
 
         if (consequtiveConditionCount >= 50) {
             std::cout << "consequtiveConditionCount >= 5" << std::endl;
-            printf("Signaling color\n");
+            printf("Signaling color\n"); // xxxx this is happenning multile times. why? fix
             pthread_cond_signal(&syncObject->condition_variable_color);
             pthread_mutex_unlock(&syncObject->condition_lock_color);
             printf("At this stage window should change color\n");

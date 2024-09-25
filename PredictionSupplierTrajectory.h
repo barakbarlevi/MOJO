@@ -14,7 +14,7 @@ class PredictionSupplierTrajectory : public Trajectory {
 
     std::thread threadpPlotTrajectoryAtOnce(int indexJump, int currentNumberOfSuppliers, int CollectorSize, bool isCollector) {
         if(!isCollector) {
-            utils::kmlInit_href(this->KML_path, this->KML_path, this->color);
+            utils::kmlInit_href(this->kmlPath_, this->kmlPath_, this->colorInGE_);
 
         }   // XXXX for simplicity ZMANIT assuming only plotting detections coord-by-coord. it's less meaningful for the prediction suppliers and i dont wanna mess up the code with tons of passed arguments or LEZAMZEM the option of plotting coord by coord to only detections and not predictions.
         

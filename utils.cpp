@@ -468,7 +468,7 @@ namespace utils
 
         kml_file << "\t\t <Style id=\"\sn_shaded_dot" + styleID + "\"\>\n"; // XXXX is this working properly?
         kml_file << "\t\t\t<IconStyle>\n";
-        kml_file << "\t\t\t\t<color>" + color + "</color>\n";
+        kml_file << "\t\t\t\t<color>" + colorInGE_ + "</color>\n";
         kml_file << "\t\t\t\t<scale>" + scale + "</scale>\n";
         kml_file << "\t\t\t\t<Icon>\n";
         kml_file << "\t\t\t\t\t<href>http://maps.google.com/mapfiles/kml/shapes/shaded_dot.png</href>\n";
