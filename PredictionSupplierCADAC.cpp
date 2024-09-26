@@ -1,48 +1,49 @@
 #include "PredictionSupplierCADAC.h"
 
-// XXXX FOR THE FOLLOWING (AND OTHERS?) EXPLAING ON CHAIN something... " : " in the comments.
-PredictionSupplierCADAC::PredictionSupplierCADAC(std::string path_to_exe, std::string priamryInputFile) : PredictionSupplier(path_to_exe, priamryInputFile)
+PredictionSupplierCADAC::PredictionSupplierCADAC(std::string path_to_exe, std::string priamryInputFile, std::string pathCADAC) : PredictionSupplier(path_to_exe, priamryInputFile)
 {
-    /*
+    this->path_to_exe_ = path_to_exe;           
+    this->primaryInputFile_ = priamryInputFile;
+    this->pathCADAC_ = pathCADAC;
+    
+    this->trajectoryCADAC_ = std::make_shared<PredSuppTrajectoryCADAC>("Empty", "Empty"); // xxxx
 
-    XXXX OFCOURSE CHANGE ALL OF THE ABOVE TO SOMETHING RELEVANT. WRITE SOMETHING IN GENERAL FOR THE GENERAL USER. MENTION THAT AT THE MOEMNT, REFERRING SPECIFICALLY TO CADAC.
+    EmptyMasses_ = {
+        {pathCADAC + "inputOriginal.asc", "17809"},
+        {pathCADAC + "input_Drag0p7.asc", "17809"},
+        {pathCADAC + "input_Drag1p3.asc", "17809"}
+    };
 
-    In case of starting a PredictionSupplierCADAC instance, the following procedure expects:
-    In paths_to_input_files:
-        First string is "..\\tmp\\bal_name.tmp"
-        Second string is path to TBM
-    */
-    this->path_to_exe = path_to_exe;           // xxxx add _ s for all class members for all classes ! starting here
-    this->primaryInputFile = priamryInputFile; // xxxx names
+    Aero_decks_ = {
+        {pathCADAC + "inputOriginal.asc", "aero_deck_SLV.asc"},
+        {pathCADAC + "input_Drag0p7.asc", "aero_deck_SLV_Drag0p7.asc"},
+        {pathCADAC + "input_Drag1p3.asc", "aero_deck_SLV_Drag1p3.asc"}
+    };
+
 }
 
-// xxxx delete this if not used
-int PredictionSupplierCADAC::prepareInputFiles() { return 0; }; // XXXX this is a big change, account for it. delete unnecessary code. explain what can be done here. init dt and dt_plot if u wanna change during flight. or any other input parameters THAT have no relation to BITA because bita editing should be included for any kind of simulation.
 
-
-
-
-int PredictionSupplierCADAC::updateBITA_ParamsInSupplierInput(BITA_params BITA_params) // XXXX so _bita_params or bita_params? and ofcourse change tbm and all
+int PredictionSupplierCADAC::updateBITA_ParamsInSupplierInput(BITA_params BITA_params)
 {
     
-    std::string inputPath = this->primaryInputFile;
+    std::string inputPath = this->primaryInputFile_;
     std::ofstream kml_file(inputPath, std::ofstream::out | std::ios::binary);
 
     if (!kml_file.is_open())
     {
         std::cout << std::strerror(errno) << '\n';
-        std::cerr << "Failed to open the file: " << this->primaryInputFile << std::endl;
-        //return -1;  // xxxx in other places these are some other things. decide and then fix 
+        std::cerr << "Failed to open the file: " << this->primaryInputFile_ << std::endl;
     }
     std::string momentaryMass, aeroDeck;
 
-    if (this->EmptyMasses.find(this->primaryInputFile) != this->EmptyMasses.end()) { momentaryMass = this->EmptyMasses[this->primaryInputFile]; } // xxxx explain on the temporary constraint to take only empty mass. probably written somewhere else. but mention here too, and why it's like this.
+    // This code is restricted to only give ballistic forecasts for non-propelled flight. Looking up empty masses for a lookup table.
+    if (this->EmptyMasses_.find(this->primaryInputFile_) != this->EmptyMasses_.end()) { momentaryMass = this->EmptyMasses_[this->primaryInputFile_]; }
     else
-        std::cout << "Key not found in EmptyMass unordered map.\n" << std::endl; // XXXX really not sure that when cheaping out on {}s like this, the if else structure works well.. CHECK !
+        std::cout << "Key not found in EmptyMass unordered map.\n" << std::endl;
     
-    if (this->Aero_decks.find(this->primaryInputFile) != this->Aero_decks.end()) { aeroDeck = this->Aero_decks[this->primaryInputFile]; } // xxxx explain on the temporary constraint to take only empty mass. probably written somewhere else. but mention here too, and why it's like this.
+    if (this->Aero_decks_.find(this->primaryInputFile_) != this->Aero_decks_.end()) { aeroDeck = this->Aero_decks_[this->primaryInputFile_]; }
     else
-        std::cout << "Key not found in AeroDecks unordered map.\n" << std::endl; // XXXX really not sure that when cheaping out on {}s like this, the if else structure works well.. CHECK !
+        std::cout << "Key not found in AeroDecks unordered map.\n" << std::endl;
 
     kml_file << "TITLE input_ballistic.asc  Three-stage rocket ascent followed by ballistic\nMONTE 1 1234\nOPTIONS y_plot\nMODULES\nkinematics		def,init,exec\nenvironment		def,init,exec\npropulsion		def,init,exec\naerodynamics	def,init,exec\nforces			def,exec\nnewton			def,init,exec\neuler			def,init,exec\nintercept		def,exec\nEND\nTIMING\nscrn_step 10\nplot_step 0.5\ntraj_step 1\nint_step 0.003\ncom_step 20\nEND\nVEHICLES 1\nHYPER6 SLV\nlonx  " + BITA_params.BITA_lon + "\nlatx  " + BITA_params.BITA_lat + "\nalt  " + BITA_params.BITA_height + "\ndvbe  " + BITA_params.BITA_speed + "\nphibdx  0\nthtbdx  " + BITA_params.BITA_flightPath + "\npsibdx  " + BITA_params.BITA_heading + "\nalpha0x  0\nbeta0x  0\n//environment\nmair  0\nWEATHER_DECK  /home/barak/Source_Files/CADAC/Custom/Version7/weather_deck_Wallops.asc\nRAYL dvae  5\ntwind  1\nturb_length  100\nturb_sigma  0.5\n//aerodynamics\nmaero  11\nAERO_DECK /home/barak/Source_Files/CADAC/Custom/Version7/" + aeroDeck + "\nxcg_ref  0.01\nrefa  3.243\nrefd  2.032\nalplimx  20\nalimitx  5\n//propulsion\nmprop  0\nvmass0  " + momentaryMass + "\nfmass0  0.01\nxcg_0  0.01\nxcg_1  0.01\nmoi_roll_0  6.95e3\nmoi_roll_1  6.95e3\nmoi_trans_0  158.83e3\nmoi_trans_1  158.83e3\nspi  0.01\nfuel_flow_rate  0.0\nEND\nENDTIME 900\nSTOP"; // xxxx check what to do with path containing my name
     /*
@@ -112,39 +113,10 @@ int PredictionSupplierCADAC::updateBITA_ParamsInSupplierInput(BITA_params BITA_p
     kml_file.close();
     std::cout << "Wrote to input file: lonx = " + BITA_params.BITA_lon + ", latx = " + BITA_params.BITA_lat + ", alt = " + BITA_params.BITA_height + ", dvbe = " + BITA_params.BITA_speed + ", thtbdx = " + BITA_params.BITA_flightPath + ", psibdx = " + BITA_params.BITA_heading + ", Aerodeck = " + aeroDeck + ", vmass0 = " + momentaryMass << std::endl;
     
-    
 }
-
-
-
-// xxxx delete if not needed. did it like this because nakar sucks and doesn't receive command line args.
-/*
-int PredictionSupplierCADAC::runSupplierOnce()
-{                        // XXXX names and conventions
-    FILE *fileCADAC_EXE; // XXXX CHANGE FROM C TO CPP ! AND THIS IS NO EXE ON LINUX! XXXX
-    char input[] = "\n";
-    fileCADAC_EXE = popen(this->path_to_exe.c_str(), "w"); // XXXX this line is way off. not exe on linux. find differences in open functions and decide, and comment, which one to take here. are there differences besides the argument list? mention and justify. XXXX c to cpp.
-    if (fileCADAC_EXE == NULL)
-    {
-        printf("Error openning exe file.\n");
-        exit(1);
-    } // XXXX c to cpp. nullptr. or something better from the purple modern c++ book i remember he said something that replaces nullptr or NULL dont remember.
-
-    // Sending input to the exe XXXX CHANGE
-    fputs(input, fileCADAC_EXE); // XXXX why the hell init input in \n ?
-    fflush(fileCADAC_EXE);
-    printf("Used fflush\n"); // XXXX
-    pclose(fileCADAC_EXE);   // XXXX
-    return 0;
-}
-*/
 
 int PredictionSupplierCADAC::runSupplierOnce()
 { 
-    
-
-
-        std::string COMMAND = this->path_to_exe + " " + this->primaryInputFile;
-        std::system(COMMAND.c_str());
-    
+    std::string COMMAND = this->path_to_exe_ + " " + this->primaryInputFile_;
+    std::system(COMMAND.c_str());  
 }

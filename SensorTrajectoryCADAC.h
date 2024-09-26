@@ -1,3 +1,10 @@
+/*=============================================================================
+A class derived from 'SensorTrajectory', representing a trajectory that's being
+tracked live by the specific sensor: CADAC. This isn't an actual sensor. CADAC
+simulation is currently taking the place of an actualy sensor, providing
+'track' data - simulation output that represents track detections.
+=============================================================================*/
+
 #pragma once
 #include "SensorTrajectory.h"
 

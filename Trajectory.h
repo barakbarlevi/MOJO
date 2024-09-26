@@ -33,6 +33,9 @@ class Trajectory {
     void setFinishedPlotting(const bool& value) {finishedPlotting = value;}
     void setFinishedPlotting2(const bool& value) {finishedplotting2 = value;}
     void setReachedheightFirstDetection(const bool& value) {reachedheightFirstDetection_ = value;}
+    void setLoadPath(const std::string& value) {loadPath_ = value;}
+    void set_kmlPath(const std::string& value) {kmlPath_ = value;}
+
 
     protected:
 

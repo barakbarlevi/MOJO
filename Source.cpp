@@ -51,9 +51,11 @@ https://geosoft.no/development/cppstyle.html.
 // xxxx "int" i ? ++i or i++ ? xxxx always size_t? maybe unsigned?
 // xxxx what abouth factory design pattern? how can it be implemented in mojo?
 // XXXX difference from typedef struct?
+// xxxx add _ s for all class members for all classes ! starting here
+// xxxx go through all couts....
 // xxxx add option to specify port number as input and also path to CADAC so no "home + ..." but just "pathToCADAC + ..." and print out command structue and throw out if given wrongly
 // XXXX EVERY LINE OF CODE SAYING CADAC SHOULD BE SWITCHED TO SOMETHING GENERAL. or maybe explain that it's general until at some level u have to be percise on simulation. but as less as possible.
-// xxxx add std::cout << "log(-1) failed: " << std::strerror(errno) << '\n'; EVERYWHERE
+// xxxx add std::cout << "log(-1) failed: " << std::strerror(errno) << '\n'; EVERYWHERE. ctrl+f 'perror'
 // xxxx maybe according the the most right column, make all the lines align to the max column. tried 80 like it specified but that's not enough for even some assignments
 // XXXX ADD CONSTS? WHEN TO ADD CONSTS? WRITE IN COMMENT TO CLARFIYIF NEEDED
 
@@ -200,23 +202,39 @@ int main(int argc, char *argv[])
                 {
                     case CADAC:
                     {
-                        std::shared_ptr<PredictionSupplierCADAC> predictionSupplierCADAC = std::make_shared<PredictionSupplierCADAC>(currentCollectorExecutables.at(i), currentCollectorPriamryInputFiles.at(i));
+                        std::shared_ptr<PredictionSupplierCADAC> predictionSupplierCADAC = std::make_shared<PredictionSupplierCADAC>(currentCollectorExecutables.at(i), currentCollectorPriamryInputFiles.at(i), pathCADAC);
 
                         // Injecting the state of the detected target into the current input file for a simulations.
                         // At the first time executing this line, BITA params are from 'heightFirstDetection'.
                         predictionSupplierCADAC->updateBITA_ParamsInSupplierInput(trajectoryFromSensor.getBITA_Params()); // XXXX names XXXX POSIX xxxx mention: way of updating bita params in input files may vary.
 
+
+                        // // Instantiate a trajectory object
+                        // //predictionSupplierCADAC->trajectoryCADAC_ = std::make_shared<PredSuppTrajectoryCADAC>(currentCollectorLoadPaths.at(i), currentCollector->collectorKML_);
+                        // predictionSupplierCADAC->getTrajectoryCADAC() = std::make_shared<PredSuppTrajectoryCADAC>(currentCollectorLoadPaths.at(i), currentCollector->collectorKML_);
+
+
+
                         // Run a single simulation run with the adequate initial conditions.
                         predictionSupplierCADAC->runSupplierOnce();
 
-                        // Instantiate a trajectory object
-                        predictionSupplierCADAC->trajectoryCADAC = std::make_shared<PredSuppTrajectoryCADAC>(currentCollectorLoadPaths.at(i), currentCollector->collectorKML_);
-                        
-                        // Read simulation results
-                        predictionSupplierCADAC->trajectoryCADAC->readInputFile(false);
 
+
+                        // Instantiate a trajectory object
+                        //predictionSupplierCADAC->trajectoryCADAC_ = std::make_shared<PredSuppTrajectoryCADAC>(currentCollectorLoadPaths.at(i), currentCollector->collectorKML_);
+                        //predictionSupplierCADAC->getTrajectoryCADAC() = std::make_shared<PredSuppTrajectoryCADAC>(currentCollectorLoadPaths.at(i), currentCollector->collectorKML_);
+                        predictionSupplierCADAC->getTrajectoryCADAC()->setLoadPath(currentCollectorLoadPaths.at(i));
+                        predictionSupplierCADAC->getTrajectoryCADAC()->set_kmlPath(currentCollector->collectorKML_);
+
+
+                        // Read simulation results
+                        //predictionSupplierCADAC->trajectoryCADAC_->readInputFile(false);
+                        predictionSupplierCADAC->getTrajectoryCADAC()->readInputFile(false);
+                        
+                        
                         // Push the simulation results to the correct place inside 'suppliersCollectorsVector's back().
-                        suppliersCollectorsVector.back()->suppliersVector.push_back(predictionSupplierCADAC->trajectoryCADAC);
+                        //suppliersCollectorsVector.back()->suppliersVector.push_back(predictionSupplierCADAC->trajectoryCADAC_);
+                        suppliersCollectorsVector.back()->suppliersVector.push_back(predictionSupplierCADAC->getTrajectoryCADAC());
                     }
                 }
                 suppliersCollectorsVector.back()->currentNumOfSuppliers++;

@@ -1,3 +1,9 @@
+/*=============================================================================
+'PredictionSupplier' is the base class of its hierarchy. It represents a generic
+simulation, or 'Supplier' of ballistic trajectories forecasts,with no specific
+context to the output trajectory itself. 
+=============================================================================*/
+
 #pragma once
 #include "BITA_params.h"
 
@@ -6,13 +12,24 @@ class PredictionSupplier {
     
     public: 
     
-    PredictionSupplier(std::string path_to_exe, std::string priamryInputFile);    // XXXX names xxxx dt, dt_plot don't add anything right now.. erase..
-    virtual int prepareInputFiles() = 0;    // XXXX name?
-    virtual int runSupplierOnce() = 0;  // XXXX name?
+    PredictionSupplier(std::string path_to_exe, std::string priamryInputFile);
+    ~PredictionSupplier() = default;
+
+    // @brief A 'PredictionSupplier' is a representing a generic simulation, used to generate
+    // ballisitc trajectories outputs. This function's purpose is to run the simulation once,
+    // in the background of the current code flow.
+    virtual int runSupplierOnce() = 0;
+
+    // @brief Usually a 'PredictionSupplier', namely, a simulation, is run at some initial
+    // conditions stored in one or several input files. The purpose of this function is to
+    // make all edits so that the simulation's input files will contain the momentary
+    // 'BITA_params' as initial conditions.
     virtual int updateBITA_ParamsInSupplierInput(BITA_params BITA_params) = 0;    // XXXX
 
     protected:
 
-    std::string primaryInputFile;   // XXXX OFC NOT TBM, CHANGE
-    std::string path_to_exe = "";   // XXXX no exe in linux, change name
+    std::string primaryInputFile_; // If the simulation has one input file, this will be a path to it.
+    std::string path_to_exe_ = ""; // Path to the simulation executable.
+
+    private:
 };
