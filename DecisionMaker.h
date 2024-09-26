@@ -24,9 +24,9 @@ class DecisionMaker {
         estimation_ = 0;
     }
 
-    void calculate(SyncDataArrivalAndPredicting * syncObject);
+    void calculate(SyncObject * syncObject);
 
-    std::thread threadCalculate(SyncDataArrivalAndPredicting * syncObject) {
+    std::thread threadCalculate(SyncObject * syncObject) {
         return std::thread([=] {calculate(syncObject);});
     }
 

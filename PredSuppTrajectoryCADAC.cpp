@@ -7,7 +7,7 @@ PredSuppTrajectoryCADAC::PredSuppTrajectoryCADAC(std::string loadPath, std::stri
 };
 
 // XXXX CHANGE ENGLISH Not investing time in implementing it because not planning to plot a supplier coord by coord. Just wrote it so project will compile.
-//int PredSuppTrajectoryCADAC::PlotTrajectoryCoordByCoord(int indexJump) { return 0; }
+//int PredSuppTrajectoryCADAC::PlotTrajectoryCoordByCoord(int effective_dtPlot) { return 0; }
 
 
 
@@ -25,4 +25,4 @@ void PredSuppTrajectoryCADAC::setSingleCoordsLine()
 
 } // XXXX names etc
 
-//int PredSuppTrajectoryCADAC::PlotTrajectoryAtOnce(std::string KML, int indexJump, int currentNumbebrOfSuppliers, int CollectorSize, float StyleScale) {};
+//int PredSuppTrajectoryCADAC::PlotTrajectoryAtOnce(std::string KML, int effective_dtPlot, int currentNumbebrOfSuppliers, int CollectorSize, float StyleScale) {};

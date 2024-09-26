@@ -1,6 +1,6 @@
 #include "SuppliersCollector.h"
 
-void SuppliersCollector::plotCollectorAtOnce(int indexJump) {
+void SuppliersCollector::plotCollectorAtOnce(int effective_dtPlot) {
 
     //std::string kmlName = "SupplierCollector" + std::to_string(this->suppliersCollectorsVectorIndex_);    // xxxx rename this variable. name is specifically the "name" field inside the kml. something between path and name
     //utils::kmlInit_href(kmlName, kmlName, suppliersVector.size()); // XXXX what's the meaning of this? make better. also: to_string.. xxxx why the hell pass twice both name and kml...
@@ -11,7 +11,7 @@ void SuppliersCollector::plotCollectorAtOnce(int indexJump) {
         //std::shared_ptr<Trajectory> supplierTrajectory = this->suppliersVector.at(i);
         std::shared_ptr<PredictionSupplierTrajectory> supplierTrajectory = this->suppliersVector.at(i);
 
-        supplierTrajectory->appendTrajectoryToKML(indexJump, i, this->suppliersVector.size(), 1);
+        supplierTrajectory->appendTrajectoryToKML(effective_dtPlot, i, this->suppliersVector.size(), 1);
         
     }
 

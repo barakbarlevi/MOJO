@@ -1,13 +1,13 @@
-#include "SyncDataArrivalAndPredicting.h"
+#include "SyncObject.h"
 
-void SyncDataArrivalAndPredicting::WaitForFirstMsg() {
+void SyncObject::WaitForFirstMsg() {
         std::unique_lock<std::mutex> lk(mtxFirstMsg);
         cvFirstMsg.wait(lk, [this]{ 
         return firstMsgArrived == true; 
         });
     }
 
-void SyncDataArrivalAndPredicting::FirstMsgArrived() {
+void SyncObject::FirstMsgArrived() {
     {
         std::lock_guard<std::mutex> lk(mtxFirstMsg);
         firstMsgArrived = true;

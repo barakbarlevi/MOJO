@@ -82,7 +82,7 @@ int main(int argc, char *argv[])
     
     // Create a window background thread. Joined at the end of the program, after ground impact.
     pthread_t windowThread;
-    SyncDataArrivalAndPredicting *syncObject = new SyncDataArrivalAndPredicting();
+    SyncObject *syncObject = new SyncObject();
     pthread_create( &windowThread, NULL, windowWork, (void*) syncObject);
     
     std::string pathCADAC = home + "/Source_Files/CADAC/Custom/Version7/";
@@ -158,7 +158,7 @@ int main(int argc, char *argv[])
         }
 
         std::this_thread::sleep_for(std::chrono::milliseconds(1));
-        std::cout << "Reached " << heightFirstDetection << "[m], at currentDetectionIndex: " << trajectoryFromSensor.currentDetectionIndex << std::endl;
+        std::cout << "Reached " << heightFirstDetection << "[m], at currentDetectionIndex: " << trajectoryFromSensor.getCurrentDetectionIndex() << std::endl;
         //float detectionTime = std::stof(trajectoryFromSensor.BITA_Params_.BITA_time);
         float detectionTime = std::stof(trajectoryFromSensor.getBITA_Params().BITA_time);
         //trajectoryFromSensor.reachedheightFirstDetection_ = true;
@@ -213,7 +213,7 @@ int main(int argc, char *argv[])
                         predictionSupplierCADAC->trajectoryCADAC = std::make_shared<PredSuppTrajectoryCADAC>(currentCollectorLoadPaths.at(i), currentCollector->collectorKML_);
                         
                         // Read simulation results
-                        predictionSupplierCADAC->trajectoryCADAC->readInput(false);
+                        predictionSupplierCADAC->trajectoryCADAC->readInputFile(false);
 
                         // Push the simulation results to the correct place inside 'suppliersCollectorsVector's back().
                         suppliersCollectorsVector.back()->suppliersVector.push_back(predictionSupplierCADAC->trajectoryCADAC);

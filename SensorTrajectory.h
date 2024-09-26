@@ -1,46 +1,46 @@
+/*=============================================================================
+A class derived from 'Trajectory', representing a trajectory that's being
+tracked live by a generic sensor.
+=============================================================================*/
+
 #pragma once
 #include "Trajectory.h"
-#include "SyncDataArrivalAndPredicting.h"
+#include "SyncObject.h"
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <netdb.h>
 
-
-
 class SensorTrajectory : public Trajectory {
     
     public:
 
-    unsigned int currentDetectionIndex = 0;
+    SensorTrajectory(std::string loadPath, std::string kmlPath);
+    ~SensorTrajectory() = default;
 
-    SensorTrajectory(std::string loadPath, std::string kmlPath);   // ADD CONSTS? WHEN TO ADD CONSTS? XXXX
-    ~SensorTrajectory() = default; // COMPLETE IF THERE's memory allocation needed to be deleted. XXXX what's default? why this?
-    virtual void setBITA_Params() = 0;  // XXXX names...
-    BITA_params getBITA_Params() { return this->BITA_Params_; } // XXXX names...
-    
-    //float get_vVertical() { return std::stof(utils::SubStringStartTillReaching(this->data_[currentDetectionIndex], ',', 10, 1)); } // XXXX the ',', 15, and 1 ARE NOT GENERAL BUT DEPENDENT ON SIMULATION so need to change or atleast comment that this is not the focus of the project and this line can be manipulated by any one who chooses so and i made simplification to myself that arent the interesting or important case.
-    float get_vVertical() { return std::stof(utils::SubStringStartTillReaching(this->data_[currentDetectionIndex], ',', 10, 1, currentDetectionIndex, "SensorTrajectory::get_vVertical",true)); } // xxxx does this need synchronization? accesses currentDetectionIndex XXXX the ',', 15, and 1 ARE NOT GENERAL BUT DEPENDENT ON SIMULATION so need to change or atleast comment that this is not the focus of the project and this line can be manipulated by any one who chooses so and i made simplification to myself that arent the interesting or important case.
-    
-    float getCurrentAlt() { 
-        return std::stof(utils::SubStringStartTillReaching(data_[currentDetectionIndex], ',', 6, 1, currentDetectionIndex, "SensorTrajectory::getCurrentAlt",true));
-    } // xxxx does this need synchronization? accesses currentDetectionIndex
+    BITA_params getBITA_Params() { return this->BITA_Params_; }
+    int getCurrentDetectionIndex() { return this->currentDetectionIndex; }
+    virtual void setBITA_Params() = 0;
+    virtual float get_vVertical() = 0;
+    virtual float getCurrentAlt() = 0;
 
+    //@brief Listen on a socket. Read data as soon as it's received, and store (Lat, Lon, Alt) coordinates in a dedicated .kml file.
+    //Synchronize with other code sections that rely on the inflowing data. Currently,  supports the incoming of 1 single trajectory.
+    //The way of parsing the incoming data into coordinates is specific to the source of information.
+    //@param synchObject Encapsulated synchronization object.
+    virtual void plotDataFromRT(SyncObject* syncObject) = 0; // xxxx check that this is right..
 
-    std::thread threadReceiveDataFromRT(SyncDataArrivalAndPredicting* syncObject) {
-
+    std::thread threadReceiveDataFromRT(SyncObject* syncObject) {
         utils::kmlInit_href(this->kmlPath_, this->kmlPath_, this->colorInGE_);
         return std::thread([=]{plotDataFromRT(syncObject);});
-
-    }   // XXXX as of now i'm taking into consideration only 1 detection and predictofrs for it. that's why it has a defined style, written in Source.cpp. mention that if anybody wants to expand to multiple detections inspection simultaneously, then can pretty easily modify it. but not right now.
-
-    virtual void plotDataFromRT(SyncDataArrivalAndPredicting* syncObject) = 0; // xxxx check that this is right..
-
+    }
+    
     protected:
     
-    float vVertical = 0;    // XXXX name sucks. XXXX explain on assumed coordinate system. up is down etc
-
-
-
+    unsigned int currentDetectionIndex = 0;
+    
+    private:
+    
+    float vVertical = 0; // The velocity component perpendicular to Earth's surface.
 
 };

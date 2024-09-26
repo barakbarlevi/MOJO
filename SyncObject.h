@@ -4,7 +4,7 @@
 
 //extern // xxxx
 
-class SyncDataArrivalAndPredicting {
+class SyncObject {
     public:
     bool firstMsgArrived;
 
@@ -24,7 +24,7 @@ class SyncDataArrivalAndPredicting {
     bool syncDetectSetBITA_ready = false;
     
 
-    SyncDataArrivalAndPredicting() {
+    SyncObject() {
         pthread_mutex_init(&this->condition_lock_color, NULL);
         pthread_cond_init(&this->condition_variable_color, NULL);
         pthread_mutex_init(&this->condition_lock_finished, NULL);

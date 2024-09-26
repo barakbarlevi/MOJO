@@ -23,10 +23,10 @@ class SuppliersCollector {  // XXXX THIS IS SUPPLIERS OR SUPPLIER ? PICK ONE AND
 
 
 
-    void plotCollectorAtOnce(int indexJump);  // XXXX if really implementing like this, should it be raw pointer or smart pointer? ownership etc xxxx after implementing plotsupplierallatonce, go over this one and see if all arguments are really needed. looks like this is only for 1 traj, whose kml is already known, and the rest of the args too. xxxx here's a good example of classes are named class MyClass and variables are camelCase. go through all and make sure it's like this throughout xxxx need to have ownership on the object? need to pass smart pointer?
+    void plotCollectorAtOnce(int effective_dtPlot);  // XXXX if really implementing like this, should it be raw pointer or smart pointer? ownership etc xxxx after implementing plotsupplierallatonce, go over this one and see if all arguments are really needed. looks like this is only for 1 traj, whose kml is already known, and the rest of the args too. xxxx here's a good example of classes are named class MyClass and variables are camelCase. go through all and make sure it's like this throughout xxxx need to have ownership on the object? need to pass smart pointer?
 
-    std::thread threadpPlotCollectorAtOnce(int indexJump) {
-        return std::thread([=]{plotCollectorAtOnce(indexJump);});
+    std::thread threadpPlotCollectorAtOnce(int effective_dtPlot) {
+        return std::thread([=]{plotCollectorAtOnce(effective_dtPlot);});
     }
 
 

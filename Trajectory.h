@@ -1,3 +1,9 @@
+/*=============================================================================
+'Trajectory' is the base class of its hierarchy. It hold attributes which are
+generic for any kind of a ballistic trajectory, whether it's received live
+by a sensor, or an output file of a simulation.
+=============================================================================*/
+
 #pragma once
 #include <mutex>
 #include <condition_variable>
@@ -7,22 +13,17 @@
 class Trajectory {
     
     public:
-    // bool reachedheightFirstDetection_ = false;
-    // bool finishedPlotting = false; // xxxx make order in these two and change names. in the new name, include _ in the end
-    // bool finishedplotting2 = false; // xxxx name
-    // int FirstLineOfNumericData_; // Output files for different simulations vary in their structure. The program reads the file line by line. This is the index of the first line containing numerical values to parse.
-    // std::string loadPath_; // The path from which trajectory data is loaded.
-    // std::string kmlPath_; // The path to the .kml file that will contain the trajectory data to visualize in Google Earth.
-    // std::string SingleCoordsLine_; // Hold the momentary (Lat, Lon, Height) coordinate of the trajectory.
-    // std::string colorInGE_ =  "ff00AAff"; // Default color for Google Earth display
-    // std::string scale_ =  "0.4"; // Default scale for Google Earth display
-    // std::vector<std::string> data_;  // Contains any data the relevant for the trajectory: time, position, flight path and heading angles, etc.
-    // BITA_params BITA_Params_; // Momentary state vector, containing any data that can be measured for the detected target: position, velocity, heading etc.
-     
+
     Trajectory(std::string loadPath, std::string kmlPath);
     ~Trajectory() = default;
-    virtual int readInput(bool isDetection); // Read trajectory input. 
-    virtual void setSingleCoordsLine() = 0; // Set the momentary (Lat, Lon, Height) coordinate of the trajectory.
+
+    // @brief Read trajectory input file line by line.
+    // @param isDetection is currently unused. Left as a parameter for possible future implementations.
+    // @return 0 if the operation was successful, non-zero if an error occurred.
+    virtual int readInputFile(bool isDetection);
+
+    // @brief Set the momentary (Lat, Lon, Height) coordinate of the trajectory.
+    virtual void setSingleCoordsLine() = 0;
     
     bool getReachedheightFirstDetection_() {return reachedheightFirstDetection_;}
     bool getFinishedPlotting() {return finishedPlotting;}
@@ -34,9 +35,10 @@ class Trajectory {
     void setReachedheightFirstDetection(const bool& value) {reachedheightFirstDetection_ = value;}
 
     protected:
+
     std::string loadPath_; // The path from which trajectory data is loaded.
     std::string kmlPath_; // The path to the .kml file that will contain the trajectory data to visualize in Google Earth.
-    std::string SingleCoordsLine_; // Hold the momentary (Lat, Lon, Height) coordinate of the trajectory.
+    std::string SingleCoordsLine_; // Holds the momentary (Lat, Lon, Height) coordinate of the trajectory.
     std::string colorInGE_ =  "ff00AAff"; // Default color for Google Earth display
     std::string scale_ =  "0.4"; // Default scale for Google Earth display
     std::vector<std::string> data_;  // Contains any data the relevant for the trajectory: time, position, flight path and heading angles, etc.
@@ -44,10 +46,8 @@ class Trajectory {
     int FirstLineOfNumericData_; // Output files for different simulations vary in their structure. The program reads the file line by line. This is the index of the first line containing numerical values to parse.
 
     private:
+
     bool reachedheightFirstDetection_ = false;
     bool finishedPlotting = false; // xxxx make order in these two and change names. in the new name, include _ in the end xxxx amd see what methods are still relevant and what not
     bool finishedplotting2 = false; // xxxx name
-    
-    
-
 };

@@ -3,7 +3,7 @@
 
 int mutexheld = 0;
 
-void DecisionMaker::calculate(SyncDataArrivalAndPredicting * syncObject) {
+void DecisionMaker::calculate(SyncObject * syncObject) {
 
     collectorsVector_->at(1)->suppliersVector.at(0)->setAltData();
 

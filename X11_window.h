@@ -87,7 +87,7 @@ static void set_up_font ()
 
 
 // Draw the window.
-static void draw_screen (SyncDataArrivalAndPredicting *syncObject)
+static void draw_screen (SyncObject *syncObject)
 {
     sleep(1);
     //printf("entered draw_screen\n");
@@ -144,7 +144,7 @@ void *windowWork(void *arg)
     text_box.text2 = "Not pure ballistic";
     text_box.text_len2 = strlen (text_box.text2);
 
-    SyncDataArrivalAndPredicting *syncObject = (SyncDataArrivalAndPredicting *) arg;
+    SyncObject *syncObject = (SyncObject *) arg;
 
     x_connect ();
     create_window ();

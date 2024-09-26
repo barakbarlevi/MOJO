@@ -2,17 +2,12 @@
 
 SensorTrajectoryCADAC::SensorTrajectoryCADAC(std::string loadPath, std::string kmlPath) : SensorTrajectory(loadPath, kmlPath) {
     this->FirstLineOfNumericData_ = 0;
-    this->currentDetectionIndex = this->FirstLineOfNumericData_;
-       
-} // XXXX names, : chain, an so
+    this->currentDetectionIndex = this->FirstLineOfNumericData_;      
+}
 
 
 void SensorTrajectoryCADAC::setBITA_Params()
-{ // XXXX names.. make high level..
-    
-    
-
-
+{
     this->BITA_Params_.BITA_time = utils::SubStringStartTillReaching(data_[currentDetectionIndex], ',', 1, 0, currentDetectionIndex, "SensorTrajectoryCADAC::setBITA_Params 1",true); // XXXX check on func arguments to match cadac / general(?)
     // BITA_mass: Cannot be detected by the sensor. It's added in he supplier's Update BITA routine, according to the supplier's models.  // XXXX VERIFY for example still calling it BITA_mass ? go over this line.
     this->BITA_Params_.BITA_mass = "0";
@@ -23,31 +18,19 @@ void SensorTrajectoryCADAC::setBITA_Params()
     // xxxx write that assuming alpha = 0 because can't sense it !
     this->BITA_Params_.BITA_flightPath = utils::SubStringStartTillReaching(data_[currentDetectionIndex], ',', 3, 1, currentDetectionIndex, "SensorTrajectoryCADAC::setBITA_Params 6",true);    // XXXX name BITA_flightPath, XXXX to_string more modern way?  
     this->BITA_Params_.BITA_heading = utils::SubStringStartTillReaching(data_[currentDetectionIndex], ',', 2, 1, currentDetectionIndex, "SensorTrajectoryCADAC::setBITA_Params 7",true); // XXXX check on func arguments to match cadac / general(?) XXXX name BITA_heading change
-
 }
-
-
-
 
 
 void SensorTrajectoryCADAC::setSingleCoordsLine()
 {
-   
-
     std::string lon = utils::SubStringStartTillReaching(this->data_[this->currentDetectionIndex], ',', 4, 1, currentDetectionIndex, "SensorTrajectoryCADAC::setSingleCoordsLine 1",true); // XXXX check on func arguments to match cadac / general(?)  XXXX here i put this-> and below not. do both work? why? which to choose?
     std::string lat = utils::SubStringStartTillReaching(data_[currentDetectionIndex], ',', 5, 1, currentDetectionIndex, "SensorTrajectoryCADAC::setSingleCoordsLine 2",true); // XXXX check on func arguments to match cadac / general(?)
     std::string alt = utils::SubStringStartTillReaching(data_[currentDetectionIndex], ',', 6, 1, currentDetectionIndex, "SensorTrajectoryCADAC::setSingleCoordsLine 3",true); // XXXX check on func arguments to match cadac / general(?)
+    this->SingleCoordsLine_ = lon + "," + lat + "," + alt;
+}
 
 
-    this->SingleCoordsLine_ = lon + "," + lat + "," + alt;   // XXXX THERE MUST be a much more efficient way... ask chatgpt or think... at the end, in enhancements
-
-} // XXXX names etc
-
-//int SensorTrajectoryCADAC::PlotTrajectoryAtOnce(std::string KML, int indexJump, int currentNumbebrOfSuppliers, int CollectorSize, float StyleScale) {};
-// XXXX in order to fill an entire sensor and an entire supplier, write for instance CADAC_As_Sensor and CADAC_As_Supplier. mention it in the paper and github. create a template for both.
-
-
-void SensorTrajectoryCADAC::plotDataFromRT(SyncDataArrivalAndPredicting* syncObject)
+void SensorTrajectoryCADAC::plotDataFromRT(SyncObject* syncObject)
 {
     utils::kmlInsertOneNetworkLink("Secondary_Controller.kml",this->kmlPath_); // xxxx names!
         
@@ -117,7 +100,7 @@ void SensorTrajectoryCADAC::plotDataFromRT(SyncDataArrivalAndPredicting* syncObj
                 buf_string = buf;
                 data_.push_back(buf);
                 this->setSingleCoordsLine();
-                //this->currentDetectionIndex++; // XXXX fix name of indexJump (?)
+                //this->currentDetectionIndex++; // XXXX fix name of effective_dtPlot (?)
                 
                 syncObject->FirstMsgArrived(); // xxxx the name. NAMES
             }
@@ -189,9 +172,9 @@ void SensorTrajectoryCADAC::plotDataFromRT(SyncDataArrivalAndPredicting* syncObj
                     printf("rval is:%d\n", rval);
                     printf("%s\n", buf);
                     std::cout << "Getting RT data_ and inserting it to KML: " << this->kmlPath_ << std::endl; // XXXX English. check that this cout is needed. fix what needs to be fixed. maybe remove that cout maybe not
-                    //for (unsigned int i = this->currentDetectionIndex; i < this->data_.size() / indexJump; i++) {
+                    //for (unsigned int i = this->currentDetectionIndex; i < this->data_.size() / effective_dtPlot; i++) {
 
-                    // currentDetectionIndex = i * indexJump; // XXXX makes sense to put in comment, add comment about it.
+                    // currentDetectionIndex = i * effective_dtPlot; // XXXX makes sense to put in comment, add comment about it.
                     
                     
                     //std::unique_lock<std::mutex> ul(this->syncDetectSetBITA_mutex);   // xxxx inside the loop, initialized every time? try putting outside of the loop see what happens.
@@ -205,7 +188,7 @@ void SensorTrajectoryCADAC::plotDataFromRT(SyncDataArrivalAndPredicting* syncObj
                     // This is the reason why this whole code is inside CADAC (bottom of the hierarchy...) xxxx
                     this->setSingleCoordsLine();
                     utils::kmlAppendOneCoord(this->kmlPath_, this->SingleCoordsLine_, "0"); // XXXX HERE this->SingleCoordsLine_ and line above just SingleCoordsLine_ ?xxxx fix this method to the one i printed on one paper that only does appending
-                    this->currentDetectionIndex++; // XXXX fix name of indexJump (?)
+                    this->currentDetectionIndex++; // XXXX fix name of effective_dtPlot (?)
 
                     //this->syncDetectSetBITA_ready = true;
                     syncObject->syncDetectSetBITA_ready = true;
