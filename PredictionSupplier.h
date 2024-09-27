@@ -1,6 +1,6 @@
 /*=============================================================================
 'PredictionSupplier' is the base class of its hierarchy. It represents a generic
-simulation, or 'Supplier' of ballistic trajectories forecasts,with no specific
+simulation, or 'Supplier' of ballistic trajectories forecasts, with no specific
 context to the output trajectory itself. 
 =============================================================================*/
 

@@ -2,8 +2,6 @@
 #include <mutex>
 #include <condition_variable>
 
-//extern // xxxx
-
 class SyncObject {
     public:
     bool firstMsgArrived;

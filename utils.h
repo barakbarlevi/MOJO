@@ -1,3 +1,7 @@
+/*=============================================================================
+A namespace for some utility functions, mainly involving flat files editing.
+=============================================================================*/
+
 #pragma once
 #include <iostream>
 #include <fstream>
@@ -7,18 +11,36 @@
 
 namespace utils {
     
-    std::string SubStringStartTillReaching(const std::string &str, char c, int NumOfEncounterToExclude, int functionality, int currentDetectionIndex,  std::string caller, bool callerIsSensor); // xxxx after solving the problem, delete the currentrowindex and caller arguments
-    void replaceLastWord(std::string &line, const std::string& old_word, const std::string& new_word);
-    std::string replaceLastWord(const std::string& line, const std::string& newWord);
+    /**
+     * @brief extract a substring from a given string, starting from a
+              specified position and continuing until reaching a certain
+              character for a specified amount of times.
+       @param str The initial string from which we want to extract some portion.
+       @param c The character for which we want to count appearances in the string.
+       @param NumOfEncounterToExclude Number of encounters with 'char c' until
+                                      fixing the position in the string.
+       @param functionality 0 for trimming the string starting at its first char.
+                            1 for trimming the string starting at the previous 'c' appearance
+                            in the string.
+       @param currentDetectionIndex Index of the last received detection message, containing momentary target information.
+       @param caller Caller function, mainly for debug purposes.
+       @param callerIsSensor Boolean, mainly for debug purposes. Either called from sensor or prediction supplier context.
+       @return The resulting std::string. 
 
-    // xxxx is it possible, will it compile, if moveing this to BITA_params.h?
+       The purpose of this function is to retrieve desired values from a string containing momentary target data.
+       for example: 
+       255,-178.767,-33.0216,-120.555,31.2456,64372.8,912.42,-764.855,-16.4627,497.227,380908
+       extract the number after the 5th ',' so it could be later stored in the variable for holding Latitude. 
+    */
+    std::string SubStringStartTillReaching(const std::string &str, char c, int NumOfEncounterToExclude, int functionality, int currentDetectionIndex,  std::string caller, bool callerIsSensor); // xxxx after solving the problem, delete the currentrowindex and caller arguments
+
+    
     typedef struct {
         double h;   // Angle in degrees
         double s;   // Fraction between 0 and 1
         double v;   // Fraction between 0 and 1
     } hsv;
 
-    // xxxx is it possible, will it compile, if moveing this to BITA_params.h?
     typedef struct {
         double r;   // Fraction between 0 and 1
         double g;   // Fraction between 0 and 1
@@ -27,27 +49,65 @@ namespace utils {
 
     hsv rgb2hsv(rgb in);
     rgb hsv2rgb(hsv in);
-    
+
+
+
+    /**
+     * @brief Edit 'Primary_Controller.kml' to its initial form.
+     *        This file, and only itm has to be manually opened
+     *        in Google Earth.
+     */
     int kmlInitPrimaryController();
+
+    /**
+     * @brief Edit 'Secondary_Controller.kml' to its initial form.
+     *        During runtime, hyperlinks to different '.kml' files
+     *        represnting ballistic trajectories will be added to
+     *        'Secondary_Controller.kml'.
+     */
     int kmlInitSecondaryController();
-    //int kmlInitTrajectory(std::string kml_path, std::string name);    // XXXX change name to sometime like kmlInitTrajectory XXXX CALL IT CONTROLLING KML OR SOMETHING IN THE SIGNON XXXX Keep this one, to init the two contollers.
-    //int kmlInitSuppliersCollector(std::string kml_path, std::string name, int CollectorSize);    // XXXX change name to sometime like kmlInitTrajectory XXXX CALL IT CONTROLLING KML OR SOMETHING IN THE SIGNON XXXX Keep this one, to init the two contollers.
-    
-    // xxxx should replace kmlInitTrajectory and kmlInitSuppliersCollector
-    int kmlInit_href(std::string kml_path, std::string name, std::string color);   // xxxx use this when plotting the sensor. would have used a collector with 1, but then the colors would be the same. explain this in good neglish
+
+
+    /**
+     * @brief Edit a general '.kml' file that is intended to be filled
+     *        with (Lat, Lon, H) data for visualization in Google Earth.
+     * @param color This signature is used for the detected target, which
+     *              has its own single color.
+     */
+    int kmlInit_href(std::string kml_path, std::string name, std::string color);
+
+    /**
+     * @brief Edit a general '.kml' file that is intended to be filled
+     *        with (Lat, Lon, H) data for visualization in Google Earth.
+     * @param CollectorSize The size of the collector is used for determining
+     *                      the collor of each trajectory inside it.
+     */
     int kmlInit_href(std::string kml_path, std::string name, int CollectorSize);
 
+    /**
+     * @brief Inser one netowrk link to 'Secondary_Controller.kml'.
+     */
     int kmlInsertOneNetworkLink(std::string kml_path, std::string href); // XXXX change all relevant function names to KML_functionality
-    //int kmlInsertOneStyle(std::string KML, std::string styleID, std::string color, std::string scale); // XXXX names, XXXX more? XXXX MAKE IT WITH ::in ::out ::binary and append by known fixed number of bytes. not destrot and re-write which is stupid. XXXX and then change name to insertOneStyle...
-    //int kmlInsertStyles(std::string KML, std::string styleID, std::string color, std::string scale); // XXXX names, xxxx mention: assuming number of suppliers doesn't increase with time (will work if it decreases or stays the same). this assumtion doesn't necessarily have to hold in the general case. doing easy life for me right now. xxxx improve english. the advantage is that when dealing with a supplierscollector that already has for example n-1 suppliers in its kml, i don't have to push down all that data in order to add a style. putting them there in advance.
-    //int kmlInsertEntireTrajectory(std::shared_ptr<Trajectory> trajectory, std::string KML, int effective_dtPlot, int currentNumbebrOfSuppliers, int CollectorSize, float StyleScale, bool flagDelay, int delayms);    //  XXXX    A FIGURE EXPLAINING THE LAYOUT: MAIN TRAJECTORY SENSOR, SUPPLIER, COLLOCTOR, ETC. can be done with screenshop from ge.
-    int kmlAppendOneCoord(std::string KML, std::string SingleCoordsLine, std::string styleID); // XXXX Kinda looks like bad practive to have these arguments. see if can modify and write better.   
-    // xxxx when ready, delete this ! and the implementation as well !
-    //int AppendOneCoordInKML(std::string KML, std::string SingleCoordsLine, std::string styleID, std::string SensorOrSupplier); // XXXX Kinda looks like bad practive to have these arguments. see if can modify and write better.   
     
+    /**
+     * @brief Append one (Lat, Lon, H) coordinate inside a '.kml' file
+     * @param SingleCoordsLine A string in the form "X,X,X" where X are chars themselves,
+     *                         which stand for numbers that can be converted to type float.
+     * @param styleID StyleID for visualization purposes.
+     */
+    int kmlAppendOneCoord(std::string KML, std::string SingleCoordsLine, std::string styleID); // XXXX Kinda looks like bad practive to have these arguments. see if can modify and write better.   
+
+
+    /**
+     * @brief Check equality with tolerance within a range
+     * @param m Size of std::vector<Type> x
+     * @param x A std::vector
+     * @param y The value whose equity is check against x
+     * @param altTolerance Tolerance, should account for the summation of many uncertainties.
+     */
     template<typename Type>
-    bool eq(size_t n, std::vector<Type> x, Type y, Type tolerance) {
-        const Type absTolerance = std::abs(tolerance);
+    bool eq(size_t n, std::vector<Type> x, Type y, Type altTolerance) {
+        const Type absTolerance = std::abs(altTolerance);
         for(unsigned int i = 0; i < n; ++i) {
             if (std::abs(x.at(i)-y) > absTolerance) {
                 return false;
@@ -55,7 +115,5 @@ namespace utils {
         }
         return true;
     }
-    
-    
-    
+
 }

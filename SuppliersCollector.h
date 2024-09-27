@@ -1,34 +1,37 @@
+/*=============================================================================
+'SuppliersCollector' gathers a series of ballistic trajectories forecasts that
+ were given at a certain point in time into one entity, uniqely identified by
+ this point in time.
+=============================================================================*/
+
 #pragma once
 #include "PredictionSupplierTrajectory.h"
 
-class SuppliersCollector {  // XXXX THIS IS SUPPLIERS OR SUPPLIER ? PICK ONE AND GO ALL THROUGHOUT.
+class SuppliersCollector {
+    
     public:
+                               
+    SuppliersCollector(float timeAfterDetectionCreated);
+    ~SuppliersCollector() = default;
+    
+    void incrementCurrentNumOfSuppliers() {currentNumOfSuppliers_++;}
+    void setCollectorKML_(std::string collectorKML) {collectorKML_ = collectorKML;}
+    std::string getCollectorKML_() {return collectorKML_;}
+    std::vector<std::shared_ptr<PredictionSupplierTrajectory>>& getSuppliersVector()  {return suppliersVector_;}
 
-    //nt suppliersCollectorsVectorIndex_;    // MAKE ARRANGEMENTS IN ALL project vars to have rightConventions 
-    int currentNumOfSuppliers;
+    // @brief For visualiztion purposes, add all the trajectories stored in 'suppliersVector_'
+    // to Google Earth.
+    // @param effective_dtPlot Additional control over plot intervals, on top of the simulation output writing interval.
+    void plotCollectorAtOnce(int effective_dtPlot);
+
+
+    protected:
+
+    private:
+
     float timeAfterDetectionCreated_;
+    int currentNumOfSuppliers_;
     std::string collectorKML_;
-    
-    //std::vector<std::shared_ptr<Trajectory> > suppliersVector;    // xxxx delete if not used
-    std::vector<std::shared_ptr<PredictionSupplierTrajectory> > suppliersVector;
-                                
-
-    //SuppliersCollector(int suppliersCollectorsVectorIndex) { this->suppliersCollectorsVectorIndex_= suppliersCollectorsVectorIndex; } // xxxx delete if not needed
-    SuppliersCollector(float timeAfterDetectionCreated) {
-        this->currentNumOfSuppliers = 0;
-        timeAfterDetectionCreated_ = timeAfterDetectionCreated;
-    }
-    
-    int getCurrentNumOfSuppliers() { return this->currentNumOfSuppliers; }
-
-
-
-    void plotCollectorAtOnce(int effective_dtPlot);  // XXXX if really implementing like this, should it be raw pointer or smart pointer? ownership etc xxxx after implementing plotsupplierallatonce, go over this one and see if all arguments are really needed. looks like this is only for 1 traj, whose kml is already known, and the rest of the args too. xxxx here's a good example of classes are named class MyClass and variables are camelCase. go through all and make sure it's like this throughout xxxx need to have ownership on the object? need to pass smart pointer?
-
-    std::thread threadpPlotCollectorAtOnce(int effective_dtPlot) {
-        return std::thread([=]{plotCollectorAtOnce(effective_dtPlot);});
-    }
-
-
+    std::vector<std::shared_ptr<PredictionSupplierTrajectory>> suppliersVector_;
 
 };

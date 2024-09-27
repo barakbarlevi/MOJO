@@ -41,7 +41,7 @@ class SensorTrajectory : public Trajectory {
     
     protected:
     
-    unsigned int currentDetectionIndex = 0;
+    unsigned int currentDetectionIndex = 0; // Index of the last received detection message, containing momentary target information.
     
     private:
     

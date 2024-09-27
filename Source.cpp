@@ -47,6 +47,8 @@ https://geosoft.no/development/cppstyle.html.
 =============================================================================*/
 
 // xxxx put big intro text in grammarly
+// xxxx move to the right @brief ... structure
+// xxxx synchobject.h
 // XXXX go though all public / protected / private sections and decide on the best declarations.
 // xxxx "int" i ? ++i or i++ ? xxxx always size_t? maybe unsigned?
 // xxxx what abouth factory design pattern? how can it be implemented in mojo?
@@ -55,9 +57,10 @@ https://geosoft.no/development/cppstyle.html.
 // xxxx go through all couts....
 // xxxx add option to specify port number as input and also path to CADAC so no "home + ..." but just "pathToCADAC + ..." and print out command structue and throw out if given wrongly
 // XXXX EVERY LINE OF CODE SAYING CADAC SHOULD BE SWITCHED TO SOMETHING GENERAL. or maybe explain that it's general until at some level u have to be percise on simulation. but as less as possible.
-// xxxx add std::cout << "log(-1) failed: " << std::strerror(errno) << '\n'; EVERYWHERE. ctrl+f 'perror'
+// xxxx add std::cout << "log(-1) failed: " << std::strerror(errno) << '\n'; EVERYWHERE. ctrl+f 'perror', ctrl + f 'return -1'
 // xxxx maybe according the the most right column, make all the lines align to the max column. tried 80 like it specified but that's not enough for even some assignments
 // XXXX ADD CONSTS? WHEN TO ADD CONSTS? WRITE IN COMMENT TO CLARFIYIF NEEDED
+// xxxx give arguments for ip and port
 
 #include "PredictionSupplierCADAC.h"
 #include "DecisionMaker.h"
@@ -190,7 +193,9 @@ int main(int argc, char *argv[])
             //std::shared_ptr<SuppliersCollector> currentCollector = std::make_shared<SuppliersCollector>(std::stof(trajectoryFromSensor.BITA_Params_.BITA_time) - detectionTime);
             std::shared_ptr<SuppliersCollector> currentCollector = std::make_shared<SuppliersCollector>(std::stof(trajectoryFromSensor.getBITA_Params().BITA_time) - detectionTime);
             suppliersCollectorsVector.push_back(currentCollector);
-            currentCollector->collectorKML_ = "Collector" + std::to_string(suppliersCollectorsVector.size() - 1) + ".kml";
+            
+            //currentCollector->collectorKML_ = "Collector" + std::to_string(suppliersCollectorsVector.size() - 1) + ".kml";
+            currentCollector->setCollectorKML_("Collector" + std::to_string(suppliersCollectorsVector.size() - 1) + ".kml");
 
             // Iterating over all the airframe model we currently want to check. Those are stored in a std::vector and can be added/removed during the scenario.
             // This loop is representing a single point in time where we sample the detected data, insert it to all relevant simulation input files one by one,
@@ -224,7 +229,8 @@ int main(int argc, char *argv[])
                         //predictionSupplierCADAC->trajectoryCADAC_ = std::make_shared<PredSuppTrajectoryCADAC>(currentCollectorLoadPaths.at(i), currentCollector->collectorKML_);
                         //predictionSupplierCADAC->getTrajectoryCADAC() = std::make_shared<PredSuppTrajectoryCADAC>(currentCollectorLoadPaths.at(i), currentCollector->collectorKML_);
                         predictionSupplierCADAC->getTrajectoryCADAC()->setLoadPath(currentCollectorLoadPaths.at(i));
-                        predictionSupplierCADAC->getTrajectoryCADAC()->set_kmlPath(currentCollector->collectorKML_);
+                        //predictionSupplierCADAC->getTrajectoryCADAC()->set_kmlPath(currentCollector->collectorKML_);
+                        predictionSupplierCADAC->getTrajectoryCADAC()->set_kmlPath(currentCollector->getCollectorKML_());
 
 
                         // Read simulation results
@@ -233,11 +239,13 @@ int main(int argc, char *argv[])
                         
                         
                         // Push the simulation results to the correct place inside 'suppliersCollectorsVector's back().
-                        //suppliersCollectorsVector.back()->suppliersVector.push_back(predictionSupplierCADAC->trajectoryCADAC_);
-                        suppliersCollectorsVector.back()->suppliersVector.push_back(predictionSupplierCADAC->getTrajectoryCADAC());
+                        //suppliersCollectorsVector.back()->suppliersVector_.push_back(predictionSupplierCADAC->trajectoryCADAC_);
+                        //suppliersCollectorsVector.back()->suppliersVector_.push_back(predictionSupplierCADAC->getTrajectoryCADAC());
+                        suppliersCollectorsVector.back()->getSuppliersVector().push_back(predictionSupplierCADAC->getTrajectoryCADAC());
                     }
                 }
-                suppliersCollectorsVector.back()->currentNumOfSuppliers++;
+                //suppliersCollectorsVector.back()->currentNumOfSuppliers++;
+                suppliersCollectorsVector.back()->incrementCurrentNumOfSuppliers();
             }
 
             suppliersCollectorsVector.back()->plotCollectorAtOnce(effective_dtPlot);

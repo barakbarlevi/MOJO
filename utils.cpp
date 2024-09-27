@@ -1,10 +1,6 @@
 #include "utils.h"
 #include <math.h>
 
-// XXXX NumOfEncounterToExclude or NumOfEncountersToExclude ?
-// XXXX Use Chat GPT to write well and not crap. WRITE MODERN. GO OVER ALL CODE AND MAKE PRETTY.
-// XXXX EXTENSIVE documentation throught all the project. ALL AND EXTENSIVE. for example what is functionality? make an explanation like fishman did in COB. purpose, input, output, etc.
-
 namespace utils
 {
     std::string SubStringStartTillReaching(const std::string &str, char c, int NumOfEncounterToExclude, int functionality, int currentDetectionIndex,  std::string caller, bool callerIsSensor)
@@ -35,29 +31,9 @@ namespace utils
             if (functionality == 1)
                 return str.substr(pos[NumOfEncounterToExclude - 2] + 1, pos[NumOfEncounterToExclude - 1] - pos[NumOfEncounterToExclude - 2] - 1);
         }
-
-        return "Didn't find any other string"; // XXXX WHAT DOES THIS EVEN MEAN? AND what if functinality isn't 0 or 1 ? write properly.
+        return "Didn't find any other string";
     }
 
-    void replaceLastWord(std::string &line, const std::string &old_word, const std::string &new_word)
-    {
-        size_t pos = line.rfind(old_word);
-        if (pos != std::string::npos)
-        {
-            line.replace(pos, old_word.size(), new_word);
-        }
-    }
-
-    std::string replaceLastWord(const std::string& line, const std::string& newWord) {
-    size_t lastSpacePos = line.find_last_of(" ");
-    if (lastSpacePos == std::string::npos) {
-            return newWord; // If there's no space, just return the new word
-        } else {
-            return line.substr(0, lastSpacePos + 1) + newWord;
-        }
-    }
-
-    
 
     hsv rgb2hsv(rgb in)
     {
@@ -70,7 +46,7 @@ namespace utils
         max = in.r > in.g ? in.r : in.g;
         max = max > in.b ? max : in.b;
 
-        out.v = max; // v
+        out.v = max;
         delta = max - min;
         if (delta < 0.00001)
         {
@@ -80,7 +56,7 @@ namespace utils
         }
         if (max > 0.0)
         {                          // NOTE: if Max is == 0, this divide would cause a crash
-            out.s = (delta / max); // s
+            out.s = (delta / max);
         }
         else
         {
@@ -166,6 +142,8 @@ namespace utils
         return out;
     }
 
+
+
     int kmlInitPrimaryController()
     {
         std::ofstream kml_file;
@@ -202,13 +180,13 @@ namespace utils
         kml_file << "\t\t\t</Link>\n";
         kml_file << "\t\t</NetworkLink>\n\n\n";
 
-        kml_file << "\t</Document>\n"; // XXXX Mention that this is not even really needed because these lines are going to be run over anyway but for the sake of good will write it.
+        kml_file << "\t</Document>\n";
         kml_file << "</kml>\n";
 
         kml_file.close();
 
         return 0;
-    } // XXXX Arrange order of functions to be the same as in the .h file. xxxx same for all other source files.
+    }
 
     int kmlInitSecondaryController()
     {
@@ -218,7 +196,7 @@ namespace utils
         if (!kml_file.is_open())
         {
             std::cerr << "Failed to open the file: Secondary_Controller.kml" << std::endl;
-            return -1;  // xxxx in some other places it will be return 1; change it. what about exit() is it too C and not c++ ? find the right way to deal with an error and implement for all.
+            return -1;
         }
 
         kml_file << "<kml xmlns=\"http://www.opengis.net/kml/2.2\">\n";
@@ -231,58 +209,13 @@ namespace utils
         kml_file << "\t\t</NetworkLinkControl>\n";
         kml_file << "\t\t<visibility>1</visibility>\n\n\n";
 
-        kml_file << "\t</Document>\n"; // XXXX Mention that this is not even really needed because these lines are going to be run over anyway but for the sake of good will write it.
-        kml_file << "</kml>\n";
-
-        kml_file.close();
-
-        return 0;
-    }
-
-    // XXXX CHECK ALL utility functions and make modern.
-    /*
-    int kmlInitTrajectory(std::string kml_path, std::string name)
-    {
-        std::ofstream kml_file;
-        kml_file.open(kml_path);
-        if (!kml_file.is_open())
-        {
-            std::cerr << "Error openning file: " << kml_path << std::endl;
-            return -1;
-        }
-
-        std::string line;
-        std::string lineToInsert;
-
-        kml_file << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n";
-        kml_file << "<kml xmlns=\"http://www.opengis.net/kml/2.2\" xmlns:gx=\"http://www.opengis.net/kml/2.2\" xmlns:kml=\"http://www.opengis.net/kml/2.2\" xmlns:atom=\"http://www.opengis.net/kml/2.2\">\n\n";
-        kml_file << "\t<Document>\n";
-        kml_file << "\t\t <name>" + name + "</name>\n\n\n";
-
-        kml_file << "\t\t <Style id=\"\sn_shaded_dot0\"\>\n"; // XXXX is this working properly?
-        kml_file << "\t\t\t<IconStyle>\n";
-        kml_file << "\t\t\t\t<color>ff00AAff</color>\n";
-        kml_file << "\t\t\t\t<scale>0.4</scale>\n";
-        kml_file << "\t\t\t\t<Icon>\n";
-        kml_file << "\t\t\t\t\t<href>http://maps.google.com/mapfiles/kml/shapes/shaded_dot.png</href>\n";
-        kml_file << "\t\t\t\t</Icon>\n";
-        kml_file << "\t\t\t</IconStyle>\n";
-        kml_file << "\t\t\t<ListStyle></ListStyle>\n"; // XXXX A MUST? CHECK WITHOUT.
-        kml_file << "\t\t</Style>\n";
-
-        kml_file << "\t\t<Folder>\n";
-        kml_file << "\t\t\t<name>LLAs</name>\n";
-        kml_file << "\t\t</Folder>\n";
-
         kml_file << "\t</Document>\n";
         kml_file << "</kml>\n";
 
         kml_file.close();
-        std::cout << "Closed the file :" << kml_path << "\n";
 
         return 0;
     }
-    */
 
 
     int kmlInit_href(std::string kml_path, std::string name, int CollectorSize)
@@ -310,7 +243,7 @@ namespace utils
         for (int i = 1; i < CollectorSize + 1; i++)
         {
             ss.str(std::string());
-            HSV.h = ((((double)i) / (double)CollectorSize)) * 360.0; // XXXX THERES ABSOLUTELY no way that so many casts are needed. MINIMIZE.
+            HSV.h = ((((double)i) / (double)CollectorSize)) * 360.0;
             HSV.s = 0.9;
             HSV.v = 1;
             RGB = utils::hsv2rgb(HSV);
@@ -321,9 +254,9 @@ namespace utils
             int decimalA = (1 * 255);
 
             ss << std::hex << std::setfill('0') << std::setw(2) << decimalA << std::hex << std::setfill('0') << std::setw(2) << decimalG << std::hex << std::setfill('0') << std::setw(2) << decimalB << std::hex << std::setfill('0') << std::setw(2) << decimalR << std::endl;
-            std::string color = ss.str();                         // XXXX ss.str() ? FROm what library this and c_str, to_string .substr() etc are from ?
+            std::string color = ss.str();
             
-            kml_file << "\t\t <Style id=\"sn_shaded_dot" + std::to_string(i) + "\">\n"; // XXXX is this working properly?
+            kml_file << "\t\t <Style id=\"sn_shaded_dot" + std::to_string(i) + "\">\n";
             kml_file << "\t\t\t<IconStyle>\n";
             kml_file << "\t\t\t\t<color>" + color.substr(0, color.size() - 1) + "</color>\n";
             kml_file << "\t\t\t\t<scale>0.4</scale>\n";
@@ -331,10 +264,9 @@ namespace utils
             kml_file << "\t\t\t\t\t<href>http://maps.google.com/mapfiles/kml/shapes/shaded_dot.png</href>\n";
             kml_file << "\t\t\t\t</Icon>\n";
             kml_file << "\t\t\t</IconStyle>\n";
-            kml_file << "\t\t\t<ListStyle></ListStyle>\n"; // XXXX A MUST? CHECK WITHOUT.
+            kml_file << "\t\t\t<ListStyle></ListStyle>\n";
             kml_file << "\t\t</Style>\n";
-
-        } // xxxx int i ?
+        }
 
         kml_file << "\t\t<Folder>\n";
         kml_file << "\t\t\t<name>LLAs</name>\n";
@@ -347,9 +279,7 @@ namespace utils
         std::cout << "Closed the file :" << kml_path << "\n";
 
         return 0;
-    } // XXXX
-
-
+    }
 
 
     int kmlInit_href(std::string kml_path, std::string name, std::string color) {
@@ -370,7 +300,7 @@ namespace utils
         kml_file << "\t<Document>\n";
         kml_file << "\t\t <name>" + name + "</name>\n\n\n";
 
-        kml_file << "\t\t <Style id=\"sn_shaded_dot0\">\n"; // XXXX is this working properly?
+        kml_file << "\t\t <Style id=\"sn_shaded_dot0\">\n";
         kml_file << "\t\t\t<IconStyle>\n";
         kml_file << "\t\t\t\t<color>" + color + "</color>\n";   
         kml_file << "\t\t\t\t<scale>0.4</scale>\n";
@@ -378,7 +308,7 @@ namespace utils
         kml_file << "\t\t\t\t\t<href>http://maps.google.com/mapfiles/kml/shapes/shaded_dot.png</href>\n";
         kml_file << "\t\t\t\t</Icon>\n";
         kml_file << "\t\t\t</IconStyle>\n";
-        kml_file << "\t\t\t<ListStyle></ListStyle>\n"; // XXXX A MUST? CHECK WITHOUT.
+        kml_file << "\t\t\t<ListStyle></ListStyle>\n";
         kml_file << "\t\t</Style>\n";
 
         kml_file << "\t\t<Folder>\n";
@@ -395,20 +325,6 @@ namespace utils
     }
     
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     int kmlInsertOneNetworkLink(std::string kml_path, std::string href)
     {
         std::fstream kml_file;
@@ -420,75 +336,31 @@ namespace utils
             return 1;
         }
 
-        kml_file.seekp(-20, kml_file.end); // XXXX change -5 to the right number. xxxx delete when needed
+        kml_file.seekp(-20, kml_file.end);
 
         kml_file << "\t\t<NetworkLink>\n";
-        // kml_file << "\t\t\t<name>" + kml_path + "</name>\n";    // XXXX make sure this is relative path and working. then write in comment that this can be a relative path
-        kml_file << "\t\t\t<name>" + href + "</name>\n"; // XXXX make sure this is relative path and working. then write in comment that this can be a relative path
+        kml_file << "\t\t\t<name>" + href + "</name>\n";
         kml_file << "\t\t\t<refreshVisibility>1</refreshVisibility>\n";
         kml_file << "\t\t\t<flyToView>0</flyToView>\n";
         kml_file << "\t\t\t<Link>\n";
         kml_file << "\t\t\t\t<href>" + href + "</href>\n";
 
         kml_file << "\t\t\t\t<refreshMode>onInterval</refreshMode>       <!-- refreshModeEnum: onChange, onInterval, or onExpire -->\n";
-        //kml_file << "\t\t\t\t<refreshInterval>0</refreshInterval>        <!-- float -->\n"; // xxxx how small can it get? is there a closed solution? 0.001 didn't work. 0.01 didn't work.
-        kml_file << "\t\t\t\t<refreshInterval>0.01</refreshInterval>        <!-- float -->\n"; // xxxx how small can it get? is there a closed solution? 0.001 didn't work. 0.01 didn't work.
+        //kml_file << "\t\t\t\t<refreshInterval>0</refreshInterval>        <!-- float -->\n";
+        kml_file << "\t\t\t\t<refreshInterval>0.01</refreshInterval>        <!-- float -->\n";
         // kml_file << "\t\t\t\t<refreshMode>onChange</refreshMode>       <!-- refreshModeEnum: onChange, onInterval, or onExpire -->\n";
 
         kml_file << "\t\t\t\t<viewRefreshMode>never</viewRefreshMode>    <!-- viewRefreshModeEnum: never, onStop, onRequest, onRegion -->\n";
         kml_file << "\t\t\t</Link>\n";
         kml_file << "\t\t</NetworkLink>\n\n\n";
 
-        kml_file << "\t</Document>\n"; // XXXX this is done because we ran over the ones that were before XXXX ENGLISH xxxx WRITE it in all other places when editing kmls.
+        kml_file << "\t</Document>\n";
         kml_file << "</kml>\n";
 
         kml_file.close();
 
         return 0;
-    } // XXXX names after thought. delete this comment when needed. use these names / conventions on all others.
-
-    /*
-    int kmlInsertOneStyle(std::string kml_path, std::string styleID, std::string color, std::string scale) // xxxx fix !!! xxxx name of kml_path change to kmlPath
-    {
-
-        std::fstream kml_file;
-        kml_file.open(kml_path, std::ios::in | std::ios::out | std::ios::binary);
-
-        if (!kml_file.is_open())
-        {
-            std::cerr << "Failed to open the file: " << kml_path << std::endl;
-            return 1;
-        }
-
-        kml_file.seekp(257, kml_file.beg); // XXXX change -5 to the right number. xxxx delete when needed
-
-        // for (size_t i = 0; i < 15; i++) { kml_file << "\n"; }   // xxxx size_t ?
-
-        // kml_file.seekp(257, kml_file.beg); // XXXX change -5 to the right number. xxxx delete when needed
-
-        kml_file << "\t\t <Style id=\"\sn_shaded_dot" + styleID + "\"\>\n"; // XXXX is this working properly?
-        kml_file << "\t\t\t<IconStyle>\n";
-        kml_file << "\t\t\t\t<color>" + colorInGE_ + "</color>\n";
-        kml_file << "\t\t\t\t<scale>" + scale + "</scale>\n";
-        kml_file << "\t\t\t\t<Icon>\n";
-        kml_file << "\t\t\t\t\t<href>http://maps.google.com/mapfiles/kml/shapes/shaded_dot.png</href>\n";
-        kml_file << "\t\t\t\t</Icon>\n";
-        kml_file << "\t\t\t</IconStyle>\n";
-        kml_file << "\t\t\t<ListStyle></ListStyle>\n"; // XXXX A MUST? CHECK WITHOUT.
-        kml_file << "\t\t</Style>\n";
-
-        kml_file << "\t\t<Folder>\n\n\n";
-
-        kml_file << "\t</Document>\n"; // XXXX this is done because we ran over the ones that were before XXXX ENGLISH xxxx WRITE it in all other places when editing kmls.
-        kml_file << "</kml>\n";
-
-        kml_file.close();
-
-        return 0;
-    } // XXXX names, XXXX more?
-    */
- 
-   
+    }
 
 
     int kmlAppendOneCoord(std::string kml_path, std::string SingleCoordsLine, std::string styleID)
@@ -502,115 +374,26 @@ namespace utils
             return 1;
         }
 
-        kml_file.seekp(-32, kml_file.end); // XXXX change -5 to the right number. xxxx delete when needed
+        kml_file.seekp(-32, kml_file.end);
 
         kml_file << "\t\t\t<Placemark>\n";
         kml_file << "\t\t\t<name></name>\n";
         kml_file << "\t\t\t\t<styleUrl>sn_shaded_dot" + styleID + "</styleUrl>\n";
-        // kml_file << "\t\t\t\t<description>Time: 15:00</description>\n"; // XXXX UPDATE description
+        // kml_file << "\t\t\t\t<description>Time: 15:00</description>\n";
         kml_file << "\t\t\t\t<Point>\n";
-        kml_file << "\t\t\t\t\t<altitudeMode>absolute</altitudeMode>\n"; // XXXX Whats is it? check online. DELETE IF REDUNDANT. CHECK WITH AND WITHOUT
+        kml_file << "\t\t\t\t\t<altitudeMode>absolute</altitudeMode>\n";
         kml_file << "\t\t\t\t\t<coordinates>" + SingleCoordsLine + "</coordinates>\n";
         kml_file << "\t\t\t\t</Point>\n";
         kml_file << "\t\t\t</Placemark>\n";
         kml_file << "\t\t</Folder>\n";
 
-        kml_file << "\t</Document>\n"; // XXXX this is done because we ran over the ones that were before XXXX ENGLISH xxxx WRITE it in all other places when editing kmls.
+        kml_file << "\t</Document>\n";
         kml_file << "</kml>\n";
 
         kml_file.close();
 
         return 0;
         ;
-    } // XXXX Kinda looks like bad practive to have these arguments. see if can modify and write better.
-
-    // xxxx when ready, delete this ! and the declaration as well !
-    /*
-    int AppendOneCoordInKML(std::string KML, std::string SingleCoordsLine, std::string styleID, std::string SensorOrSupplier)
-    {
-        std::ifstream read_fileAOCIKML; // XXXX CHANGE STUPID NAMES
-        std::ofstream write_fileAOCIKML;
-        char buffer[100]; // XXXX WHY 100? what's the purpose of this buffer?
-
-        read_fileAOCIKML.open(KML, std::ios::in | std::ios::out | std::ios::binary); // Open the file for both reading and writing. XXXX really needs both? RECHECK WHAT THE BAD GPT DID. XXXX ios?
-        if (!read_fileAOCIKML.is_open())
-        {
-            // std::cerr << "(errno) Error openning file " << KML << ". Error: " << strerror_s(buffer, sizeof(buffer), errno) << std::endl;    // XXXX what's going on in this line?
-            // std::cerr << "(GetLastError) Error openning file: " << KML << ". Error: " << GetLastError() << std::endl;
-            std::cerr << "(errno) Error openning file " << KML << ". Error: XXXX FIND ERROR COMMAND" << std::endl; // XXXX what's going on in this line?
-            return -1;
-        }
-
-        if (SensorOrSupplier == "Sensor")
-        {
-            write_fileAOCIKML.open("temp_KML_Sensor.txt");
-        } // XXXX WTF is hapenning here check to see for better implementation. All this creating new file and copying... not efficient...
-        else if (SensorOrSupplier == "Supplier")
-        {
-            write_fileAOCIKML.open("temp_KML_Supplier.txt");
-        }
-        else
-        {
-            std::cout << "Not a sensor and not a supplier, returning -1\n"; // XXXX Why cout ? make consistent all throughout. XXXX why returning -1 and not stating "exiting with -SOME BAD STATUS-" find online
-            return -1;
-        }
-
-        if (!write_fileAOCIKML.is_open())
-        {
-            std::cerr << "Error openning file: temp_KML.txt" << std::endl; //  XXXX this is straight up wrong, there's not temp_KML
-            return -1;
-        }
-
-        std::string line; // XXXX MOVE UP DECLARATIONS
-        std::string lineToInsert;
-
-        if (read_fileAOCIKML.is_open())
-        { // XXXX WHY THIS IF AGAIN. DO ONLY ONCe.
-            while (std::getline(read_fileAOCIKML, line))
-            {
-                // line = line.substr(0, line.size() -1 );
-                if (line.find("</Folder>") != std::string::npos)
-                { //    XXXX Make clear on the ::npos that the bad GPT brought. maybe there's something better.
-                    std::cout << "Found \"</Folder>\"" << std::endl;
-                    write_fileAOCIKML << "\t\t\t<Placemark>\n";
-                    write_fileAOCIKML << "\t\t\t<name></name>\n";
-                    write_fileAOCIKML << "\t\t\t\t<styleUrl>sn_shaded_dot" + styleID + "</styleUrl>\n";
-                    write_fileAOCIKML << "\t\t\t\t<description>Time: 15:00</description>\n"; // XXXX UPDATE description
-                    write_fileAOCIKML << "\t\t\t\t<Point>\n";
-                    write_fileAOCIKML << "\t\t\t\t\t<altitudeMode>absolute</altitudeMode>\n"; // XXXX Whats is it? check online. DELETE IF REDUNDANT. CHECK WITH AND WITHOUT
-                    write_fileAOCIKML << "\t\t\t\t\t<coordinates>" + SingleCoordsLine + "</coordinates>\n";
-                    write_fileAOCIKML << "\t\t\t\t</Point>\n";
-                    write_fileAOCIKML << "\t\t\t</Placemark>\n";
-                    write_fileAOCIKML << "\t\t</Folder>\n";
-                }
-                else
-                {
-                    write_fileAOCIKML << line << std::endl;
-                } // XXXX IN GENERAL, BAD PRACTICE
-            }
-
-            read_fileAOCIKML.close();
-            write_fileAOCIKML.close();
-            std::cout << "Closed the read_file: " << KML << "\n"; // XXXX MAKE BETTER.. why only couting on the file..
-
-            remove(KML.c_str());
-            // rename("temp_KML.txt",KML.c_str());
-            if (SensorOrSupplier == "Sensor")
-            {
-                rename("temp_KML_Sensor.txt", KML.c_str());
-            } // XXXX Is there even a .txt on linux ? make this code linux. but windows compatible as much as possible / portable
-            if (SensorOrSupplier == "Supplier")
-            {
-                rename("temp_KML_Supplier.txt", KML.c_str());
-            } // XXXX Is there even a .txt on linux ? make this code linux. but windows compatible as much as possible / portable
-        }
-
-        else
-        {
-            std::cout << "Unable to open file: " << KML << "\n";
-        } // XXXX AND EXIT WITH A BAD STATUS ?
-        return 0;
-    } // XXXX Kinda looks like bad practive to have these arguments. see if can modify and write better.
-    */
+    }
 
 }

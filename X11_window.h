@@ -1,3 +1,9 @@
+/*=============================================================================
+Basic X11 implementation for an illustrative text box. Its background color
+and presented text will alter if and when a signal is recevied by a condition
+variable.
+=============================================================================*/
+
 #pragma once
 #include <X11/Xlib.h>
 

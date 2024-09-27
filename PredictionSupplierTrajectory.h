@@ -26,7 +26,7 @@ class PredictionSupplierTrajectory : public Trajectory {
 
     protected:
 
-    unsigned int currentRowIndex = 0;
+    unsigned int currentRowIndex = 0; // Index of the last received ballistic forecast message from simulation output, containing momentary target information.
 
     private:
 
