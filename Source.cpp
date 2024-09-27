@@ -46,7 +46,6 @@ https://geosoft.no/development/cppstyle.html.
   
 =============================================================================*/
 
-// xxxx add std::cerr << "log(-1) failed: " << std::strerror(errno) << std::endl; EVERYWHERE. ctrl+f 'perror', ctrl + f 'return -1'
 // xxxx synchobject.h
 // xxxx go through all couts....
 // xxxx source.cpp
@@ -136,20 +135,20 @@ int main(int argc, char *argv[])
         //while ((std::stof(trajectoryFromSensor.BITA_Params_.BITA_height) < heightFirstDetection) && (trajectoryFromSensor.get_vVertical() <= 0))
         while ((std::stof(trajectoryFromSensor.getBITA_Params().BITA_height) < heightFirstDetection) && (trajectoryFromSensor.get_vVertical() <= 0))
         {
-            std::unique_lock<std::mutex> ul(syncObject->syncDetectSetBITA_mutex);
+            std::unique_lock<std::mutex> ul(syncObject->syncDetectSetBITA_mutex_);
 
-            syncObject->syncDetectSetBITA_cv.wait(ul, [&](){ return syncObject->syncDetectSetBITA_ready; });
+            syncObject->syncDetectSetBITA_cv_.wait(ul, [&](){ return syncObject->syncDetectSetBITA_ready_; });
 
             // Do work.
             trajectoryFromSensor.setBITA_Params();
             //std::cout << "height: " << trajectoryFromSensor.BITA_Params_.BITA_height << std::endl;
             std::cout << "height: " << trajectoryFromSensor.getBITA_Params().BITA_height << std::endl;
 
-            syncObject->syncDetectSetBITA_ready = false;
+            syncObject->syncDetectSetBITA_ready_ = false;
 
             ul.unlock();
 
-            syncObject->syncDetectSetBITA_cv.notify_one();
+            syncObject->syncDetectSetBITA_cv_.notify_one();
 
             ul.lock();
         }
@@ -261,8 +260,8 @@ int main(int argc, char *argv[])
         std::this_thread::sleep_for(std::chrono::seconds(1));
 
         printf("Signaling \"finished\" to close the text box.\n");
-        pthread_cond_signal(&syncObject->condition_variable_finished);
-        pthread_mutex_unlock(&syncObject->condition_lock_finished);
+        pthread_cond_signal(&syncObject->condition_variable_finished_);
+        pthread_mutex_unlock(&syncObject->condition_lock_finished_);
         pthread_join(windowThread, NULL);
 
     #endif

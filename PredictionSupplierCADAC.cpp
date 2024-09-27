@@ -39,14 +39,14 @@ int PredictionSupplierCADAC::updateBITA_ParamsInSupplierInput(BITA_params BITA_p
     // This code is restricted to only give ballistic forecasts for non-propelled flight. Looking up empty masses for a lookup table.
     if (this->EmptyMasses_.find(this->primaryInputFile_) != this->EmptyMasses_.end()) { momentaryMass = this->EmptyMasses_[this->primaryInputFile_]; }
     else{
-        std::cout << "Key not found in EmptyMass unordered map.\n" << std::endl;
+        std::cerr << "Key not found in EmptyMass unordered map.\n" << std::endl;
         return -1;
     }
         
     if (this->Aero_decks_.find(this->primaryInputFile_) != this->Aero_decks_.end()) { aeroDeck = this->Aero_decks_[this->primaryInputFile_]; }
     else
     {
-        std::cout << "Key not found in AeroDecks unordered map.\n" << std::endl;
+        std::cerr << "Key not found in AeroDecks unordered map.\n" << std::endl;
         return -1;
     }
         

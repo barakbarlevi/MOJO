@@ -119,7 +119,7 @@ void SensorTrajectoryCADAC::plotDataFromRT(SyncObject* syncObject)
 
                 syncObject->FirstMsgArrived(); // xxxx the name. NAMES
             }   
-        } while (syncObject->firstMsgArrived == false);
+        } while (syncObject->firstMsgArrived_ == false);
 
 
         // After first message has already been recieved.
@@ -133,30 +133,33 @@ void SensorTrajectoryCADAC::plotDataFromRT(SyncObject* syncObject)
             else
                 if(buf[0] == '\0') 
                 {
-                    std::unique_lock<std::mutex> ul(syncObject->syncDetectSetBITA_mutex);
+                    std::unique_lock<std::mutex> ul(syncObject->syncDetectSetBITA_mutex_);
 
                     this->currentDetectionIndex_--;
                     finishedOneDetection = true;
                     printf("Assigning finishedOneDetection = true;\n");
-                    setFinishedPlotting2(true);
-                    std::cout << "Assigning this->finishedplotting2 = true;" << std::endl;
+                    //setFinishedPlotting2(true);
+                    //std::cout << "Assigning this->finishedplotting2 = true;" << std::endl;
+
+                    syncObject->FINISHED = true;
+
                     rval=0;
                     
                     // system() Needed for visualization
                     std::string command = "touch " + this->kmlPath_;
 	                int systemReturn = std::system(command.c_str());
 
-                    syncObject->syncDetectSetBITA_ready = true;
+                    syncObject->syncDetectSetBITA_ready_ = true;
 
-                    std::cout << "Assigned syncDetectSetBITA_ready = true" << std::endl;
+                    std::cout << "Assigned syncDetectSetBITA_ready_ = true" << std::endl;
                     ul.unlock();
 
-                    syncObject->syncDetectSetBITA_cv.notify_one();
+                    syncObject->syncDetectSetBITA_cv_.notify_one();
                     
                     ul.lock();
 
                     if (!getReachedheightFirstDetection_()){
-                        syncObject->syncDetectSetBITA_cv.wait(ul, [&](){ return syncObject->syncDetectSetBITA_ready == false; });
+                        syncObject->syncDetectSetBITA_cv_.wait(ul, [&](){ return syncObject->syncDetectSetBITA_ready_ == false; });
                     }
                 }
                 else
@@ -165,7 +168,7 @@ void SensorTrajectoryCADAC::plotDataFromRT(SyncObject* syncObject)
                     printf("%s\n", buf);
                     std::cout << "Getting RT data_ and inserting it to KML: " << this->kmlPath_ << std::endl;
                     
-                    std::unique_lock<std::mutex> ul(syncObject->syncDetectSetBITA_mutex);
+                    std::unique_lock<std::mutex> ul(syncObject->syncDetectSetBITA_mutex_);
 
                     buf[strlen(buf) - 1] = 0;
                     buf_string = buf;
@@ -176,31 +179,35 @@ void SensorTrajectoryCADAC::plotDataFromRT(SyncObject* syncObject)
                     utils::kmlAppendOneCoord(this->kmlPath_, this->SingleCoordsLine_, "0");
                     this->currentDetectionIndex_++;
 
-                    syncObject->syncDetectSetBITA_ready = true;
+                    syncObject->syncDetectSetBITA_ready_ = true;
 
-                    std::cout << "Assigned syncDetectSetBITA_ready = true" << std::endl;
+                    std::cout << "Assigned syncDetectSetBITA_ready_ = true" << std::endl;
                     ul.unlock();
 
-                    syncObject->syncDetectSetBITA_cv.notify_one();
+                    syncObject->syncDetectSetBITA_cv_.notify_one();
                     
                     ul.lock();
 
                     if (!getReachedheightFirstDetection_()){
-                        syncObject->syncDetectSetBITA_cv.wait(ul, [&](){ return syncObject->syncDetectSetBITA_ready == false; });
+                        syncObject->syncDetectSetBITA_cv_.wait(ul, [&](){ return syncObject->syncDetectSetBITA_ready_ == false; });
                     }
                 }
         } while (rval != 0); // If there was an error and rval was -1, it would still print and won't even break from the loop.. the code simply demostrates socket functionality. taken from BSD's document.
 
-        syncObject->syncDetectSetBITA_ready = true;
+        syncObject->syncDetectSetBITA_ready_ = true;
 
-        std::cout << "Assigned syncDetectSetBITA_ready = true from right before closing socket" << std::endl;
+        std::cout << "Assigned syncDetectSetBITA_ready_ = true from right before closing socket" << std::endl;
         close(msgsock);
         printf("Closed msgsock\n");
         this->currentDetectionIndex_--;
         //printf("Decremented currentDetectionIndex_ by 1\n");
 
-        setFinishedPlotting(true);
+        
+        //setFinishedPlotting(true);
+        //syncObject->FINISHED = true;
 
-    } while (!finishedOneDetection);
+
+    //} while (!finishedOneDetection);
+    } while (syncObject->FINISHED == false);
 
 }
