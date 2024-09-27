@@ -45,8 +45,7 @@ https://geosoft.no/development/cppstyle.html.
 =============================================================================*/
 
 // xxxx
-// go through all files
-// xxxx add option to specify port number as input and also path to CADAC so no "home + ..." but just "pathToCADAC + ..." and print out command structue and throw out if given wrongly
+// xxxx add option to specify path to CADAC so no "home + ..." but just "pathToCADAC + ..." NOT just port
 // xxxx clean green trajectory?
 
 #include "PredictionSupplierCADAC.h"
@@ -59,11 +58,19 @@ enum availableSuppliers {
     // Add more prediction suppliers (simulations) here.
 };
 
+int Argc;
+char** Argv;
 
-int main(int argc, char *argv[])
-{ 
-    (void)argc;
-    (void)argv;
+int main(int argc, char* argv[])
+{
+    Argc = argc;
+    Argv = argv;
+
+    if (argc > 2) {
+        std::cerr << "Error: This program accepts at most one parameter." << std::endl;
+        utils::displayUsage(); // Show usage instructions
+        return 1; // Exit with an error code
+    }
 
     int effective_dtPlot = 2;
   

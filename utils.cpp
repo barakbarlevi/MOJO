@@ -403,4 +403,10 @@ namespace utils
         ;
     }
 
+    void displayUsage() {
+    std::cout << "Usage option 1: ./MOJO will set the port number to a default of 36961" << std::endl;
+    std::cout << "Usage option 2: ./MOJO [port number] will set the port number to the one specified" << std::endl;
+    std::cout << "No other usage options available" << std::endl;
+    }
+
 }

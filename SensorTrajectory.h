@@ -11,6 +11,9 @@ tracked live by a generic sensor.
 #include <netinet/in.h>
 #include <netdb.h>
 
+extern int Argc;
+extern char** Argv;
+
 class SensorTrajectory : public Trajectory {
     
     public:
@@ -20,6 +23,13 @@ class SensorTrajectory : public Trajectory {
 
     BITA_params getBITA_Params() { return this->BITA_Params_; }
     int getCurrentDetectionIndex() { return this->currentDetectionIndex_; }
+
+    /**
+     * @brief Get the port for the socket to listen on. If specified as a command
+     *        line argument, this argument is taken. Otherwise, sets it to a
+     *        default number: 36961.
+     */
+    int getPortNumber();
 
     /**
      * @brief Set the trajectory's momentary 'BITA_Params_', as received over the network.
@@ -51,5 +61,7 @@ class SensorTrajectory : public Trajectory {
     unsigned int currentDetectionIndex_ = 0; // Index of the last received detection message, containing momentary target information.
     
     private:
+
+    int portNumber_ = 0;
     
 };

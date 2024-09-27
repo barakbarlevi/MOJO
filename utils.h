@@ -118,4 +118,6 @@ namespace utils {
         return true;
     }
 
+    void displayUsage();
+
 }

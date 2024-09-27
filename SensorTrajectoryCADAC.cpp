@@ -38,6 +38,7 @@ void SensorTrajectoryCADAC::plotDataFromRT(SyncObject* syncObject)
 	char buf[1024];
     std::string buf_string;
 	int rval;
+    int port;
 
     utils::kmlInsertOneNetworkLink("Secondary_Controller.kml",this->kmlPath_);        
     this->currentDetectionIndex_ = this->FirstLineOfNumericData_;  
@@ -55,7 +56,20 @@ void SensorTrajectoryCADAC::plotDataFromRT(SyncObject* syncObject)
     server.sin_family = AF_INET;
     server.sin_addr.s_addr = INADDR_ANY;
     server.sin_port = 0;
-    server.sin_port = htons(36961);
+    //server.sin_port = htons(36961);
+
+    try {
+        port = getPortNumber();
+    } catch (const std::invalid_argument& e) {
+        std::cerr << "Caught exception in main: " << e.what() << ". Please inset a suitable integer port number." << std::endl;
+        exit(1); // Return a non-zero value to indicate an error
+    } catch (const std::out_of_range& e) {
+        std::cerr << "Caught exception in main: " << e.what() << ". Please inset a suitable integer port number." << std::endl;
+        exit(1); // Return a non-zero value to indicate an error
+    }
+    std::cout << "Got port number from command line: " << port << std::endl;
+    server.sin_port = htons(port);
+
 
     // The server has to bind a name on to its socket so that we can know what its address and port are, to tell clients.
     if (bind(sock, (sockaddr*)&server, sizeof(server))) {
