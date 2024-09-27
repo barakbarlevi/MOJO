@@ -9,6 +9,7 @@ a forecast on how a pure ballistic target's motion starting in the current
 flight condition will look like until ground hit.
 =============================================================================*/
 
+
 #pragma once
 #include <string>
 

@@ -1,5 +1,6 @@
 #include "Trajectory.h"
 
+
 Trajectory::Trajectory(std::string loadPath, std::string kmlPath)
 {
     this->loadPath_ = loadPath;
