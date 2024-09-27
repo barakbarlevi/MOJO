@@ -8,7 +8,7 @@ namespace utils
         if(callerIsSensor) std::cout << "currentDetectionIndex: " << currentIndex << " (Caller: " << caller << ")" << std::endl;
         else std::cout << "currentRowIndex: " << currentIndex << " (Caller: " << caller << ")" << std::endl;
 
-        std::vector<size_t> pos; // XXXX ChatGPT doesnt use this.
+        std::vector<size_t> pos;
         for (size_t i = 0; i < str.size(); ++i)
         {
             if (str[i] == c)
@@ -174,8 +174,8 @@ namespace utils
         kml_file << "\t\t\t\t<href>Secondary_Controller.kml</href>\n";
 
         kml_file << "\t\t\t\t<refreshMode>onInterval</refreshMode>       <!-- refreshModeEnum: onChange, onInterval, or onExpire -->\n";
-        //kml_file << "\t\t\t\t<refreshInterval>0</refreshInterval>        <!-- float -->\n"; // xxxx
-        kml_file << "\t\t\t\t<refreshInterval>0.01</refreshInterval>        <!-- float -->\n"; // xxxx
+        //kml_file << "\t\t\t\t<refreshInterval>0</refreshInterval>        <!-- float -->\n";
+        kml_file << "\t\t\t\t<refreshInterval>0.01</refreshInterval>        <!-- float -->\n";
         // kml_file << "\t\t\t\t<refreshMode>onChange</refreshMode>       <!-- refreshModeEnum: onChange, onInterval, or onExpire -->\n";
 
         kml_file << "\t\t\t\t<viewRefreshMode>never</viewRefreshMode>    <!-- viewRefreshModeEnum: never, onStop, onRequest, onRegion -->\n";

@@ -1,4 +1,3 @@
-
 #include "DecisionMaker.h"
 
 DecisionMaker::DecisionMaker(std::vector<std::shared_ptr<SuppliersCollector>>* suppliersCollectorsVector, SensorTrajectoryCADAC* sensorTrajectory) {

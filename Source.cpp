@@ -42,14 +42,12 @@ that easily allows anyone to add other simulations as a source of information,
 with little adjustments to meet their required metadata structure.
 3. An effort was made to work according to coding conventions given in
 https://geosoft.no/development/cppstyle.html.
-
-  
 =============================================================================*/
 
 // xxxx
 // go through all files
 // xxxx add option to specify port number as input and also path to CADAC so no "home + ..." but just "pathToCADAC + ..." and print out command structue and throw out if given wrongly
-
+// xxxx clean green trajectory?
 
 #include "PredictionSupplierCADAC.h"
 #include "DecisionMaker.h"
@@ -92,13 +90,13 @@ int main(int argc, char *argv[])
 
     std::vector<std::string> currentCollectorPriamryInputFiles = {pathCADAC + "inputOriginal.asc",
                                                                   pathCADAC + "input_Drag0p7.asc",
-                                                                  pathCADAC + "input_Drag1p3.asc"}; // Absolute / relative paths of detection plots/tracks/simulation data. xxxx absolute path looks like crap FIX change to relative path. xxxx should be a vector in order to allow predictors modification in flight xxxx english
+                                                                  pathCADAC + "input_Drag1p3.asc"};
     std::vector<std::string> currentCollectorExecutables = {pathCADAC + "SIX_DOF",
                                                             pathCADAC + "SIX_DOF",
-                                                            pathCADAC + "SIX_DOF"}; // Absolute / relative paths of detection plots/tracks/simulation data. xxxx absolute path looks like crap FIX change to relative path. xxxx should be a vector in order to allow predictors modification in flight xxxx english
+                                                            pathCADAC + "SIX_DOF"};
     std::vector<std::string> currentCollectorLoadPaths = {pathCADAC + "cadacOutputVDXVDX.asc",
                                                           pathCADAC + "cadacOutputVDXVDX.asc",
-                                                          pathCADAC + "cadacOutputVDXVDX.asc"}; // Absolute / relative paths of detection plots/tracks/simulation data. xxxx absolute path looks like crap FIX change to relative path. xxxx should be a vector in order to allow predictors modification in flight xxxx english xxxx explain that this also is a vector for the same reasons
+                                                          pathCADAC + "cadacOutputVDXVDX.asc"};
 
 
     // Initialize necessary .kml files. Only Primary_Controller.kml has to be dragged into Google Earth.
@@ -158,7 +156,7 @@ int main(int argc, char *argv[])
     #endif
 
 
-    // Checkpoint: at this stage the entire detected trajectory should be received and plotted, with no analysis preformed on it. xxxx
+    // Checkpoint: at this stage the entire detected trajectory should be received and plotted, with no analysis preformed on it.
     //receiveDataFromRealtime.join();
 
 
@@ -185,7 +183,7 @@ int main(int argc, char *argv[])
             // This loop is representing a single point in time where we sample the detected data, insert it to all relevant simulation input files one by one,
             // run the simulation and store its outputs. The next time this loop is executed is at a subsequent time during the flight, with different detected
             // target conditions.
-            for (size_t i = 0; i < currentCollectorPriamryInputFiles.size(); ++i) // loop on number of current suppliers for the current collector xxxx english
+            for (size_t i = 0; i < currentCollectorPriamryInputFiles.size(); ++i)
             {                                                                     
                 switch (predictionSuppliers.at(i))
                 {
@@ -195,7 +193,7 @@ int main(int argc, char *argv[])
 
                         // Injecting the state of the detected target into the current input file for a simulations.
                         // At the first time executing this line, BITA params are from 'heightFirstDetection'.
-                        predictionSupplierCADAC->updateBITA_ParamsInSupplierInput(trajectoryFromSensor.getBITA_Params()); // XXXX names XXXX POSIX xxxx mention: way of updating bita params in input files may vary.
+                        predictionSupplierCADAC->updateBITA_ParamsInSupplierInput(trajectoryFromSensor.getBITA_Params());
 
                         // Run a single simulation run with the adequate initial conditions.
                         predictionSupplierCADAC->runSupplierOnce();

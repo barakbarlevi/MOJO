@@ -27,7 +27,7 @@ namespace utils {
      * 255,-178.767,-33.0216,-120.555,31.2456,64372.8,912.42,-764.855,-16.4627,497.227,380908
      * extract the number after the 5th ',' so it could be later stored in the variable for holding Latitude.                                       
      */
-    std::string SubStringStartTillReaching(const std::string &str, char c, int NumOfEncounterToExclude, int functionality, int currentIndex,  std::string caller, bool callerIsSensor); // xxxx after solving the problem, delete the currentrowindex and caller arguments
+    std::string SubStringStartTillReaching(const std::string &str, char c, int NumOfEncounterToExclude, int functionality, int currentIndex,  std::string caller, bool callerIsSensor);
 
     
     typedef struct {
@@ -87,7 +87,7 @@ namespace utils {
      * @brief Inser one netowrk link to 'Secondary_Controller.kml'.
      * @return 0 if the operation was successful, non-zero if an error occurred.
      */
-    int kmlInsertOneNetworkLink(std::string kml_path, std::string href); // XXXX change all relevant function names to KML_functionality
+    int kmlInsertOneNetworkLink(std::string kml_path, std::string href);
     
     /**
      * @brief Append one (Lat, Lon, H) coordinate inside a '.kml' file
@@ -96,7 +96,7 @@ namespace utils {
      * @param styleID StyleID for visualization purposes.
      * @return 0 if the operation was successful, non-zero if an error occurred.
      */
-    int kmlAppendOneCoord(std::string KML, std::string SingleCoordsLine, std::string styleID); // XXXX Kinda looks like bad practive to have these arguments. see if can modify and write better.   
+    int kmlAppendOneCoord(std::string KML, std::string SingleCoordsLine, std::string styleID);
 
 
     /**

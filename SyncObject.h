@@ -44,11 +44,10 @@ class SyncObject {
     std::condition_variable cvFirstMsg_;
     std::mutex mtxFirstMsg_;
 
-    int              condition_predicate_color_ = 0; // xxxx needed?
+    bool              condition_boolean_color_ = false;
     pthread_mutex_t  condition_lock_color_;
     pthread_cond_t   condition_variable_color_;
 
-    int              condition_predicate_finished_ = 0; // xxxx needed?
     pthread_mutex_t  condition_lock_finished_;
     pthread_cond_t   condition_variable_finished_;
 

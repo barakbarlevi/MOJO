@@ -27,9 +27,9 @@ int PredictionSupplierCADAC::updateBITA_ParamsInSupplierInput(BITA_params BITA_p
 {
     
     std::string inputPath = this->primaryInputFile_;
-    std::ofstream kml_file(inputPath, std::ofstream::out | std::ios::binary);
+    std::ofstream input_file(inputPath, std::ofstream::out | std::ios::binary);
 
-    if (!kml_file.is_open())
+    if (!input_file.is_open())
     {
         std::cerr << "Failed to open the file: " << this->primaryInputFile_ << std::endl;
         std::cerr << "open() failed: " << std::strerror(errno) << std::endl;
@@ -50,7 +50,8 @@ int PredictionSupplierCADAC::updateBITA_ParamsInSupplierInput(BITA_params BITA_p
         return -1;
     }
         
-    kml_file << "TITLE input_ballistic.asc  Three-stage rocket ascent followed by ballistic\nMONTE 1 1234\nOPTIONS y_plot\nMODULES\nkinematics		def,init,exec\nenvironment		def,init,exec\npropulsion		def,init,exec\naerodynamics	def,init,exec\nforces			def,exec\nnewton			def,init,exec\neuler			def,init,exec\nintercept		def,exec\nEND\nTIMING\nscrn_step 10\nplot_step 0.5\ntraj_step 1\nint_step 0.003\ncom_step 20\nEND\nVEHICLES 1\nHYPER6 SLV\nlonx  " + BITA_params.BITA_lon + "\nlatx  " + BITA_params.BITA_lat + "\nalt  " + BITA_params.BITA_height + "\ndvbe  " + BITA_params.BITA_speed + "\nphibdx  0\nthtbdx  " + BITA_params.BITA_flightPath + "\npsibdx  " + BITA_params.BITA_heading + "\nalpha0x  0\nbeta0x  0\n//environment\nmair  0\nWEATHER_DECK  /home/barak/Source_Files/CADAC/Custom/Version7/weather_deck_Wallops.asc\nRAYL dvae  5\ntwind  1\nturb_length  100\nturb_sigma  0.5\n//aerodynamics\nmaero  11\nAERO_DECK /home/barak/Source_Files/CADAC/Custom/Version7/" + aeroDeck + "\nxcg_ref  0.01\nrefa  3.243\nrefd  2.032\nalplimx  20\nalimitx  5\n//propulsion\nmprop  0\nvmass0  " + momentaryMass + "\nfmass0  0.01\nxcg_0  0.01\nxcg_1  0.01\nmoi_roll_0  6.95e3\nmoi_roll_1  6.95e3\nmoi_trans_0  158.83e3\nmoi_trans_1  158.83e3\nspi  0.01\nfuel_flow_rate  0.0\nEND\nENDTIME 900\nSTOP"; // xxxx check what to do with path containing my name
+    input_file << "TITLE input_ballistic.asc  Three-stage rocket ascent followed by ballistic\nMONTE 1 1234\nOPTIONS y_plot\nMODULES\nkinematics		def,init,exec\nenvironment		def,init,exec\npropulsion		def,init,exec\naerodynamics	def,init,exec\nforces			def,exec\nnewton			def,init,exec\neuler			def,init,exec\nintercept		def,exec\nEND\nTIMING\nscrn_step 10\nplot_step 0.5\ntraj_step 1\nint_step 0.003\ncom_step 20\nEND\nVEHICLES 1\nHYPER6 SLV\nlonx  " + BITA_params.BITA_lon + "\nlatx  " + BITA_params.BITA_lat + "\nalt  " + BITA_params.BITA_height + "\ndvbe  " + BITA_params.BITA_speed + "\nphibdx  0\nthtbdx  " + BITA_params.BITA_flightPath + "\npsibdx  " + BITA_params.BITA_heading + "\nalpha0x  0\nbeta0x  0\n//environment\nmair  0\nWEATHER_DECK"  + this->pathCADAC_ + "weather_deck_Wallops.asc\nRAYL dvae  5\ntwind  1\nturb_length  100\nturb_sigma  0.5\n//aerodynamics\nmaero  11\nAERO_DECK " + this->pathCADAC_ + aeroDeck + "\nxcg_ref  0.01\nrefa  3.243\nrefd  2.032\nalplimx  20\nalimitx  5\n//propulsion\nmprop  0\nvmass0  " + momentaryMass + "\nfmass0  0.01\nxcg_0  0.01\nxcg_1  0.01\nmoi_roll_0  6.95e3\nmoi_roll_1  6.95e3\nmoi_trans_0  158.83e3\nmoi_trans_1  158.83e3\nspi  0.01\nfuel_flow_rate  0.0\nEND\nENDTIME 900\nSTOP";
+    
     /*
     kml_file << "TITLE input_ballistic.asc  Three-stage rocket ascent followed by ballistic\n \
                 MONTE 1 1234\n \
@@ -115,7 +116,7 @@ int PredictionSupplierCADAC::updateBITA_ParamsInSupplierInput(BITA_params BITA_p
                 STOP";
     */
 
-    kml_file.close();
+    input_file.close();
     std::cout << "Wrote to input file: lonx = " + BITA_params.BITA_lon + ", latx = " + BITA_params.BITA_lat + ", alt = " + BITA_params.BITA_height + ", dvbe = " + BITA_params.BITA_speed + ", thtbdx = " + BITA_params.BITA_flightPath + ", psibdx = " + BITA_params.BITA_heading + ", Aerodeck = " + aeroDeck + ", vmass0 = " + momentaryMass << std::endl;
     return 0;
 }
