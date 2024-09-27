@@ -18,11 +18,13 @@ class DecisionMaker {
 
     void calculate(SyncObject * syncObject);
 
-    // @brief This thread is calling calculate(). It's created in main(). It runs in the background
-    // of the main flow stream. The 'SensorTrajectory' of the detected target, as well as a std::vector
-    // of all 'SuppliersCollector's are passed to this singleton by reference. If some specified 
-    // condition/s are met within calculate(), it will use 'syncObject' to send a notification. 
-    // Calculations are synchronized with the incoming flow of detection data.
+    /**
+     * @brief This thread is calling calculate(). It's created in main(). It runs in the background
+              of the main flow stream. The 'SensorTrajectory' of the detected target, as well as a std::vector
+              of all 'SuppliersCollector's are passed to this singleton by reference. If some specified 
+              condition/s are met within calculate(), it will use 'syncObject' to send a notification. 
+              Calculations are synchronized with the incoming flow of detection data.
+     */
     std::thread threadCalculate(SyncObject * syncObject) {
         return std::thread([=] {calculate(syncObject);});
     }

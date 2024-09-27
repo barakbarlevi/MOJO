@@ -17,12 +17,16 @@ class Trajectory {
     Trajectory(std::string loadPath, std::string kmlPath);
     ~Trajectory() = default;
 
-    // @brief Read trajectory input file line by line.
-    // @param isDetection is currently unused. Left as a parameter for possible future implementations.
-    // @return 0 if the operation was successful, non-zero if an error occurred.
+    /**
+     * @brief Read trajectory input file line by line.
+     * @param isDetection is currently unused. Left as a parameter for possible future implementations.
+     * @return 0 if the operation was successful, non-zero if an error occurred.
+     */
     virtual int readInputFile(bool isDetection);
 
-    // @brief Set the momentary (Lat, Lon, Height) coordinate of the trajectory.
+    /**
+     * @brief Set the momentary (Lat, Lon, Height) coordinate of the trajectory.
+     */
     virtual void setSingleCoordsLine() = 0;
     
     bool getReachedheightFirstDetection_() {return reachedheightFirstDetection_;}

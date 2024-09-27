@@ -19,9 +19,10 @@ class SuppliersCollector {
     std::string getCollectorKML_() {return collectorKML_;}
     std::vector<std::shared_ptr<PredictionSupplierTrajectory>>& getSuppliersVector()  {return suppliersVector_;}
 
-    // @brief For visualiztion purposes, add all the trajectories stored in 'suppliersVector_'
-    // to Google Earth.
-    // @param effective_dtPlot Additional control over plot intervals, on top of the simulation output writing interval.
+    /**
+     * @brief For visualiztion purposes, add all the trajectories stored in 'suppliersVector_' to Google Earth.
+     * @param effective_dtPlot Additional control over plot intervals, on top of the simulation output writing interval. 
+     */
     void plotCollectorAtOnce(int effective_dtPlot);
 
 

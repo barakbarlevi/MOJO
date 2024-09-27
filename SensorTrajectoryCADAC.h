@@ -19,10 +19,10 @@ class SensorTrajectoryCADAC : public SensorTrajectory {
     virtual void setSingleCoordsLine();
     virtual void setBITA_Params(); 
     
-    float get_vVertical() { return std::stof(utils::SubStringStartTillReaching(this->data_[currentDetectionIndex], ',', 10, 1, currentDetectionIndex, "SensorTrajectory::get_vVertical",true)); } // xxxx does this need synchronization? accesses currentDetectionIndex XXXX the ',', 15, and 1 ARE NOT GENERAL BUT DEPENDENT ON SIMULATION so need to change or atleast comment that this is not the focus of the project and this line can be manipulated by any one who chooses so and i made simplification to myself that arent the interesting or important case.
+    float get_vVertical() { return std::stof(utils::SubStringStartTillReaching(this->data_[currentDetectionIndex_], ',', 10, 1, currentDetectionIndex_, "SensorTrajectory::get_vVertical",true)); } // xxxx does this need synchronization? accesses currentDetectionIndex_ XXXX the ',', 15, and 1 ARE NOT GENERAL BUT DEPENDENT ON SIMULATION so need to change or atleast comment that this is not the focus of the project and this line can be manipulated by any one who chooses so and i made simplification to myself that arent the interesting or important case.
     
     float getCurrentAlt() { 
-        return std::stof(utils::SubStringStartTillReaching(data_[currentDetectionIndex], ',', 6, 1, currentDetectionIndex, "SensorTrajectory::getCurrentAlt",true));
+        return std::stof(utils::SubStringStartTillReaching(data_[currentDetectionIndex_], ',', 6, 1, currentDetectionIndex_, "SensorTrajectory::getCurrentAlt",true));
     }
 
     virtual void plotDataFromRT(SyncObject* syncObject);  // XXXX NAME 

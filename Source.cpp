@@ -6,17 +6,17 @@ to expected behavior from 6-DOF simulation outputs.
  
 Description: The program receives detections live over the network. Detection 
 data may contain any information that a generic sensor could be able to 
-measure, such as estimated position, velocity etc. Starting at a pre-
+measure, such as estimated position, velocity, etc. Starting at a pre-
 determined point along the trajectory, the program will start executing a
 series of 6-DOF simulation runs for an array of potential airframe models,
 with the initial conditions being passed to it at the moment, from the tracked
-data. The 6-DOF is a separate project. The simulation's results for all
+data. The 6-DOF is a separate project. The simulation results for all
 airframe models will be stored. The program will continue to receive the live
-ballistic target data until it hits the ground, and will be able generate
+ballistic target data until it hits the ground, and will be able to generate
 simulation outputs during the entire flight time. As soon as the first set of
-simulation output is ready, the program will run a backgroud process to compare
+simulation output is ready, the program will run a background process to compare
 target detections and simulation output against each other. This background
-process can implement any logic coded into it, its purpose to send a
+process can implement any logic coded into it, its purpose is to send a
 notification when some programmer-defined conditions have been met.
 
 Input: The program isn't provided input parameters. It listens on a socket, and
@@ -27,40 +27,32 @@ specified conditions relating the target track data and the simulation output
 are met, a notification is sent.
    
 Notes: 
-1. As target detections are simulation output themselves, the point at
+1. As target detections are simulation outputs themselves, the point at
 which calculations on the live 6-DOF executions start can be the detected
-target in its starting conditions. This doesn't represnt a real life case for
-ballisitic targets, since first detection is expected to occur after the object
+target in its starting conditions. This doesn't represent a real-life case for
+ballistic targets, since first detection is expected to occur after the object
 has gained height. Parameter 'heightFirstDetection' of type double is set for this
 reason.
-2. In this program's context, the term 'Prediction' is referring to any type
-of simulation's output, that describes the progression of a modeled airframe
+2. In this program's context, the term 'Prediction' refers to any 
+simulation's output, that describes the progression of a modeled airframe
 motion through the air for the momentary initial conditions. The term
-'Supplier' refers to the simulation's itself. In this program, the sole
-supplier of predictions is the CADAC++ simulation, be anyone can add other
-simulations as source of information, with adjusting to meet their required
-metadata structure.
+'Supplier' refers to the simulation itself. In this program, the sole
+supplier of predictions is the CADAC++ simulation. It's written in a way
+that easily allows anyone to add other simulations as a source of information,
+with little adjustments to meet their required metadata structure.
 3. An effort was made to work according to coding conventions given in
 https://geosoft.no/development/cppstyle.html.
 
   
 =============================================================================*/
 
-// xxxx put big intro text in grammarly
-// xxxx move to the right @brief ... structure
+// xxxx add std::cerr << "log(-1) failed: " << std::strerror(errno) << std::endl; EVERYWHERE. ctrl+f 'perror', ctrl + f 'return -1'
 // xxxx synchobject.h
-// XXXX go though all public / protected / private sections and decide on the best declarations.
-// xxxx "int" i ? ++i or i++ ? xxxx always size_t? maybe unsigned?
-// xxxx what abouth factory design pattern? how can it be implemented in mojo?
-// XXXX difference from typedef struct?
-// xxxx add _ s for all class members for all classes ! starting here
 // xxxx go through all couts....
+// xxxx source.cpp
+// go through all files
 // xxxx add option to specify port number as input and also path to CADAC so no "home + ..." but just "pathToCADAC + ..." and print out command structue and throw out if given wrongly
-// XXXX EVERY LINE OF CODE SAYING CADAC SHOULD BE SWITCHED TO SOMETHING GENERAL. or maybe explain that it's general until at some level u have to be percise on simulation. but as less as possible.
-// xxxx add std::cout << "log(-1) failed: " << std::strerror(errno) << '\n'; EVERYWHERE. ctrl+f 'perror', ctrl + f 'return -1'
-// xxxx maybe according the the most right column, make all the lines align to the max column. tried 80 like it specified but that's not enough for even some assignments
-// XXXX ADD CONSTS? WHEN TO ADD CONSTS? WRITE IN COMMENT TO CLARFIYIF NEEDED
-// xxxx give arguments for ip and port
+
 
 #include "PredictionSupplierCADAC.h"
 #include "DecisionMaker.h"

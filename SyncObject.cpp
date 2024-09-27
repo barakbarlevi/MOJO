@@ -12,5 +12,5 @@ void SyncObject::FirstMsgArrived() {
         std::lock_guard<std::mutex> lk(mtxFirstMsg);
         firstMsgArrived = true;
     }
-    cvFirstMsg.notify_one(); // let the waiter know
+    cvFirstMsg.notify_one();
 }

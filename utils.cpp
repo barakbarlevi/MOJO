@@ -3,10 +3,10 @@
 
 namespace utils
 {
-    std::string SubStringStartTillReaching(const std::string &str, char c, int NumOfEncounterToExclude, int functionality, int currentDetectionIndex,  std::string caller, bool callerIsSensor)
+    std::string SubStringStartTillReaching(const std::string &str, char c, int NumOfEncounterToExclude, int functionality, int currentIndex,  std::string caller, bool callerIsSensor)
     {
-        if(callerIsSensor) std::cout << "currentDetectionIndex: " << currentDetectionIndex << " (Caller: " << caller << ")" << std::endl;
-        else std::cout << "currentRowIndex: " << currentDetectionIndex << " (Caller: " << caller << ")" << std::endl;
+        if(callerIsSensor) std::cout << "currentDetectionIndex: " << currentIndex << " (Caller: " << caller << ")" << std::endl;
+        else std::cout << "currentRowIndex: " << currentIndex << " (Caller: " << caller << ")" << std::endl;
 
         std::vector<size_t> pos; // XXXX ChatGPT doesnt use this.
         for (size_t i = 0; i < str.size(); ++i)
@@ -21,7 +21,8 @@ namespace utils
 
         if (pos.size() < (size_t)NumOfEncounterToExclude)
         {
-            std::cerr << "Size of pos < NumOfEncounterToExclude\n" << "NumOfEncounterToExclude: " << NumOfEncounterToExclude << ", str: " << str << " (Caller: " << caller << "\n"; // XXXX THIS IS VERY CHEAP WAY OF DEALING WITH AN ERROR. WRITE CONDITIONS on input in the description. assert what is needed.
+            std::cerr << "Size of pos < NumOfEncounterToExclude\n" << "NumOfEncounterToExclude: " << NumOfEncounterToExclude << ", str: " << str << " (Caller: " << caller << "\n";
+            std::cout << "SubStringStartTillReaching failed: " << std::strerror(errno) << std::endl;
             return str;
         }
         else
@@ -152,6 +153,7 @@ namespace utils
         if (!kml_file.is_open())
         {
             std::cerr << "Failed to open the file: Primary_Controller.kml" << std::endl;
+            std::cerr << "open() failed: " << std::strerror(errno) << std::endl;
             return 1;
         }
 
@@ -196,6 +198,7 @@ namespace utils
         if (!kml_file.is_open())
         {
             std::cerr << "Failed to open the file: Secondary_Controller.kml" << std::endl;
+            std::cerr << "open() failed: " << std::strerror(errno) << std::endl;
             return -1;
         }
 
@@ -225,6 +228,7 @@ namespace utils
         if (!kml_file.is_open())
         {
             std::cerr << "Error openning file: " << kml_path << std::endl;
+            std::cerr << "open() failed: " << std::strerror(errno) << std::endl;
             return -1;
         }
 
@@ -289,6 +293,7 @@ namespace utils
         if (!kml_file.is_open())
         {
             std::cerr << "Error openning file: " << kml_path << std::endl;
+            std::cerr << "open() failed: " << std::strerror(errno) << std::endl;
             return -1;
         }
 
@@ -333,6 +338,7 @@ namespace utils
         if (!kml_file.is_open())
         {
             std::cerr << "Failed to open the file: " << kml_path << std::endl;
+            std::cerr << "open() failed: " << std::strerror(errno) << std::endl;
             return 1;
         }
 
@@ -371,6 +377,7 @@ namespace utils
         if (!kml_file.is_open())
         {
             std::cerr << "Failed to open the file: " << kml_path << std::endl;
+            std::cerr << "open() failed: " << std::strerror(errno) << std::endl;
             return 1;
         }
 

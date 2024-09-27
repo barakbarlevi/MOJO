@@ -2,29 +2,29 @@
 
 SensorTrajectoryCADAC::SensorTrajectoryCADAC(std::string loadPath, std::string kmlPath) : SensorTrajectory(loadPath, kmlPath) {
     this->FirstLineOfNumericData_ = 0;
-    this->currentDetectionIndex = this->FirstLineOfNumericData_;      
+    this->currentDetectionIndex_ = this->FirstLineOfNumericData_;      
 }
 
 
 void SensorTrajectoryCADAC::setBITA_Params()
 {
-    this->BITA_Params_.BITA_time = utils::SubStringStartTillReaching(data_[currentDetectionIndex], ',', 1, 0, currentDetectionIndex, "SensorTrajectoryCADAC::setBITA_Params 1",true); // XXXX check on func arguments to match cadac / general(?)
+    this->BITA_Params_.BITA_time = utils::SubStringStartTillReaching(data_[currentDetectionIndex_], ',', 1, 0, currentDetectionIndex_, "SensorTrajectoryCADAC::setBITA_Params 1",true); // XXXX check on func arguments to match cadac / general(?)
     // BITA_mass: Cannot be detected by the sensor. It's added in he supplier's 'updateBITA_ParamsInSupplierInput' routine using unordered maps, according to the supplier's model for empty mass after complete burnout.
     this->BITA_Params_.BITA_mass = "0";
-    this->BITA_Params_.BITA_lat = utils::SubStringStartTillReaching(data_[currentDetectionIndex], ',', 5, 1, currentDetectionIndex, "SensorTrajectoryCADAC::setBITA_Params 2",true); // XXXX check on func arguments to match cadac / general(?)
-    this->BITA_Params_.BITA_lon = utils::SubStringStartTillReaching(data_[currentDetectionIndex], ',', 4, 1, currentDetectionIndex, "SensorTrajectoryCADAC::setBITA_Params 3",true); // XXXX check on func arguments to match cadac / general(?)
-    this->BITA_Params_.BITA_height = utils::SubStringStartTillReaching(data_[currentDetectionIndex], ',', 6, 1, currentDetectionIndex, "SensorTrajectoryCADAC::setBITA_Params 4",true);  // XXXX check on func arguments to match cadac / general(?)
-    this->BITA_Params_.BITA_speed = utils::SubStringStartTillReaching(data_[currentDetectionIndex], ',', 7, 1, currentDetectionIndex, "SensorTrajectoryCADAC::setBITA_Params 5",true);  // XXXX check on func arguments to match cadac / general(?)
-    this->BITA_Params_.BITA_flightPath = utils::SubStringStartTillReaching(data_[currentDetectionIndex], ',', 3, 1, currentDetectionIndex, "SensorTrajectoryCADAC::setBITA_Params 6",true);    // XXXX name BITA_flightPath, XXXX to_string more modern way?  
-    this->BITA_Params_.BITA_heading = utils::SubStringStartTillReaching(data_[currentDetectionIndex], ',', 2, 1, currentDetectionIndex, "SensorTrajectoryCADAC::setBITA_Params 7",true); // XXXX check on func arguments to match cadac / general(?) XXXX name BITA_heading change
+    this->BITA_Params_.BITA_lat = utils::SubStringStartTillReaching(data_[currentDetectionIndex_], ',', 5, 1, currentDetectionIndex_, "SensorTrajectoryCADAC::setBITA_Params 2",true); // XXXX check on func arguments to match cadac / general(?)
+    this->BITA_Params_.BITA_lon = utils::SubStringStartTillReaching(data_[currentDetectionIndex_], ',', 4, 1, currentDetectionIndex_, "SensorTrajectoryCADAC::setBITA_Params 3",true); // XXXX check on func arguments to match cadac / general(?)
+    this->BITA_Params_.BITA_height = utils::SubStringStartTillReaching(data_[currentDetectionIndex_], ',', 6, 1, currentDetectionIndex_, "SensorTrajectoryCADAC::setBITA_Params 4",true);  // XXXX check on func arguments to match cadac / general(?)
+    this->BITA_Params_.BITA_speed = utils::SubStringStartTillReaching(data_[currentDetectionIndex_], ',', 7, 1, currentDetectionIndex_, "SensorTrajectoryCADAC::setBITA_Params 5",true);  // XXXX check on func arguments to match cadac / general(?)
+    this->BITA_Params_.BITA_flightPath = utils::SubStringStartTillReaching(data_[currentDetectionIndex_], ',', 3, 1, currentDetectionIndex_, "SensorTrajectoryCADAC::setBITA_Params 6",true);    // XXXX name BITA_flightPath, XXXX to_string more modern way?  
+    this->BITA_Params_.BITA_heading = utils::SubStringStartTillReaching(data_[currentDetectionIndex_], ',', 2, 1, currentDetectionIndex_, "SensorTrajectoryCADAC::setBITA_Params 7",true); // XXXX check on func arguments to match cadac / general(?) XXXX name BITA_heading change
 }
 
 
 void SensorTrajectoryCADAC::setSingleCoordsLine()
 {
-    std::string lon = utils::SubStringStartTillReaching(this->data_[this->currentDetectionIndex], ',', 4, 1, currentDetectionIndex, "SensorTrajectoryCADAC::setSingleCoordsLine 1",true); // XXXX check on func arguments to match cadac / general(?)  XXXX here i put this-> and below not. do both work? why? which to choose?
-    std::string lat = utils::SubStringStartTillReaching(data_[currentDetectionIndex], ',', 5, 1, currentDetectionIndex, "SensorTrajectoryCADAC::setSingleCoordsLine 2",true); // XXXX check on func arguments to match cadac / general(?)
-    std::string alt = utils::SubStringStartTillReaching(data_[currentDetectionIndex], ',', 6, 1, currentDetectionIndex, "SensorTrajectoryCADAC::setSingleCoordsLine 3",true); // XXXX check on func arguments to match cadac / general(?)
+    std::string lon = utils::SubStringStartTillReaching(this->data_[this->currentDetectionIndex_], ',', 4, 1, currentDetectionIndex_, "SensorTrajectoryCADAC::setSingleCoordsLine 1",true); // XXXX check on func arguments to match cadac / general(?)  XXXX here i put this-> and below not. do both work? why? which to choose?
+    std::string lat = utils::SubStringStartTillReaching(data_[currentDetectionIndex_], ',', 5, 1, currentDetectionIndex_, "SensorTrajectoryCADAC::setSingleCoordsLine 2",true); // XXXX check on func arguments to match cadac / general(?)
+    std::string alt = utils::SubStringStartTillReaching(data_[currentDetectionIndex_], ',', 6, 1, currentDetectionIndex_, "SensorTrajectoryCADAC::setSingleCoordsLine 3",true); // XXXX check on func arguments to match cadac / general(?)
     this->SingleCoordsLine_ = lon + "," + lat + "," + alt;
 }
 
@@ -41,14 +41,15 @@ void SensorTrajectoryCADAC::plotDataFromRT(SyncObject* syncObject)
     bool finishedOneDetection = false;
 
     utils::kmlInsertOneNetworkLink("Secondary_Controller.kml",this->kmlPath_);        
-    this->currentDetectionIndex = this->FirstLineOfNumericData_;  
+    this->currentDetectionIndex_ = this->FirstLineOfNumericData_;  
 
     std::cout << "Initializing server" << std::endl;
 
     //Create socket
     sock = socket(AF_INET, SOCK_STREAM, 0); // Create a socket that runs use the INET address family. the IP version 4. For a stream.
     if (sock < 0) {
-	 perror("error: opening stream socket");
+	 //perror("error: opening stream socket");
+     std::cerr << "error opening stream socket: " << std::strerror(errno) << std::endl;
 	 exit(1);
     }
     
@@ -59,7 +60,8 @@ void SensorTrajectoryCADAC::plotDataFromRT(SyncObject* syncObject)
 
     // The server has to bind a name on to its socket so that we can know what its address and port are, to tell clients.
     if (bind(sock, (sockaddr*)&server, sizeof(server))) {
-	 perror("error: binding stream socket");
+	 //perror("error: binding stream socket");
+     std::cerr << "error binding stream socket: " << std::strerror(errno) << std::endl;
 	 exit(1);
     }
 
@@ -67,7 +69,8 @@ void SensorTrajectoryCADAC::plotDataFromRT(SyncObject* syncObject)
 
     // getsockname - If you have a socket, and you want to know the name it's bound onto it, like the address and the port, we can get it with the function. It will change the arguments, passed as pointers.
     if (getsockname(sock, (sockaddr*)&server, &length)) {
-	 perror("error: getting socket name");
+	 //perror("error: getting socket name");
+     std::cerr << "error getting socket name: " << std::strerror(errno) << std::endl;
 	 exit(1);
     }
 
@@ -81,7 +84,8 @@ void SensorTrajectoryCADAC::plotDataFromRT(SyncObject* syncObject)
         printf("Still waiting. Haven't received first message yet\n");
 	    msgsock = accept(sock, 0, 0); // Will block, waiting for a client to do a connect to the address with port from above.
 	    if (msgsock == -1)
-	        perror("error: accept");
+	        //perror("error: accept");
+            std::cerr << "error in accept(): " << std::strerror(errno) << std::endl;
 	    else do {
 	        bzero(buf, sizeof(buf)); // From John Winan's commentary: aweful. they've (4.4BSD IPC Tutorial) zeroed out this entire buffer every time
             // they read any data in. but! we may or may not get all the data in one single call to read(). just like the other end may or may not
@@ -99,7 +103,8 @@ void SensorTrajectoryCADAC::plotDataFromRT(SyncObject* syncObject)
             // will always be room for a null at the end of whatever you recieved and down at the printf(%s,buf) statement. could have
             // said buf[rval] = 0. putting 1 null byte here is more efficient than putting a thousand in there every time u go around this loop. 
             if ((rval = read(msgsock, buf, 1024)) < 0) // In this case the fd is a socket, that was returned by accept(). read from my endpoint of this streaming socket, put the data_ inside buf. will read up to 1024 bytes.
-                perror("error: reading stream message");
+                //perror("error: reading stream message");
+                std::cerr << "error reading stream message: " << std::strerror(errno) << std::endl;
             if (rval == 0) // got EOF
                 printf("Ending connection\n");
             else
@@ -121,7 +126,8 @@ void SensorTrajectoryCADAC::plotDataFromRT(SyncObject* syncObject)
         do {
             bzero(buf, sizeof(buf));
             if ((rval = read(msgsock, buf, 1024)) < 0)
-                perror("error: reading stream message");
+                //perror("error: reading stream message");
+                std::cerr << "error reading stream message: " << std::strerror(errno) << std::endl;
             if (rval == 0) // got EOF
                 printf("Ending connection\n");
             else
@@ -129,7 +135,7 @@ void SensorTrajectoryCADAC::plotDataFromRT(SyncObject* syncObject)
                 {
                     std::unique_lock<std::mutex> ul(syncObject->syncDetectSetBITA_mutex);
 
-                    this->currentDetectionIndex--;
+                    this->currentDetectionIndex_--;
                     finishedOneDetection = true;
                     printf("Assigning finishedOneDetection = true;\n");
                     setFinishedPlotting2(true);
@@ -168,7 +174,7 @@ void SensorTrajectoryCADAC::plotDataFromRT(SyncObject* syncObject)
                     // This is the reason why this function needs to be implemented from the bottom-most part of the hierarchy
                     this->setSingleCoordsLine();
                     utils::kmlAppendOneCoord(this->kmlPath_, this->SingleCoordsLine_, "0");
-                    this->currentDetectionIndex++;
+                    this->currentDetectionIndex_++;
 
                     syncObject->syncDetectSetBITA_ready = true;
 
@@ -190,8 +196,8 @@ void SensorTrajectoryCADAC::plotDataFromRT(SyncObject* syncObject)
         std::cout << "Assigned syncDetectSetBITA_ready = true from right before closing socket" << std::endl;
         close(msgsock);
         printf("Closed msgsock\n");
-        this->currentDetectionIndex--;
-        //printf("Decremented currentDetectionIndex by 1\n");
+        this->currentDetectionIndex_--;
+        //printf("Decremented currentDetectionIndex_ by 1\n");
 
         setFinishedPlotting(true);
 

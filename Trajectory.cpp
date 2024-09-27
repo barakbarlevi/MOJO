@@ -25,6 +25,7 @@ int Trajectory::readInputFile(bool isDetection)
         else
         {
             std::cerr << "Unable to open file " << this->loadPath_ << std::endl;
+            std::cerr << "open() failed: " << std::strerror(errno) << std::endl;
         }
     //}
 

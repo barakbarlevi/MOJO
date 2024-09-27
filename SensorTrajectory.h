@@ -19,19 +19,26 @@ class SensorTrajectory : public Trajectory {
     ~SensorTrajectory() = default;
 
     BITA_params getBITA_Params() { return this->BITA_Params_; }
-    int getCurrentDetectionIndex() { return this->currentDetectionIndex; }
+    int getCurrentDetectionIndex() { return this->currentDetectionIndex_; }
 
-    // @brief Set the trajectory's momentary 'BITA_Params_', as received over the network.
-    // The way of parsing the incoming data into 'BITA_Params' is specific to the source of information.
+    /**
+     * @brief Set the trajectory's momentary 'BITA_Params_', as received over the network.
+     *        The way of parsing the incoming data into 'BITA_Params' is specific to the source of information.
+     */
     virtual void setBITA_Params() = 0;
 
+    /**
+     * @return The velocity component perpendicular to Earth's surface.
+     */
     virtual float get_vVertical() = 0;
     virtual float getCurrentAlt() = 0;
 
-    // @brief Listen on a socket. Read data as soon as it's received, and store (Lat, Lon, Alt) coordinates in a dedicated .kml file.
-    // Synchronize with other code sections that rely on the inflowing data. Currently,  supports the incoming of 1 single trajectory.
-    // The way of parsing the incoming data into coordinates is specific to the source of information.
-    // @param synchObject Encapsulated synchronization object.
+    /**
+     * @brief Listen on a socket. Read data as soon as it's received, and store (Lat, Lon, Alt) coordinates in a dedicated .kml file.
+     *        Synchronize with other code sections that rely on the inflowing data. Currently,  supports the incoming of 1 single trajectory.
+     *        The way of parsing the incoming data into coordinates is specific to the source of information.
+     * @param synchObject Encapsulated synchronization object. 
+     */
     virtual void plotDataFromRT(SyncObject* syncObject) = 0; // xxxx check that this is right..
 
     std::thread threadReceiveDataFromRT(SyncObject* syncObject) {
@@ -41,10 +48,8 @@ class SensorTrajectory : public Trajectory {
     
     protected:
     
-    unsigned int currentDetectionIndex = 0; // Index of the last received detection message, containing momentary target information.
+    unsigned int currentDetectionIndex_ = 0; // Index of the last received detection message, containing momentary target information.
     
     private:
     
-    float vVertical = 0; // The velocity component perpendicular to Earth's surface.
-
 };

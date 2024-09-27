@@ -37,7 +37,8 @@ static void x_connect ()
 {
     text_box.display = XOpenDisplay (NULL);
     if (! text_box.display) {
-        fprintf (stderr, "Could not open display.\n");
+        std::cout << "text box display failed: " << std::strerror(errno) << std::endl;
+        //fprintf (stderr, "Could not open display.\n");
         exit (1);
     }
     text_box.screen = DefaultScreen (text_box.display);

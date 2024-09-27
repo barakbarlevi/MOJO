@@ -13,26 +13,21 @@ namespace utils {
     
     /**
      * @brief extract a substring from a given string, starting from a
-              specified position and continuing until reaching a certain
-              character for a specified amount of times.
-       @param str The initial string from which we want to extract some portion.
-       @param c The character for which we want to count appearances in the string.
-       @param NumOfEncounterToExclude Number of encounters with 'char c' until
-                                      fixing the position in the string.
-       @param functionality 0 for trimming the string starting at its first char.
-                            1 for trimming the string starting at the previous 'c' appearance
-                            in the string.
-       @param currentDetectionIndex Index of the last received detection message, containing momentary target information.
-       @param caller Caller function, mainly for debug purposes.
-       @param callerIsSensor Boolean, mainly for debug purposes. Either called from sensor or prediction supplier context.
-       @return The resulting std::string. 
-
-       The purpose of this function is to retrieve desired values from a string containing momentary target data.
-       for example: 
-       255,-178.767,-33.0216,-120.555,31.2456,64372.8,912.42,-764.855,-16.4627,497.227,380908
-       extract the number after the 5th ',' so it could be later stored in the variable for holding Latitude. 
-    */
-    std::string SubStringStartTillReaching(const std::string &str, char c, int NumOfEncounterToExclude, int functionality, int currentDetectionIndex,  std::string caller, bool callerIsSensor); // xxxx after solving the problem, delete the currentrowindex and caller arguments
+     * @param str The initial string from which we want to extract some portion.
+     * @param c The character for which we want to count appearances in the string.
+     * @param NumOfEncounterToExclude Number of encounters with 'char c' until fixing the position in the string.
+     * @param functionality 0 for trimming the string starting at its first char. 1 for trimming the string starting at the previous 'c' appearance in the string.
+     * @param currentDetectionIndex Index of the last received detection message, containing momentary target information.
+     * @param caller Caller function, mainly for debug purposes.
+     * @param callerIsSensor Boolean, mainly for debug purposes. Either called from sensor or prediction supplier context.
+     * @return The resulting std::string. 
+     * 
+     * The purpose of this function is to retrieve desired values from a string containing momentary target data.
+     * For example:
+     * 255,-178.767,-33.0216,-120.555,31.2456,64372.8,912.42,-764.855,-16.4627,497.227,380908
+     * extract the number after the 5th ',' so it could be later stored in the variable for holding Latitude.                                       
+     */
+    std::string SubStringStartTillReaching(const std::string &str, char c, int NumOfEncounterToExclude, int functionality, int currentIndex,  std::string caller, bool callerIsSensor); // xxxx after solving the problem, delete the currentrowindex and caller arguments
 
     
     typedef struct {
@@ -56,6 +51,7 @@ namespace utils {
      * @brief Edit 'Primary_Controller.kml' to its initial form.
      *        This file, and only itm has to be manually opened
      *        in Google Earth.
+     * @return 0 if the operation was successful, non-zero if an error occurred.
      */
     int kmlInitPrimaryController();
 
@@ -64,6 +60,7 @@ namespace utils {
      *        During runtime, hyperlinks to different '.kml' files
      *        represnting ballistic trajectories will be added to
      *        'Secondary_Controller.kml'.
+     * @return 0 if the operation was successful, non-zero if an error occurred.
      */
     int kmlInitSecondaryController();
 
@@ -73,6 +70,7 @@ namespace utils {
      *        with (Lat, Lon, H) data for visualization in Google Earth.
      * @param color This signature is used for the detected target, which
      *              has its own single color.
+     * @return 0 if the operation was successful, non-zero if an error occurred.
      */
     int kmlInit_href(std::string kml_path, std::string name, std::string color);
 
@@ -81,11 +79,13 @@ namespace utils {
      *        with (Lat, Lon, H) data for visualization in Google Earth.
      * @param CollectorSize The size of the collector is used for determining
      *                      the collor of each trajectory inside it.
+     * @return 0 if the operation was successful, non-zero if an error occurred.
      */
     int kmlInit_href(std::string kml_path, std::string name, int CollectorSize);
 
     /**
      * @brief Inser one netowrk link to 'Secondary_Controller.kml'.
+     * @return 0 if the operation was successful, non-zero if an error occurred.
      */
     int kmlInsertOneNetworkLink(std::string kml_path, std::string href); // XXXX change all relevant function names to KML_functionality
     
@@ -94,6 +94,7 @@ namespace utils {
      * @param SingleCoordsLine A string in the form "X,X,X" where X are chars themselves,
      *                         which stand for numbers that can be converted to type float.
      * @param styleID StyleID for visualization purposes.
+     * @return 0 if the operation was successful, non-zero if an error occurred.
      */
     int kmlAppendOneCoord(std::string KML, std::string SingleCoordsLine, std::string styleID); // XXXX Kinda looks like bad practive to have these arguments. see if can modify and write better.   
 
@@ -104,6 +105,7 @@ namespace utils {
      * @param x A std::vector
      * @param y The value whose equity is check against x
      * @param altTolerance Tolerance, should account for the summation of many uncertainties.
+     * @return false if the deviation is greater than the tolerance, true otherwise.
      */
     template<typename Type>
     bool eq(size_t n, std::vector<Type> x, Type y, Type altTolerance) {
