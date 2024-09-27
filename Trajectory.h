@@ -30,12 +30,7 @@ class Trajectory {
     virtual void setSingleCoordsLine() = 0;
     
     bool getReachedheightFirstDetection_() {return reachedheightFirstDetection_;}
-    bool getFinishedPlotting() {return finishedPlotting;}
-    bool getFinishedPlotting2() {return finishedplotting2;}
     BITA_params getBITA_Params() {return BITA_Params_;}
-
-    void setFinishedPlotting(const bool& value) {finishedPlotting = value;}
-    void setFinishedPlotting2(const bool& value) {finishedplotting2 = value;}
     void setReachedheightFirstDetection(const bool& value) {reachedheightFirstDetection_ = value;}
     void setLoadPath(const std::string& value) {loadPath_ = value;}
     void set_kmlPath(const std::string& value) {kmlPath_ = value;}
@@ -55,6 +50,5 @@ class Trajectory {
     private:
 
     bool reachedheightFirstDetection_ = false;
-    bool finishedPlotting = false; // xxxx make order in these two and change names. in the new name, include _ in the end xxxx amd see what methods are still relevant and what not
-    bool finishedplotting2 = false; // xxxx name
+    
 };

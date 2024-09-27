@@ -6,7 +6,7 @@ PredictionSupplierCADAC::PredictionSupplierCADAC(std::string path_to_exe, std::s
     this->primaryInputFile_ = priamryInputFile;
     this->pathCADAC_ = pathCADAC;
     
-    this->trajectoryCADAC_ = std::make_shared<PredSuppTrajectoryCADAC>("Empty", "Empty"); // xxxx
+    this->trajectoryCADAC_ = std::make_shared<PredSuppTrajectoryCADAC>("Empty", "Empty");
 
     EmptyMasses_ = {
         {pathCADAC + "inputOriginal.asc", "17809"},
@@ -124,4 +124,5 @@ int PredictionSupplierCADAC::runSupplierOnce()
 { 
     std::string COMMAND = this->path_to_exe_ + " " + this->primaryInputFile_;
     std::system(COMMAND.c_str());  
+    return 0;
 }

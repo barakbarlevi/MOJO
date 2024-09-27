@@ -46,9 +46,7 @@ https://geosoft.no/development/cppstyle.html.
   
 =============================================================================*/
 
-// xxxx synchobject.h
-// xxxx go through all couts....
-// xxxx source.cpp
+// xxxx
 // go through all files
 // xxxx add option to specify port number as input and also path to CADAC so no "home + ..." but just "pathToCADAC + ..." and print out command structue and throw out if given wrongly
 
@@ -135,29 +133,26 @@ int main(int argc, char *argv[])
         //while ((std::stof(trajectoryFromSensor.BITA_Params_.BITA_height) < heightFirstDetection) && (trajectoryFromSensor.get_vVertical() <= 0))
         while ((std::stof(trajectoryFromSensor.getBITA_Params().BITA_height) < heightFirstDetection) && (trajectoryFromSensor.get_vVertical() <= 0))
         {
-            std::unique_lock<std::mutex> ul(syncObject->syncDetectSetBITA_mutex_);
+            std::unique_lock<std::mutex> ul(syncObject->syncMsgStoreAndRead_mutex_);
 
-            syncObject->syncDetectSetBITA_cv_.wait(ul, [&](){ return syncObject->syncDetectSetBITA_ready_; });
+            syncObject->syncMsgStoreAndRead_cv_.wait(ul, [&](){ return syncObject->syncMsgStoreAndRead_ready_; });
 
             // Do work.
             trajectoryFromSensor.setBITA_Params();
-            //std::cout << "height: " << trajectoryFromSensor.BITA_Params_.BITA_height << std::endl;
             std::cout << "height: " << trajectoryFromSensor.getBITA_Params().BITA_height << std::endl;
 
-            syncObject->syncDetectSetBITA_ready_ = false;
+            syncObject->syncMsgStoreAndRead_ready_ = false;
 
             ul.unlock();
 
-            syncObject->syncDetectSetBITA_cv_.notify_one();
+            syncObject->syncMsgStoreAndRead_cv_.notify_one();
 
             ul.lock();
         }
 
         std::this_thread::sleep_for(std::chrono::milliseconds(1));
         std::cout << "Reached " << heightFirstDetection << "[m], at currentDetectionIndex: " << trajectoryFromSensor.getCurrentDetectionIndex() << std::endl;
-        //float detectionTime = std::stof(trajectoryFromSensor.BITA_Params_.BITA_time);
         float detectionTime = std::stof(trajectoryFromSensor.getBITA_Params().BITA_time);
-        //trajectoryFromSensor.reachedheightFirstDetection_ = true;
         trajectoryFromSensor.setReachedheightFirstDetection(true);
 
     #endif
@@ -181,11 +176,9 @@ int main(int argc, char *argv[])
 
         do
         {
-            //std::shared_ptr<SuppliersCollector> currentCollector = std::make_shared<SuppliersCollector>(std::stof(trajectoryFromSensor.BITA_Params_.BITA_time) - detectionTime);
             std::shared_ptr<SuppliersCollector> currentCollector = std::make_shared<SuppliersCollector>(std::stof(trajectoryFromSensor.getBITA_Params().BITA_time) - detectionTime);
             suppliersCollectorsVector.push_back(currentCollector);
             
-            //currentCollector->collectorKML_ = "Collector" + std::to_string(suppliersCollectorsVector.size() - 1) + ".kml";
             currentCollector->setCollectorKML_("Collector" + std::to_string(suppliersCollectorsVector.size() - 1) + ".kml");
 
             // Iterating over all the airframe model we currently want to check. Those are stored in a std::vector and can be added/removed during the scenario.
@@ -204,46 +197,38 @@ int main(int argc, char *argv[])
                         // At the first time executing this line, BITA params are from 'heightFirstDetection'.
                         predictionSupplierCADAC->updateBITA_ParamsInSupplierInput(trajectoryFromSensor.getBITA_Params()); // XXXX names XXXX POSIX xxxx mention: way of updating bita params in input files may vary.
 
-
-                        // // Instantiate a trajectory object
-                        // //predictionSupplierCADAC->trajectoryCADAC_ = std::make_shared<PredSuppTrajectoryCADAC>(currentCollectorLoadPaths.at(i), currentCollector->collectorKML_);
-                        // predictionSupplierCADAC->getTrajectoryCADAC() = std::make_shared<PredSuppTrajectoryCADAC>(currentCollectorLoadPaths.at(i), currentCollector->collectorKML_);
-
-
-
                         // Run a single simulation run with the adequate initial conditions.
                         predictionSupplierCADAC->runSupplierOnce();
 
-
-
-                        // Instantiate a trajectory object
-                        //predictionSupplierCADAC->trajectoryCADAC_ = std::make_shared<PredSuppTrajectoryCADAC>(currentCollectorLoadPaths.at(i), currentCollector->collectorKML_);
-                        //predictionSupplierCADAC->getTrajectoryCADAC() = std::make_shared<PredSuppTrajectoryCADAC>(currentCollectorLoadPaths.at(i), currentCollector->collectorKML_);
+                        // Set the right load path and kml path for the newly instantiated 'PredSuppTrajectoryCADAC'
                         predictionSupplierCADAC->getTrajectoryCADAC()->setLoadPath(currentCollectorLoadPaths.at(i));
-                        //predictionSupplierCADAC->getTrajectoryCADAC()->set_kmlPath(currentCollector->collectorKML_);
                         predictionSupplierCADAC->getTrajectoryCADAC()->set_kmlPath(currentCollector->getCollectorKML_());
 
-
                         // Read simulation results
-                        //predictionSupplierCADAC->trajectoryCADAC_->readInputFile(false);
                         predictionSupplierCADAC->getTrajectoryCADAC()->readInputFile(false);
-                        
-                        
+                                                
                         // Push the simulation results to the correct place inside 'suppliersCollectorsVector's back().
-                        //suppliersCollectorsVector.back()->suppliersVector_.push_back(predictionSupplierCADAC->trajectoryCADAC_);
-                        //suppliersCollectorsVector.back()->suppliersVector_.push_back(predictionSupplierCADAC->getTrajectoryCADAC());
                         suppliersCollectorsVector.back()->getSuppliersVector().push_back(predictionSupplierCADAC->getTrajectoryCADAC());
                     }
                 }
-                //suppliersCollectorsVector.back()->currentNumOfSuppliers++;
+                // Increment the number of suppliers residing in the current 'SuppliersCollector'.
                 suppliersCollectorsVector.back()->incrementCurrentNumOfSuppliers();
             }
 
             suppliersCollectorsVector.back()->plotCollectorAtOnce(effective_dtPlot);
             std::this_thread::sleep_for(std::chrono::milliseconds(1450));
 
-            // Capture detected target state
+
+            std::unique_lock<std::mutex> ul(syncObject->syncMsgStoreAndRead_mutex_);
+            syncObject->syncMsgStoreAndRead_cv_.wait(ul, [&](){ return syncObject->syncMsgStoreAndRead_ready_; });
+            // Do work. Capture detected target state
             trajectoryFromSensor.setBITA_Params();
+            std::cout << "height: " << trajectoryFromSensor.getBITA_Params().BITA_height << std::endl;
+            syncObject->syncMsgStoreAndRead_ready_ = false;
+            ul.unlock();
+            syncObject->syncMsgStoreAndRead_cv_.notify_one();
+            ul.lock();
+
 
         } while (suppliersCollectorsVector.size() <= 1);
         
@@ -255,7 +240,7 @@ int main(int argc, char *argv[])
 
         // Needed for visualization
         std::string command = "touch " + detectionKML;
-        int systemReturn = std::system(command.c_str());
+        std::system(command.c_str());
         
         std::this_thread::sleep_for(std::chrono::seconds(1));
 
@@ -265,10 +250,11 @@ int main(int argc, char *argv[])
         pthread_join(windowThread, NULL);
 
     #endif
-
+    
     // Needed for visualization
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
     std::string command2 = "touch " + detectionKML;
-    int systemReturn2 = std::system(command2.c_str());
+    std::system(command2.c_str());
 
     delete syncObject;
 

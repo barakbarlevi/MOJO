@@ -8,9 +8,9 @@ PredSuppTrajectoryCADAC::PredSuppTrajectoryCADAC(std::string loadPath, std::stri
 
 void PredSuppTrajectoryCADAC::setSingleCoordsLine()
 {
-    std::string lon = utils::SubStringStartTillReaching(this->data_[this->currentRowIndex_], ',', 4, 1, currentRowIndex_, "PredSuppTrajectoryCADAC::setSingleCoordsLine 1",false); // XXXX check on func arguments to match cadac / general(?)  XXXX here i put this-> and below not. do both work? why? which to choose?
-    std::string lat = utils::SubStringStartTillReaching(data_[currentRowIndex_], ',', 5, 1, currentRowIndex_, "PredSuppTrajectoryCADAC::setSingleCoordsLine 2",false); // XXXX check on func arguments to match cadac / general(?)
-    std::string alt = utils::SubStringStartTillReaching(data_[currentRowIndex_], ',', 6, 1, currentRowIndex_, "PredSuppTrajectoryCADAC::setSingleCoordsLine 3",false); // XXXX check on func arguments to match cadac / general(?)
+    std::string lon = utils::SubStringStartTillReaching(this->data_[this->currentRowIndex_], ',', 4, 1, currentRowIndex_, "PredSuppTrajectoryCADAC::setSingleCoordsLine 1",false);
+    std::string lat = utils::SubStringStartTillReaching(data_[currentRowIndex_], ',', 5, 1, currentRowIndex_, "PredSuppTrajectoryCADAC::setSingleCoordsLine 2",false);
+    std::string alt = utils::SubStringStartTillReaching(data_[currentRowIndex_], ',', 6, 1, currentRowIndex_, "PredSuppTrajectoryCADAC::setSingleCoordsLine 3",false);
 
     this->SingleCoordsLine_ = lon + "," + lat + "," + alt;
 }

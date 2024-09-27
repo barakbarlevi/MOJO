@@ -39,11 +39,11 @@ class SensorTrajectory : public Trajectory {
      *        The way of parsing the incoming data into coordinates is specific to the source of information.
      * @param synchObject Encapsulated synchronization object. 
      */
-    virtual void plotDataFromRT(SyncObject* syncObject) = 0; // xxxx check that this is right..
+    virtual void plotDataFromRT(SyncObject* syncObject) = 0;
 
     std::thread threadReceiveDataFromRT(SyncObject* syncObject) {
         utils::kmlInit_href(this->kmlPath_, this->kmlPath_, this->colorInGE_);
-        return std::thread([=]{plotDataFromRT(syncObject);});
+        return std::thread([=, this]{plotDataFromRT(syncObject);});
     }
     
     protected:

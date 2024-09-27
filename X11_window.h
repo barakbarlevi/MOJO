@@ -146,9 +146,9 @@ static void draw_screen (SyncObject *syncObject)
 
 void *windowWork(void *arg) 
 {
-    text_box.text = "Pure ballistic";
+    text_box.text = (char*)"Pure ballistic";
     text_box.text_len = strlen (text_box.text);
-    text_box.text2 = "Not pure ballistic";
+    text_box.text2 = (char*)"Not pure ballistic";
     text_box.text_len2 = strlen (text_box.text2);
 
     SyncObject *syncObject = (SyncObject *) arg;

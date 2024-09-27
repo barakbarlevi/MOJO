@@ -8,23 +8,23 @@ SensorTrajectoryCADAC::SensorTrajectoryCADAC(std::string loadPath, std::string k
 
 void SensorTrajectoryCADAC::setBITA_Params()
 {
-    this->BITA_Params_.BITA_time = utils::SubStringStartTillReaching(data_[currentDetectionIndex_], ',', 1, 0, currentDetectionIndex_, "SensorTrajectoryCADAC::setBITA_Params 1",true); // XXXX check on func arguments to match cadac / general(?)
+    this->BITA_Params_.BITA_time = utils::SubStringStartTillReaching(data_[currentDetectionIndex_], ',', 1, 0, currentDetectionIndex_, "SensorTrajectoryCADAC::setBITA_Params 1",true);
     // BITA_mass: Cannot be detected by the sensor. It's added in he supplier's 'updateBITA_ParamsInSupplierInput' routine using unordered maps, according to the supplier's model for empty mass after complete burnout.
     this->BITA_Params_.BITA_mass = "0";
-    this->BITA_Params_.BITA_lat = utils::SubStringStartTillReaching(data_[currentDetectionIndex_], ',', 5, 1, currentDetectionIndex_, "SensorTrajectoryCADAC::setBITA_Params 2",true); // XXXX check on func arguments to match cadac / general(?)
-    this->BITA_Params_.BITA_lon = utils::SubStringStartTillReaching(data_[currentDetectionIndex_], ',', 4, 1, currentDetectionIndex_, "SensorTrajectoryCADAC::setBITA_Params 3",true); // XXXX check on func arguments to match cadac / general(?)
-    this->BITA_Params_.BITA_height = utils::SubStringStartTillReaching(data_[currentDetectionIndex_], ',', 6, 1, currentDetectionIndex_, "SensorTrajectoryCADAC::setBITA_Params 4",true);  // XXXX check on func arguments to match cadac / general(?)
-    this->BITA_Params_.BITA_speed = utils::SubStringStartTillReaching(data_[currentDetectionIndex_], ',', 7, 1, currentDetectionIndex_, "SensorTrajectoryCADAC::setBITA_Params 5",true);  // XXXX check on func arguments to match cadac / general(?)
-    this->BITA_Params_.BITA_flightPath = utils::SubStringStartTillReaching(data_[currentDetectionIndex_], ',', 3, 1, currentDetectionIndex_, "SensorTrajectoryCADAC::setBITA_Params 6",true);    // XXXX name BITA_flightPath, XXXX to_string more modern way?  
-    this->BITA_Params_.BITA_heading = utils::SubStringStartTillReaching(data_[currentDetectionIndex_], ',', 2, 1, currentDetectionIndex_, "SensorTrajectoryCADAC::setBITA_Params 7",true); // XXXX check on func arguments to match cadac / general(?) XXXX name BITA_heading change
+    this->BITA_Params_.BITA_lat = utils::SubStringStartTillReaching(data_[currentDetectionIndex_], ',', 5, 1, currentDetectionIndex_, "SensorTrajectoryCADAC::setBITA_Params 2",true);
+    this->BITA_Params_.BITA_lon = utils::SubStringStartTillReaching(data_[currentDetectionIndex_], ',', 4, 1, currentDetectionIndex_, "SensorTrajectoryCADAC::setBITA_Params 3",true);
+    this->BITA_Params_.BITA_height = utils::SubStringStartTillReaching(data_[currentDetectionIndex_], ',', 6, 1, currentDetectionIndex_, "SensorTrajectoryCADAC::setBITA_Params 4",true);
+    this->BITA_Params_.BITA_speed = utils::SubStringStartTillReaching(data_[currentDetectionIndex_], ',', 7, 1, currentDetectionIndex_, "SensorTrajectoryCADAC::setBITA_Params 5",true);
+    this->BITA_Params_.BITA_flightPath = utils::SubStringStartTillReaching(data_[currentDetectionIndex_], ',', 3, 1, currentDetectionIndex_, "SensorTrajectoryCADAC::setBITA_Params 6",true);
+    this->BITA_Params_.BITA_heading = utils::SubStringStartTillReaching(data_[currentDetectionIndex_], ',', 2, 1, currentDetectionIndex_, "SensorTrajectoryCADAC::setBITA_Params 7",true);
 }
 
 
 void SensorTrajectoryCADAC::setSingleCoordsLine()
 {
-    std::string lon = utils::SubStringStartTillReaching(this->data_[this->currentDetectionIndex_], ',', 4, 1, currentDetectionIndex_, "SensorTrajectoryCADAC::setSingleCoordsLine 1",true); // XXXX check on func arguments to match cadac / general(?)  XXXX here i put this-> and below not. do both work? why? which to choose?
-    std::string lat = utils::SubStringStartTillReaching(data_[currentDetectionIndex_], ',', 5, 1, currentDetectionIndex_, "SensorTrajectoryCADAC::setSingleCoordsLine 2",true); // XXXX check on func arguments to match cadac / general(?)
-    std::string alt = utils::SubStringStartTillReaching(data_[currentDetectionIndex_], ',', 6, 1, currentDetectionIndex_, "SensorTrajectoryCADAC::setSingleCoordsLine 3",true); // XXXX check on func arguments to match cadac / general(?)
+    std::string lon = utils::SubStringStartTillReaching(this->data_[this->currentDetectionIndex_], ',', 4, 1, currentDetectionIndex_, "SensorTrajectoryCADAC::setSingleCoordsLine 1",true);
+    std::string lat = utils::SubStringStartTillReaching(data_[currentDetectionIndex_], ',', 5, 1, currentDetectionIndex_, "SensorTrajectoryCADAC::setSingleCoordsLine 2",true);
+    std::string alt = utils::SubStringStartTillReaching(data_[currentDetectionIndex_], ',', 6, 1, currentDetectionIndex_, "SensorTrajectoryCADAC::setSingleCoordsLine 3",true);
     this->SingleCoordsLine_ = lon + "," + lat + "," + alt;
 }
 
@@ -38,7 +38,6 @@ void SensorTrajectoryCADAC::plotDataFromRT(SyncObject* syncObject)
 	char buf[1024];
     std::string buf_string;
 	int rval;
-    bool finishedOneDetection = false;
 
     utils::kmlInsertOneNetworkLink("Secondary_Controller.kml",this->kmlPath_);        
     this->currentDetectionIndex_ = this->FirstLineOfNumericData_;  
@@ -117,7 +116,7 @@ void SensorTrajectoryCADAC::plotDataFromRT(SyncObject* syncObject)
                 data_.push_back(buf);
                 this->setSingleCoordsLine();
 
-                syncObject->FirstMsgArrived(); // xxxx the name. NAMES
+                syncObject->FirstMsgArrived();
             }   
         } while (syncObject->firstMsgArrived_ == false);
 
@@ -133,42 +132,38 @@ void SensorTrajectoryCADAC::plotDataFromRT(SyncObject* syncObject)
             else
                 if(buf[0] == '\0') 
                 {
-                    std::unique_lock<std::mutex> ul(syncObject->syncDetectSetBITA_mutex_);
+                    std::unique_lock<std::mutex> ul(syncObject->syncMsgStoreAndRead_mutex_);
 
                     this->currentDetectionIndex_--;
-                    finishedOneDetection = true;
-                    printf("Assigning finishedOneDetection = true;\n");
-                    //setFinishedPlotting2(true);
-                    //std::cout << "Assigning this->finishedplotting2 = true;" << std::endl;
 
-                    syncObject->FINISHED = true;
+                    syncObject->transmissionEnded_ = true;
 
                     rval=0;
                     
                     // system() Needed for visualization
                     std::string command = "touch " + this->kmlPath_;
-	                int systemReturn = std::system(command.c_str());
+                    std::system(command.c_str());
 
-                    syncObject->syncDetectSetBITA_ready_ = true;
+                    syncObject->syncMsgStoreAndRead_ready_ = true;
 
-                    std::cout << "Assigned syncDetectSetBITA_ready_ = true" << std::endl;
+                    std::cout << "Assigned syncMsgStoreAndRead_ready_ = true" << std::endl;
                     ul.unlock();
 
-                    syncObject->syncDetectSetBITA_cv_.notify_one();
+                    syncObject->syncMsgStoreAndRead_cv_.notify_one();
                     
                     ul.lock();
 
                     if (!getReachedheightFirstDetection_()){
-                        syncObject->syncDetectSetBITA_cv_.wait(ul, [&](){ return syncObject->syncDetectSetBITA_ready_ == false; });
+                        syncObject->syncMsgStoreAndRead_cv_.wait(ul, [&](){ return syncObject->syncMsgStoreAndRead_ready_ == false; });
                     }
                 }
                 else
                 {              
-                    printf("rval is:%d\n", rval);
-                    printf("%s\n", buf);
                     std::cout << "Getting RT data_ and inserting it to KML: " << this->kmlPath_ << std::endl;
+                    printf("rval is:%d\n", rval);
+                    printf("Message received: %s", buf);
                     
-                    std::unique_lock<std::mutex> ul(syncObject->syncDetectSetBITA_mutex_);
+                    std::unique_lock<std::mutex> ul(syncObject->syncMsgStoreAndRead_mutex_);
 
                     buf[strlen(buf) - 1] = 0;
                     buf_string = buf;
@@ -179,35 +174,30 @@ void SensorTrajectoryCADAC::plotDataFromRT(SyncObject* syncObject)
                     utils::kmlAppendOneCoord(this->kmlPath_, this->SingleCoordsLine_, "0");
                     this->currentDetectionIndex_++;
 
-                    syncObject->syncDetectSetBITA_ready_ = true;
+                    syncObject->syncMsgStoreAndRead_ready_ = true;
 
-                    std::cout << "Assigned syncDetectSetBITA_ready_ = true" << std::endl;
+                    std::cout << "Assigned syncMsgStoreAndRead_ready_ = true" << std::endl;
                     ul.unlock();
 
-                    syncObject->syncDetectSetBITA_cv_.notify_one();
+                    syncObject->syncMsgStoreAndRead_cv_.notify_one();
                     
                     ul.lock();
 
                     if (!getReachedheightFirstDetection_()){
-                        syncObject->syncDetectSetBITA_cv_.wait(ul, [&](){ return syncObject->syncDetectSetBITA_ready_ == false; });
+                        syncObject->syncMsgStoreAndRead_cv_.wait(ul, [&](){ return syncObject->syncMsgStoreAndRead_ready_ == false; });
                     }
                 }
         } while (rval != 0); // If there was an error and rval was -1, it would still print and won't even break from the loop.. the code simply demostrates socket functionality. taken from BSD's document.
 
-        syncObject->syncDetectSetBITA_ready_ = true;
+        syncObject->syncMsgStoreAndRead_ready_ = true;
 
-        std::cout << "Assigned syncDetectSetBITA_ready_ = true from right before closing socket" << std::endl;
+        std::cout << "Assigned syncMsgStoreAndRead_ready_ = true from right before closing socket" << std::endl;
         close(msgsock);
         printf("Closed msgsock\n");
         this->currentDetectionIndex_--;
         //printf("Decremented currentDetectionIndex_ by 1\n");
 
         
-        //setFinishedPlotting(true);
-        //syncObject->FINISHED = true;
-
-
-    //} while (!finishedOneDetection);
-    } while (syncObject->FINISHED == false);
+    } while (syncObject->transmissionEnded_ == false);
 
 }

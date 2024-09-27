@@ -29,7 +29,7 @@ class PredictionSupplier {
      *        'BITA_params' as initial conditions.
      * @return  0 if the operation was successful, non-zero if an error occurred.
      */
-    virtual int updateBITA_ParamsInSupplierInput(BITA_params BITA_params) = 0;    // XXXX
+    virtual int updateBITA_ParamsInSupplierInput(BITA_params BITA_params) = 0;
 
     protected:
 

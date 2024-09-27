@@ -26,7 +26,7 @@ class DecisionMaker {
               Calculations are synchronized with the incoming flow of detection data.
      */
     std::thread threadCalculate(SyncObject * syncObject) {
-        return std::thread([=] {calculate(syncObject);});
+        return std::thread([=, this] {calculate(syncObject);});
     }
 
     protected:

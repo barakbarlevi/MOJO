@@ -8,7 +8,7 @@ Trajectory::Trajectory(std::string loadPath, std::string kmlPath)
 
 int Trajectory::readInputFile(bool isDetection)
 {
-    // if (isDetection)
+    if (isDetection) {}
     // {
         std::ifstream file(this->loadPath_);
         std::string line;

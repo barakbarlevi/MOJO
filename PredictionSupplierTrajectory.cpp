@@ -1,10 +1,10 @@
 #include "PredictionSupplierTrajectory.h"
 
-PredictionSupplierTrajectory::PredictionSupplierTrajectory(std::string loadPath, std::string kmlPath) : Trajectory(loadPath, kmlPath) {}; // XXXX names...
+PredictionSupplierTrajectory::PredictionSupplierTrajectory(std::string loadPath, std::string kmlPath) : Trajectory(loadPath, kmlPath) {};
 
 void PredictionSupplierTrajectory::setAltData() {
     for (size_t i = this->FirstLineOfNumericData_; i < this->data_.size(); i++) {
-        std::string alt = utils::SubStringStartTillReaching(data_[i], ',', 6, 1, i, "PredictionSupplierTrajectory::setAltData()",false); // XXXX check on func arguments to match cadac / general(?)
+        std::string alt = utils::SubStringStartTillReaching(data_[i], ',', 6, 1, i, "PredictionSupplierTrajectory::setAltData()",false);
         altData_.push_back(std::stof(alt));
     }   
 }
