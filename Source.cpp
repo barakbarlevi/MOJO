@@ -45,7 +45,7 @@ https://geosoft.no/development/cppstyle.html.
 =============================================================================*/
 
 // xxxx
-// xxxx add option to specify path to CADAC so no "home + ..." but just "pathToCADAC + ..." NOT just port
+// xxxx delete //std::string pathCADAC = home + "/CADAC/"; // xxxx
 // xxxx clean green trajectory?
 
 #include "PredictionSupplierCADAC.h"
@@ -66,25 +66,38 @@ int main(int argc, char* argv[])
     Argc = argc;
     Argv = argv;
 
-    if (argc > 2) {
-        std::cerr << "Error: This program accepts at most one parameter." << std::endl;
-        utils::displayUsage(); // Show usage instructions
-        return 1; // Exit with an error code
+    if (argc == 2 || argc > 3) {
+        std::cerr << "Error: This program accepts two or no parameters." << std::endl;
+        utils::displayUsage();
+        return 1;
     }
 
-    int effective_dtPlot = 2;
-  
     char* homeENV = getenv("HOME");
     std::stringstream ss;
     ss.str(homeENV);
     std::string home = ss.str();
+
+    std::string pathCADAC = home + "/Source_Files/CADAC/Custom/Version7/";
+    //std::string pathCADAC = home + "/CADAC/"; // xxxx
+
+    if (argc == 3) {
+        if(!utils::isValidPort(argv[2]))
+        {
+            std::cerr << "Port number not valid" << std::endl;
+            exit(1);
+        }
+        pathCADAC = std::string(argv[1]) + "/";
+    }
+
+    int effective_dtPlot = 2;
+    
     
     // Create a window background thread. Joined at the end of the program, after ground impact.
     pthread_t windowThread;
     SyncObject *syncObject = new SyncObject();
     pthread_create( &windowThread, NULL, windowWork, (void*) syncObject);
     
-    std::string pathCADAC = home + "/Source_Files/CADAC/Custom/Version7/";
+    
 
     // The next four assignments can be thought of storing the data for the simulated trajectories in a table, that has constant columns and rows that can change throught the duration of the scenario.
     // We have column 'predictionSuppliers', where each row element is the name of the simulation 'supplying' ballistic trajectories forecasts.

@@ -9,6 +9,9 @@ A namespace for some utility functions, mainly involving flat files editing.
 #include <iomanip>
 #include <cstring>
 
+extern int Argc;
+extern char** Argv;
+
 namespace utils {
     
     /**
@@ -118,6 +121,7 @@ namespace utils {
         return true;
     }
 
+    bool isValidPort(const std::string& arg);
     void displayUsage();
 
 }

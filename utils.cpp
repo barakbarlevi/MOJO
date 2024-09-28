@@ -403,10 +403,25 @@ namespace utils
         ;
     }
 
+    bool isValidPort(const std::string& arg) {
+    // Check if the string is numeric
+    if (arg.empty() || !std::all_of(arg.begin(), arg.end(), ::isdigit)) {
+        return false;
+    }
+
+    // Convert to an integer
+    long port = std::strtol(arg.c_str(), nullptr, 10);
+
+    // Check the port range
+    return (port > 0 && port <= 65535);
+    }
+
+
     void displayUsage() {
-    std::cout << "Usage option 1: ./MOJO will set the port number to a default of 36961" << std::endl;
-    std::cout << "Usage option 2: ./MOJO [port number] will set the port number to the one specified" << std::endl;
-    std::cout << "No other usage options available" << std::endl;
+    std::cerr << "Usage option 1: " << Argv[0] << " will use default values for the path to the 6-DOF simulation directory and for the port number." << std::endl;
+    std::cerr << "Default values: [/home/username/CADAC] , [36961]" << std::endl;
+    std::cerr << "Usage option 2: " << Argv[0] << " [path] [port] will use the specified values." << std::endl;
+    std::cerr << "No other usage options available" << std::endl;
     }
 
 }

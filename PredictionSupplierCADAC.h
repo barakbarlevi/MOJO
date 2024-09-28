@@ -8,6 +8,9 @@ It's a wrapper around the CADAC simulation.
 #include "PredictionSupplier.h"
 #include "PredSuppTrajectoryCADAC.h"
 
+extern int Argc;
+extern char** Argv;
+
 class PredictionSupplierCADAC : public PredictionSupplier {
 
     public:  
